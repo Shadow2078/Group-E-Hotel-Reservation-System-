@@ -94,3 +94,62 @@ body {
 .form-content {
     background-color: #152733;
 }
+.form-content .form-group {
+    color: #fff;
+}
+
+.form-content .form-items {
+    max-width: 400px;
+    text-align: left;
+}
+
+.form-content .form-icon {
+    margin-top: calc(-42px - 35px);
+}
+
+.form-content .form-icon .icon-holder {
+    background-color: #4A77F7;
+}
+
+.form-content h3 {
+    color: #fff;
+    text-align: left;
+}
+
+.form-content p {
+    color: #fff;
+    text-align: left;
+}
+
+.form-content label {
+    color: #fff;
+    text-align: left;
+}
+
+.form-content .page-links a {
+    color: #fff;
+}
+
+.form-content .page-links a:after {
+    background-color: rgba(222, 222, 222, 0.7);
+}
+
+.form-content .page-links a.active:after {
+    background-color: #0092FE;
+}
+
+.form-content .page-links a:hover:after, .form-content .page-links a:focus:after {
+    background-color: #0092FE;
+}
+
+.form-content input, .form-content .dropdown-toggle.btn-default {
+    border: 1px solid rgba(0, 149, 255, 0);
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #000;
+}
+
+.form-content input:hover, .form-content input:focus, .form-content .dropdown-toggle.btn-default:hover, .form-content .dropdown-toggle.btn-default:focus {
+    border: 1px solid rgba(0, 149, 255, 0);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #000;
+}
