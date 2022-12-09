@@ -1,0 +1,96 @@
+body {
+    background-color: #152733;
+}
+
+.form-body {
+    background-color: #152733;
+}
+
+.website-logo {
+    display: inline-block;
+    top: 140px;
+    left: 80px;
+    right: initial;
+    bottom: initial;
+}
+
+.website-logo img {
+    width: 100px;
+}
+
+.website-logo .logo {
+    background-image: url("../images/download (1).svg");
+}
+
+.website-logo .logo img {
+    width: 200px;
+}
+
+.website-logo-inside img {
+    width: 200px;
+}
+
+.website-logo-inside .logo {
+    background-image: url("../images/download (1).svg");
+}
+
+.website-logo-inside .logo img {
+    width: 100px;
+}
+
+.img-holder {
+    width: 550px;
+    background-color: #152733;
+}
+
+.img-holder .info-holder h3 {
+    color: #fff;
+    text-align: left;
+}
+
+.img-holder .info-holder h3 span {
+    color: #fff;
+}
+
+.img-holder .info-holder h2 {
+    color: #fff;
+    text-align: left;
+}
+
+.img-holder .info-holder h2 span {
+    color: #fff;
+}
+
+.img-holder .info-holder p {
+    color: #fff;
+    text-align: left;
+}
+
+.img-holder .bg {
+    opacity: 1;
+    background-image: none;
+}
+
+.form-holder {
+    margin-left: 550px;
+}
+
+.form-holder .form-content ::-webkit-input-placeholder {
+    color: #a5a9ac !important;
+}
+
+.form-holder .form-content :-moz-placeholder {
+    color: #a5a9ac !important;
+}
+
+.form-holder .form-content ::-moz-placeholder {
+    color: #a5a9ac !important;
+}
+
+.form-holder .form-content :-ms-input-placeholder {
+    color: #a5a9ac !important;
+}
+
+.form-content {
+    background-color: #152733;
+}
