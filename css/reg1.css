@@ -153,3 +153,39 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     color: #000;
 }
+.form-content textarea {
+    border: 1px solid rgba(0, 149, 255, 0);
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #000;
+}
+
+.form-content textarea:hover, .form-content textarea:focus {
+    border: 1px solid rgba(0, 149, 255, 0);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #000;
+}
+
+.form-content .custom-file-label {
+    border: 1px solid rgba(0, 149, 255, 0);
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #000;
+}
+
+.form-content .custom-file-label:after {
+    color: #0093FF;
+}
+
+.form-content .custom-file:hover .custom-file-label, .form-content .custom-file:focus .custom-file-label {
+    border: 1px solid rgba(0, 149, 255, 0);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #000;
+}
+
+.form-content input[type=checkbox]:not(:checked) + label, .form-content input[type=checkbox]:checked + label, .form-content input[type=radio]:not(:checked) + label, .form-content input[type=radio]:checked + label {
+    color: #000;
+    font-weight: 700;
+}
+
+.form-content input[type=checkbox]:checked + label, .form-content input[type=radio]:checked + label {
+    color: #000;
+}
