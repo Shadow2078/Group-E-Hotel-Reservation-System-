@@ -2,10 +2,75 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile page</title>
+    <title>Profile Page</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
+    <div class="wrapper">
+        
+        <nav>
+            <!-- <img src="/images/mg.png" class="logo"> -->
+            <h1 style="color: white;">Mojgara</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+            <img src="/images/user.png" class="user-pic" onclick="toggleMenu()">
+
+             <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                <div class="user-info">
+                    <img src="/images/user.png">
+                    <h2>John</h2>
+                    <h3>john37@gmail.com</h3> 
+                    </div>
+                <hr>
+                
+                <a href="#" class="sub-menu-link">
+                    <img src="/images/profile.png">
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/images/details.png">
+                    <p>View Details</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/images/setting.png">
+                    <p>Setting & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/images/help.png">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="/images/profile.png">
+                    <p>Sign out</p>
+                    <span></span>
+                </a>
+                <p>Mojgara All rights reserved Copyrights 2021.</p>
+               
+                </div>
+            </div>
+            </div>
+            
+        </nav>
+    
+
+    <script>
+        let subMenu=document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
     
 </body>
 </html>
