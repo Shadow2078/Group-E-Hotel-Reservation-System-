@@ -1,4 +1,4 @@
-
+package com.system.hotel_reservation_system.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ public class SpringSecurityConfig {
                 .authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/user/login")
+                .loginPage("/about")
                 .defaultSuccessUrl("/home",true)
                 .usernameParameter("username")
                 .permitAll()
