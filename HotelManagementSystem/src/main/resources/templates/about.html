@@ -40,11 +40,45 @@
                   <ul class=header_nav-list>
                      <li class=header_nav-list_item><a class=nav-item href=index.html data-page=home>Home</a></li>
                      <li class=header_nav-list_item><a class=nav-item href=about.html data-page=about>About</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=rooms.html data-page=about>Rooms</a></li>
-
-                     <li class=header_nav-list_item><a class=nav-item href=news.html data-page=about>News</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=gallery.html data-page=about>Gallery</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href=rooms.html data-bs-toggle=collapse data-bs-target=#roomMenu aria-expanded=false aria-controls=roomMenu data-page=rooms>Rooms <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=roomMenu>
+                           <ul class=dropdown-list>
+                              <li class=list-item data-main=true><a class="dropdown-item nav-item" data-page=rooms href=rooms.html>Rooms</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=room href=room.html>Single room</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href=news.html data-bs-toggle=collapse data-bs-target=#newsMenu aria-expanded=false aria-controls=newsMenu data-page=news>News <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=newsMenu>
+                           <ul class=dropdown-list>
+                              <li class=list-item data-main=true><a class="dropdown-item nav-item" data-page=news href=news.html>News</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=post href=post.html>Single post</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href=# data-bs-toggle=collapse data-bs-target=#pagesMenu aria-expanded=false aria-controls=pagesMenu>Pages <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=pagesMenu>
+                           <ul class=dropdown-list>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=gallery href=gallery.html>Gallery</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=faq01 href=faq.html>FAQ V1</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=faq02 href=faq2.html>FAQ V2</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=error01 href=error.html>Error Page V1</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=error02 href=404.html>Error Page V2</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link nav-link--contacts dropdown-toggle d-inline-flex align-items-center" href=# data-bs-toggle=collapse data-bs-target=#contactsMenu aria-expanded=false aria-controls=contactsMenu>Contacts <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=contactsMenu>
+                           <ul class=dropdown-list>
+                              <!-- <li class=list-item><a class="dropdown-item nav-item" data-page=contacts01 href=contacts.html>Contacts V1</a></li> -->
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=contacts02 href=contacts2.html>Contacts V2</a></li>
+                           </ul>
+                        </div>
+                     </li>
                   </ul>
                </nav>
                <ul class="socials d-flex align-items-center">
@@ -60,7 +94,7 @@
       <header class=page>
          <div class=container>
             <ul class="breadcrumbs d-flex flex-wrap align-content-center">
-               <li class=list-item><a class=link href=index.html>MojGara</a></li>
+               <li class=list-item><a class=link href=index.html>Home</a></li>
                <li class=list-item><a class=link href=#>About</a></li>
             </ul>
             <h1 class=page_title>About</h1>
@@ -71,20 +105,20 @@
             <div class=container>
                <div class="about_benefits-header d-md-flex align-items-center justify-content-between">
                   <h2 class=about_benefits-header_title data-aos=fade-up>The main benefits to choose MojGara</h2>
-                  <!-- <p class=about_benefits-header_text data-aos=fade-up>Aliquam eleifend mi in nulla. Viverra nibh cras pulvinar mattis nunc</p> -->
+                  <p class=about_benefits-header_text data-aos=fade-up>Aliquam eleifend mi in nulla. Viverra nibh cras pulvinar mattis nunc</p>
                </div>
                <ul class="about_benefits-list d-md-flex">
                   <li class=about_benefits-list_item>
                      <span class="countNum number h1 d-flex align-items-center" data-suffix=+ data-value=240>0</span>
-                     <p class=number-label>Customers have stayed with us</p>
+                     <p class=number-label>Consequat interdum varius sit amet mattis vulputate enim nulla</p>
                   </li>
                   <li class=about_benefits-list_item>
                      <span class="countNum number h1 d-flex align-items-center" data-suffix=+ data-value=60>0</span>
-                     <p class=number-label>Rooms available</p>
+                     <p class=number-label>Consequat interdum varius sit amet mattis vulputate enim nulla</p>
                   </li>
                   <li class=about_benefits-list_item>
                      <span class="countNum number h1 d-flex align-items-center" data-suffix=% data-value=98>0</span>
-                     <p class=number-label>Customer Satisfaction</p>
+                     <p class=number-label>Consequat interdum varius sit amet mattis vulputate enim nulla</p>
                   </li>
                </ul>
                <div class=about_benefits-video data-aos=fade-in>
@@ -107,14 +141,14 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              <img class=lazy  src=img/room/lux3.jpg alt=media>
+                              <img class=lazy data-src=img/about/01.jpg src=img/about/01.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">Rs1800</span> / 1 night</span>
                         </div>
                         <div class="main d-md-flex flex-column justify-content-between flex-grow-1">
-                           <a class="main_title h4" href=room.html data-shave=true>Luxury Suite</a>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-bunk_bed icon"></i> 2 Beds</span></div>
-                           <a class="link link--arrow d-inline-flex align-items-center" href=room.html>See information <i class="icon-arrow_right icon"></i></a>
+                           <a class="main_title h4" href=room.html data-shave=true>Bed in 6-Bed Room with Shared Bathroom</a>
+                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-bunk_bed icon"></i> 1 bunk bed</span></div>
+                           <a class="link link--arrow d-inline-flex align-items-center" href=#>See availability <i class="icon-arrow_right icon"></i></a>
                         </div>
                      </div>
                   </li>
@@ -122,14 +156,14 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              <img class=lazy  src=img/room/stdel1.jpg alt=media>
+                              <img class=lazy data-src=img/about/02.jpg src=img/about/02.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">RS.3500</span> / 1 night</span>
                         </div>
                         <div class="main d-md-flex flex-column justify-content-between flex-grow-1">
-                           <a class="main_title h4" href=room.html data-shave=true>Standard Deluxe Room</a>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 3 people </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 Single Beds</span></div>
-                           <a class="link link--arrow d-inline-flex align-items-center" href=standarddeluxe.html>See information <i class="icon-arrow_right icon"></i></a>
+                           <a class="main_title h4" href=room.html data-shave=true>Double Room with Private Bathroom</a>
+                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 twin beds</span></div>
+                           <a class="link link--arrow d-inline-flex align-items-center" href=#>See availability <i class="icon-arrow_right icon"></i></a>
                         </div>
                      </div>
                   </li>
@@ -137,14 +171,14 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              <img class=lazy src=img/room/pent3.jpg alt=media>
+                              <img class=lazy data-src=img/about/03.jpg src=img/about/03.jpg alt=media>
                            </picture>
-                           <span class="media_label media_label--pricing"><span class="price h4">Rs.5000</span> / 1 night</span>
+                           <span class="media_label media_label--pricing"><span class="price h4">Rs.999</span> / 1 night</span>
                         </div>
                         <div class="main d-md-flex flex-column justify-content-between flex-grow-1">
-                           <a class="main_title h4" href=room.html data-shave=true>The Penthouse</a>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 6 people </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 King Beds</span></div>
-                           <a class="link link--arrow d-inline-flex align-items-center" href=Penthouse.html>See information <i class="icon-arrow_right icon"></i></a>
+                           <a class="main_title h4" href=room.html data-shave=true>Apartment with Private Bathroom</a>
+                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 1 full bed </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-bunk_bed icon"></i> 2 twin beds</span></div>
+                           <a class="link link--arrow d-inline-flex align-items-center" href=#>See availability <i class="icon-arrow_right icon"></i></a>
                         </div>
                      </div>
                   </li>
@@ -179,7 +213,7 @@
                         </div>
                         <div class=main>
                            <h4 class=main_title>Room reservation</h4>
-                           <p class=main_text>Select your desired room and date and reserve it early</p>
+                           <p class=main_text>Integer eget aliquet nibh praesent tristique magna sit amet purus</p>
                         </div>
                      </li>
                      <li class="list-item d-flex align-items-sm-center" data-aos=fade-up data-aos-delay=50>
@@ -194,7 +228,7 @@
                         </div>
                         <div class=main>
                            <h4 class=main_title>Filling in documents and payment</h4>
-                           <p class=main_text>Fill the required document from our reception and pay accordingly.</p>
+                           <p class=main_text>Leo duis ut diam quam. Sed velit dignissim sodales ut eu</p>
                         </div>
                      </li>
                      <li class="list-item d-flex align-items-sm-center" data-aos=fade-up data-aos-delay=100>
@@ -208,17 +242,17 @@
                            </span>
                         </div>
                         <div class=main>
-                           <h4 class=main_title>Сheck in hotel</h4>
-                           <p class=main_text>Arrive at time and check in</p>
+                           <h4 class=main_title>Сheck in hostel</h4>
+                           <p class=main_text>Vulputate enim nulla aliquet porttitor. Sagittis nisl rhoncus mattis rhoncus</p>
                         </div>
                      </li>
                   </ul>
-                  <div class=wrapper data-aos=fade-up><a class="about_stages-main_btn btn theme-element theme-element--accent" href=rooms.html>Choose room</a></div>
+                  <div class=wrapper data-aos=fade-up><a class="about_stages-main_btn btn theme-element theme-element--accent" href=#>Choose room</a></div>
                </div>
                <div class="about_stages-media col-xl-6" data-aos=fade-in>
                   <picture>
-                    
-                     <img class=lazy  src=img/about/stages.jpg alt=media>
+                     <source data-srcset=img/about/stages.webp srcset=img/about/stages.webp>
+                     <img class=lazy data-src=img/about/stages.jpg src=img/about/stages.jpg alt=media>
                   </picture>
                </div>
             </div>
@@ -226,18 +260,18 @@
          <section class="about_rules section">
             <div class="container d-xl-flex justify-content-between align-items-center">
                <div class="about_rules-main col-xl-5">
-                  <h2 class=about_rules-main_header data-aos=fade-right>Policies of our hotels</h2>
+                  <h2 class=about_rules-main_header data-aos=fade-right>Rule settlement, eviction and stay</h2>
                   <ul class=about_rules-main_list>
-                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i> Check-in and Check-out on time</li>
-                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i> The guest will be held responsible for any loss or damage to the hotel property</li>
-                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i> Respect the hotel staff and management</li>
-                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i>Smoking only allowed in the smoking zone</li>
-                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i>Smoking only allowed in the smoking zone</li>
+                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i> Time of arrival is after 14-00. Time of departure is to 12-00</li>
+                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i> Does a settlement take place only at complete payment</li>
+                     <li class="list-item d-flex align-items-baseline" data-aos=fade-up><i class="icon-check icon"></i> Is there a settlement in hostel only after the presence of passport</li>
+                     <li class="list-item d-flex align-items-baseline important" data-aos=fade-up><i class="icon-check icon"></i> Volutpat odio facilisis mauris sit amet massa vitae tortor condimentum. Quam elementum pulvinar etiam non quam lacus suspendisse. Eget gravida cum sociis natoque</li>
                   </ul>
                </div>
                <div class="contacts col-xl-6" data-aos=fade-up>
                   <div class=contacts_header>
                      <h2 class=contacts_header-title>We are ready answer your question</h2>
+                     <p class=contacts_header-text>Egestas pretium aenean pharetra magna ac. Et tortor consequat id porta nibh venenatis cras sed</p>
                   </div>
                   <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" action=https://html.merku.love/hosteller/form.php method=post data-type=feedback>
                      <div class=field-wrapper><label class=label for=feedbackName><i class="icon-user icon"></i></label> <input class="field required" id=feedbackName type=text placeholder=Name></div>
@@ -251,23 +285,23 @@
          <section class="about_faq section">
             <div class=container>
                <div class="about_faq-header d-lg-flex justify-content-between align-items-center">
-                  <h2 class=about_faq-header_title>Frequently asked questions about our hotel</h2>
-            
+                  <h2 class=about_faq-header_title>Frequently asked questions about hostel</h2>
+                  <p class=about_faq-header_text>Diam phasellus vestibulum lorem sed risus ultricies tristique</p>
                </div>
                <div class="about_faq-main d-grid">
                   <div class=accordion_component-item>
                      <div class="item-wrapper d-flex flex-column justify-content-between">
-                        <h4 class="accordion_component-item_header d-flex justify-content-between align-items-center collapsed" data-bs-toggle=collapse data-bs-target=#item-1 aria-expanded=true>How do you choose the right hotel? <span class=wrapper><i class="icon-chevron_down icon transform"></i></span></h4>
+                        <h4 class="accordion_component-item_header d-flex justify-content-between align-items-center collapsed" data-bs-toggle=collapse data-bs-target=#item-1 aria-expanded=true>How do you choose the right hostel? <span class=wrapper><i class="icon-chevron_down icon transform"></i></span></h4>
                         <div id=item-1 class="accordion-collapse collapse show">
-                           <div class=accordion_component-item_body>Do your research about the hotels and also consider your budget and choose accordingly.</div>
+                           <div class=accordion_component-item_body>Consequat interdum varius sit amet mattis vulputate enim nulla. Posuere morbi leo urna molestie at element eu facilisis sed excepteur sint occaecat</div>
                         </div>
                      </div>
                   </div>
                   <div class=accordion_component-item>
                      <div class="item-wrapper d-flex flex-column justify-content-between">
-                        <h4 class="accordion_component-item_header d-flex justify-content-between align-items-center" data-bs-toggle=collapse data-bs-target=#item-2 aria-expanded=true>How many people are in a hotel room? <span class=wrapper><i class="icon-chevron_down icon transform"></i></span></h4>
+                        <h4 class="accordion_component-item_header d-flex justify-content-between align-items-center" data-bs-toggle=collapse data-bs-target=#item-2 aria-expanded=true>How many people are in a hostel room? <span class=wrapper><i class="icon-chevron_down icon transform"></i></span></h4>
                         <div id=item-2 class="accordion-collapse collapse show">
-                           <div class=accordion_component-item_body>It varies from room to room. </div>
+                           <div class=accordion_component-item_body>Consequat interdum varius sit amet mattis vulputate enim nulla. Posuere morbi leo urna molestie at element eu facilisis sed excepteur sint occaecat</div>
                         </div>
                      </div>
                   </div>
@@ -297,8 +331,8 @@
                   </div>
                   <div class="about_faq-main_card accent d-flex flex-column justify-content-between">
                      <h4 class=title>Do you have any questions?</h4>
-                     <p class="text flex-grow-1">Feel free to contact us at any time</p>
-                     <a class="btn theme-element theme-element--light" href=contacts2.html>Ask a question</a>
+                     <p class="text flex-grow-1">Diam phasellus vestibulum lorem sed risus ultricies tristique</p>
+                     <a class="btn theme-element theme-element--light" href=contacts.html>Ask a question</a>
                   </div>
                </div>
             </div>
@@ -308,8 +342,8 @@
                <div class="about_footer-block about_footer-block--quote d-md-flex align-items-center">
                   <div class=media data-aos=fade-right>
                      <picture>
-                        
-                        <img class=lazy src=img/aside/02.jpg alt=media>
+                        <source data-srcset=img/aside/02.webp srcset=img/aside/02.webp>
+                        <img class=lazy data-src=img/aside/02.jpg src=img/aside/02.jpg alt=media>
                      </picture>
                   </div>
                   <div class=main>
@@ -322,12 +356,12 @@
                   <div class=content>
                      <h4 class=about_footer-block_header data-aos=fade-left>Are you looking for an apartment?</h4>
                      <p class=about_footer-block_text data-aos=fade-left data-aos-delay=50>Tellus mauris a diam maecenas sed enim. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum</p>
-                     <div class=wrapper data-aos=fade-left data-aos-delay=100><a class="theme-element theme-element--accent btn" href=rooms.html>View rooms</a></div>
+                     <div class=wrapper data-aos=fade-left data-aos-delay=100><a class="theme-element theme-element--accent btn" href=#>View rooms</a></div>
                   </div>
                </div>
                <div class="about_footer-block about_footer-block--subscribe d-lg-flex flex-column justify-content-between">
                   <h4 class=about_footer-block_header data-aos=fade-left>Newsletter</h4>
-                  <p class="about_footer-block_text flex-grow-1" data-aos=fade-left data-aos-delay=50>Feel free to contact us</p>
+                  <p class="about_footer-block_text flex-grow-1" data-aos=fade-left data-aos-delay=50>Urna id volutpat lacus laoreet. Viverra vitae congue eu consequat ac</p>
                   <form class="form d-flex" action=# method=post data-type=subscribe data-aos=fade-left data-aos-delay=100><input class="field required" type=text data-type=email placeholder="Email address"> <button class="btn theme-element--accent" type=submit><i class="icon-arrow_right icon"></i></button></form>
                </div>
             </div>
@@ -355,7 +389,15 @@
                   </a>
                   <p class=footer_main-block_text>Ut tellus elementum sagittis vitae et leo duis ut. Sit amet consectetur adipiscing elit duis. Ultrices gravida dictum fusce ut placer orci nulla pellentesque</p>
                </div>
-            
+               <div class="footer_main-block footer_main-block--nav col-sm-6 col-lg-auto">
+                  <h4 class=footer_main-block_header>Quick links</h4>
+                  <ul class="footer_main-block_nav d-flex flex-lg-column">
+                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=home href=index.html>Home</a></li>
+                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=about href=about.html>About</a></li>
+                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=rooms href=rooms.html>Rooms</a></li>
+                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=news href=news.html>News</a></li>
+                  </ul>
+               </div>
                <div class="footer_main-block footer_main-block--contacts col-sm-5 col-lg-auto">
                   <h4 class=footer_main-block_header>Contact Us</h4>
                   <ul class=footer_main-block_contacts>
@@ -385,11 +427,11 @@
                </div>
             </div>
          </div>
-         <!-- <div class=footer_copyright>
+         <div class=footer_copyright>
             <div class=container>
                <p class=footer_copyright-text><span class=linebreak> MojGara </span> <span class=linebreak>All rights reserved Copyrights 2021</span></p>
             </div>
-         </div> -->
+         </div>
       </footer>
       <script src=js/common.min.js></script><script src=js/demo.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}

@@ -1057,7 +1057,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     .hero_media{
         display:block;
         width:calc(100% - 680px);
-        height:565px;
+        height:734px;
         position:relative;
         z-index:-1
     }

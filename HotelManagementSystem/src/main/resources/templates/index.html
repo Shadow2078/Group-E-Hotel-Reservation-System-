@@ -39,11 +39,46 @@
                   <ul class=header_nav-list>
                      <li class=header_nav-list_item><a class=nav-item href=index.html data-page=home>Home</a></li>
                      <li class=header_nav-list_item><a class=nav-item href=about.html data-page=about>About</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=rooms.html data-page=about>Rooms</a></li>
-
-                     <li class=header_nav-list_item><a class=nav-item href=news.html data-page=about>News</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=gallery.html data-page=about>Gallery</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href=rooms.html data-bs-toggle=collapse data-bs-target=#roomMenu aria-expanded=false aria-controls=roomMenu data-page=rooms>Rooms <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=roomMenu>
+                           <ul class=dropdown-list>
+                              <li class=list-item data-main=true><a class="dropdown-item nav-item" data-page=rooms href=rooms.html>Rooms</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=room href=room.html>Single room</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href=news.html data-bs-toggle=collapse data-bs-target=#newsMenu aria-expanded=false aria-controls=newsMenu data-page=news>News <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=newsMenu>
+                           <ul class=dropdown-list>
+                              <li class=list-item data-main=true><a class="dropdown-item nav-item" data-page=news href=news.html>News</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=post href=post.html>Single post</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link dropdown-toggle d-inline-flex align-items-center" href=# data-bs-toggle=collapse data-bs-target=#pagesMenu aria-expanded=false aria-controls=pagesMenu>Pages <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=pagesMenu>
+                           <ul class=dropdown-list>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=gallery href=gallery.html>Gallery</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=faq01 href=faq.html>FAQ V1</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=faq02 href=faq2.html>FAQ V2</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=error01 href=error.html>Error Page V1</a></li>
+                              <li class=list-item><a class="dropdown-item nav-item" data-page=error02 href=404.html>Error Page V2</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="header_nav-list_item dropdown">
+                        <a class="nav-link nav-link--contacts dropdown-toggle d-inline-flex align-items-center" href=# data-bs-toggle=collapse data-bs-target=#contactsMenu aria-expanded=false aria-controls=contactsMenu>Contacts <i class="icon-chevron_down--entypo icon"></i></a>
+                        <div class="dropdown-menu collapse" id=contactsMenu>
+                           <ul class=dropdown-list>
+                              <!-- <li class=list-item><a class="dropdown-item nav-item" data-page=contacts01 href=contacts.html>Contacts V1</a></li> -->
+                               <li class=list-item><a class="dropdown-item nav-item" data-page=contacts01 href=contacts2.html>Contacts</a></li>
+                              <!-- <span class="contact">Contact <a href="contacts2.html"a></span> -->
+                           </ul>
+                        </div>
+                     </li>
                   </ul>
                </nav>
                <ul class="socials d-flex align-items-center">
@@ -100,8 +135,8 @@
                </div>
                <div class=hero_media data-aos=zoom-in>
                   <picture>
-                  
-                     <img class=lazy  src=img/index/hero.jpg alt=media>
+                     <!-- <source data-srcset=img/index/hero.webp srcset=img/index/hero.webp> -->
+                     <img class=lazy data-src=img/index/hero.jpg src=img/index/hero.jpg alt=media>
                   </picture>
                </div>
             </div>
@@ -110,7 +145,7 @@
             <div class=block></div>
             <div class=container>
                <div class="rooms_header d-sm-flex justify-content-between align-items-center">
-                  <h2 class=rooms_header-title data-aos=fade-right>Hotel rooms</h2>
+                  <h2 class=rooms_header-title data-aos=fade-right>Hostel rooms</h2>
                   <div class=wrapper data-aos=fade-left><a class="btn theme-element theme-element--light" href=rooms.html>View all rooms</a></div>
                </div>
                <ul class="rooms_list d-md-flex flex-wrap">
@@ -118,13 +153,13 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                        
-                              <img class=lazy  src=img/room/pent3.jpg alt=media>
+                              <!-- <source data-srcset=img/about/01.webp srcset=img/about/01.webp> -->
+                              <img class=lazy data-src=img/about/01.jpg src=img/about/01.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">$18</span> / 1 night</span>
                         </div>
                         <div class="main d-md-flex flex-column justify-content-between flex-grow-1">
-                           <a class="main_title h4" href=room.html data-shave=true>The Penthouse</a>
+                           <a class="main_title h4" href=room.html data-shave=true>Bed in 6-Bed Room with Shared Bathroom</a>
                            <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-bunk_bed icon"></i> 1 bunk bed</span></div>
                            <a class="link link--arrow d-inline-flex align-items-center" href=#>See availability <i class="icon-arrow_right icon"></i></a>
                         </div>
@@ -134,8 +169,8 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                          
-                              <img class=lazy  src=img/about/02.jpg alt=media>
+                        
+                              <img class=lazy data-src=img/about/02.jpg src=img/about/02.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">$35</span> / 1 night</span>
                         </div>
@@ -211,8 +246,8 @@
                </div>
                <div class=about_media data-aos=zoom-in>
                   <picture>
-                  
-                     <img class=lazy src=img/index/about.jpg alt=media>
+                     
+                     <img class=lazy data-src=img/index/about.jpg src=img/index/about.jpg alt=media>
                   </picture>
                   <a class="video-play d-inline-flex align-items-center justify-content-center" href=#><i class="icon-play icon"></i></a>
                </div>
@@ -297,32 +332,32 @@
                      <div class=swiper-wrapper>
                         <div class=swiper-slide>
                            <picture>
-                             
-                              <img class=lazy src=img/index/slide01.jpg alt=media>
+                           
+                              <img class=lazy data-src=img/index/slide01.jpg src=img/index/slide01.jpg alt=media>
                            </picture>
                         </div>
                         <div class=swiper-slide>
                            <picture>
                               
-                              <img class=lazy  src=img/index/slide02.jpg alt=media>
+                              <img class=lazy data-src=img/index/slide02.jpg src=img/index/slide02.jpg alt=media>
                            </picture>
                         </div>
                         <div class=swiper-slide>
                            <picture>
                               
-                              <img class=lazy g src=img/index/slide03.jpg alt=media>
-                           </picture>
-                        </div>
-                        <div class=swiper-slide>
-                           <picture>
-                             
-                              <img class=lazy  src=img/index/slide04.jpg alt=media>
+                              <img class=lazy data-src=img/index/slide03.jpg src=img/index/slide03.jpg alt=media>
                            </picture>
                         </div>
                         <div class=swiper-slide>
                            <picture>
                               
-                              <img class=lazy  src=img/index/slide05.jpg alt=media>
+                              <img class=lazy data-src=img/index/slide04.jpg src=img/index/slide04.jpg alt=media>
+                           </picture>
+                        </div>
+                        <div class=swiper-slide>
+                           <picture>
+                              
+                              <img class=lazy data-src=img/index/slide05.jpg src=img/index/slide05.jpg alt=media>
                            </picture>
                         </div>
                      </div>
@@ -343,7 +378,7 @@
                               <span class=avatar>
                                  <picture>
                                     
-                                    <img class=lazy  src=img/index/avatar01.jpg alt=media>
+                                    <img class=lazy data-src=img/index/avatar01.jpg src=img/index/avatar01.jpg alt=media>
                                  </picture>
                               </span>
                               <span class="name h6">Betty Randal</span>
@@ -360,7 +395,7 @@
                               <span class=avatar>
                                  <picture>
                                    
-                                    <img class=lazy  src=img/index/avatar02.jpg alt=media>
+                                    <img class=lazy data-src=img/index/avatar02.jpg src=img/index/avatar02.jpg alt=media>
                                  </picture>
                               </span>
                               <span class="name h6">Max Jones</span>
@@ -376,8 +411,8 @@
                            <span class="reviews_slider-slide_guest d-flex align-items-center">
                               <span class=avatar>
                                  <picture>
-                                
-                                    <img class=lazy  src=img/index/avatar03.jpg alt=media>
+                                   
+                                    <img class=lazy data-src=img/index/avatar03.jpg src=img/index/avatar03.jpg alt=media>
                                  </picture>
                               </span>
                               <span class="name h6">Kate Walker</span>
@@ -394,7 +429,7 @@
                               <span class=avatar>
                                  <picture>
                                     
-                                    <img class=lazy  src=img/index/avatar04.jpg alt=media>
+                                    <img class=lazy data-src=img/index/avatar04.jpg src=img/index/avatar04.jpg alt=media>
                                  </picture>
                               </span>
                               <span class="name h6">Panam Palmer</span>
@@ -411,7 +446,7 @@
                               <span class=avatar>
                                  <picture>
                                     
-                                    <img class=lazy  src=img/index/avatar05.jpg alt=media>
+                                    <img class=lazy data-src=img/index/avatar05.jpg src=img/index/avatar05.jpg alt=media>
                                  </picture>
                               </span>
                               <span class="name h6">Lisa Adams</span>
@@ -494,8 +529,8 @@
                   </div>
                   <div class=promo_media data-aos=fade-up>
                      <picture>
-                     
-                        <img class=lazy  src=img/index/promo.jpg alt=media>
+                      
+                        <img class=lazy data-src=img/index/promo.jpg src=img/index/promo.jpg alt=media>
                      </picture>
                      <div class="media_card media_card--top" data-aos=fade-left>
                         <h4 class=media_card-text>This is the perfect hostel for a weekend getaway!</h4>
@@ -503,7 +538,7 @@
                            <span class=avatar>
                               <picture>
                                 
-                                 <img class=lazy  src=img/room/roomreview02.jpg alt=media>
+                                 <img class=lazy data-src=img/room/roomreview02.jpg src=img/room/roomreview02.jpg alt=media>
                               </picture>
                            </span>
                            <div class="wrapper d-flex flex-column">
@@ -531,7 +566,8 @@
                   <div class="gallery_grid-item gallery_grid-item--left" data-aos=zoom-in>
                      <a href=img/gallery/full01.jpg data-caption="Image caption" data-role=gallery-link>
                         <picture>
-                           <img class="gallery_grid-item_img lazy"  src=img/gallery/full01.jpg alt=media>
+                           
+                           <img class="gallery_grid-item_img lazy" data-src=img/gallery/full01.jpg src=img/gallery/full01.jpg alt=media>
                         </picture>
                         <div class="overlay d-flex align-items-center justify-content-center">
                            <div class=overlay_focus>
@@ -549,7 +585,7 @@
                      <a href=img/gallery/full09.jpg data-caption="Image caption" data-role=gallery-link>
                         <picture>
                            
-                           <img class="gallery_grid-item_img lazy"  src=img/gallery/full09.jpg alt=media>
+                           <img class="gallery_grid-item_img lazy" data-src=img/gallery/full09.jpg src=img/gallery/full09.jpg alt=media>
                         </picture>
                         <div class="overlay d-flex align-items-center justify-content-center">
                            <div class=overlay_focus>
@@ -566,8 +602,8 @@
                   <div class="gallery_grid-item gallery_grid-item--right" data-aos=zoom-in>
                      <a href=img/index/gallery04.jpg data-caption="Image caption" data-role=gallery-link>
                         <picture>
-                           
-                           <img class="gallery_grid-item_img lazy"  src=img/index/gallery04.jpg alt=media>
+                          
+                           <img class="gallery_grid-item_img lazy" data-src=img/index/gallery04.jpg src=img/index/gallery04.jpg alt=media>
                         </picture>
                         <div class="overlay d-flex align-items-center justify-content-center">
                            <div class=overlay_focus>
@@ -585,7 +621,7 @@
                      <a href=img/gallery/full12.jpg data-caption="Image caption" data-role=gallery-link>
                         <picture>
                            
-                           <img class="gallery_grid-item_img lazy"  src=img/gallery/full12.jpg alt=media>
+                           <img class="gallery_grid-item_img lazy" data-src=img/gallery/full12.jpg src=img/gallery/full12.jpg alt=media>
                         </picture>
                         <div class="overlay d-flex align-items-center justify-content-center">
                            <div class=overlay_focus>
@@ -614,8 +650,8 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              
-                              <img class=lazy  src=img/news/02.jpg alt=media>
+                       
+                              <img class=lazy data-src=img/news/02.jpg src=img/news/02.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--left">Travel</span>
                         </div>
@@ -630,8 +666,8 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              
-                              <img class=lazy  src=img/news/05.jpg alt=media>
+                             
+                              <img class=lazy data-src=img/news/05.jpg src=img/news/05.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--left">Tourist Guide</span>
                         </div>
@@ -647,7 +683,7 @@
                         <div class=media>
                            <picture>
                               
-                              <img class=lazy  src=img/news/01.jpg alt=media>
+                              <img class=lazy data-src=img/news/01.jpg src=img/news/01.jpg alt=media>
                            </picture>
                            <span class="media_label media_label--left">Communication</span>
                         </div>
@@ -733,7 +769,7 @@
                   </a>
                   <p class=footer_main-block_text>Ut tellus elementum sagittis vitae et leo duis ut. Sit amet consectetur adipiscing elit duis. Ultrices gravida dictum fusce ut placer orci nulla pellentesque</p>
                </div>
-               <!-- <div class="footer_main-block footer_main-block--nav col-sm-6 col-lg-auto">
+               <div class="footer_main-block footer_main-block--nav col-sm-6 col-lg-auto">
                   <h4 class=footer_main-block_header>Quick links</h4>
                   <ul class="footer_main-block_nav d-flex flex-lg-column">
                      <li class=list-item><a class="link underlined underlined--white nav-item" data-page=home href=index.html>Home</a></li>
@@ -741,7 +777,7 @@
                      <li class=list-item><a class="link underlined underlined--white nav-item" data-page=rooms href=rooms.html>Rooms</a></li>
                      <li class=list-item><a class="link underlined underlined--white nav-item" data-page=news href=news.html>News</a></li>
                   </ul>
-               </div> -->
+               </div>
                <div class="footer_main-block footer_main-block--contacts col-sm-5 col-lg-auto">
                   <h4 class=footer_main-block_header>Contact Us</h4>
                   <ul class=footer_main-block_contacts>
@@ -771,13 +807,13 @@
                </div>
             </div>
          </div>
-         <!-- <div class=footer_copyright>
+         <div class=footer_copyright>
             <div class=container>
                <p class=footer_copyright-text><span class=linebreak>MojGara</span> <span class=linebreak>All rights reserved Copyrights 2021</span></p>
             </div>
-         </div> -->
+         </div>
       </footer>
-      <script src=js/common.min.js></script><script src=js/index.min.js></script><script src=js/gallery.min.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+      <script src=js/common.min.js></script><script src=js/index.min.js></script><script src=js/gallery.min.js></script><script src=js/demo.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          gtag('config', 'G-FC3KYV46D4');
