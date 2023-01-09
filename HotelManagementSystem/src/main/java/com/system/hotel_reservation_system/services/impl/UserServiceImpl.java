@@ -25,4 +25,18 @@ public class UserServiceImpl implements UserService {
         return "Created";
 
     }
+
+    @Override
+    public UserPojo findByEmail(String email) {
+        User user = (User) userRepo.findByEmail(email)
+                .orElseThrow(()-> new RuntimeException("Invalid User email"));
+        return new UserPojo(user);
+    }
+
+    @Override
+    public UserPojo findByPassword(String password) {
+        User user = (User) userRepo.findByPassword(password)
+                .orElseThrow(() -> new RuntimeException("Invalid User password"));
+        return new UserPojo(user);
+    }
 }

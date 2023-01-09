@@ -27,6 +27,12 @@ public class UserController {
     @PostMapping("/save")
     public String SaveUser(@Valid UserPojo userPojo){
         userService.saveUser(userPojo);
-        return "redirect:/home";
+        return "login";
+    }
+
+    //Temporary
+    @GetMapping("/index")
+    public String indexPage(){
+        return "index";
     }
 }
