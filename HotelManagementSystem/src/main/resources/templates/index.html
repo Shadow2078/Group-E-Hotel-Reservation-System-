@@ -565,10 +565,10 @@
                </a>
             </div>
             <div class="gallery_grid-item gallery_grid-item--right" data-aos=zoom-in>
-               <a href=/static/img/index/gallery04.jpg data-caption="Image caption" data-role=gallery-link>
+               <a th:href="@{img/index/gallery04.jpg}" data-caption="Image caption" data-role=gallery-link>
                   <picture>
 
-                     <img class="gallery_grid-item_img lazy"  src=/static/img/index/gallery04.jpg alt=media>
+                     <img class="gallery_grid-item_img lazy"  th:src="@{img/index/gallery04.jpg}" alt=media>
                   </picture>
                   <div class="overlay d-flex align-items-center justify-content-center">
                      <div class=overlay_focus>
@@ -583,10 +583,10 @@
                </a>
             </div>
             <div class=gallery_grid-item data-aos=zoom-in>
-               <a href=/static/img/gallery/full12.jpg data-caption="Image caption" data-role=gallery-link>
+               <a th:href="@{img/gallery/full12.jpg}" data-caption="Image caption" data-role=gallery-link>
                   <picture>
 
-                     <img class="gallery_grid-item_img lazy"  src=/static/img/gallery/full12.jpg alt=media>
+                     <img class="gallery_grid-item_img lazy"  th:src="@{img/gallery/full12.jpg}" alt=media>
                   </picture>
                   <div class="overlay d-flex align-items-center justify-content-center">
                      <div class=overlay_focus>
@@ -616,7 +616,7 @@
                   <div class=media>
                      <picture>
 
-                        <img class=lazy  src=/static/img/news/02.jpg alt=media>
+                        <img class=lazy  th:src="@{img/news/02.jpg}" alt=media>
                      </picture>
                      <span class="media_label media_label--left">Travel</span>
                   </div>
@@ -632,7 +632,7 @@
                   <div class=media>
                      <picture>
 
-                        <img class=lazy  src=/static/img/news/05.jpg alt=media>
+                        <img class=lazy  th:src="@{img/news/05.jpg}" alt=media>
                      </picture>
                      <span class="media_label media_label--left">Tourist Guide</span>
                   </div>
@@ -648,7 +648,7 @@
                   <div class=media>
                      <picture>
 
-                        <img class=lazy  src=/static/img/news/01.jpg alt=media>
+                        <img class=lazy  th:src="@{img/news/01.jpg}" alt=media>
                      </picture>
                      <span class="media_label media_label--left">Communication</span>
                   </div>
