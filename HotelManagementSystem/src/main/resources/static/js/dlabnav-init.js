@@ -23,15 +23,6 @@ function getUrlParams(dParam)
 	
 	"use strict"
 	
-	/* var direction =  getUrlParams('dir');
-	
-	if(direction == 'rtl')
-	{
-        direction = 'rtl'; 
-    }else{
-        direction = 'ltr'; 
-    } */
-	
 	dlabSettingsOptions = {
 			typography: "poppins",
 			version: "light",
