@@ -15,10 +15,10 @@
 @import url("../icons/flaticon_1/flaticon_1.css");
 @import url("../icons/icomoon/icomoon.css");
 @import url("../icons/bootstrap-icons/font/bootstrap-icons.css");
-@import url(../vendor/animate/animate.min.css);
-@import url(../vendor/aos/css/aos.min.css);
-@import url(../vendor/perfect-scrollbar/css/perfect-scrollbar.css);
-@import url(../vendor/metismenu/css/metisMenu.min.css);
+/*@import url(../vendor/animate/animate.min.css);*/
+/*@import url(../vendor/aos/css/aos.min.css);*/
+/*@import url(../vendor/perfect-scrollbar/css/perfect-scrollbar.css);*/
+/*@import url(../vendor/metismenu/css/metisMenu.min.css);*/
 
 *,
 *::before,
@@ -13496,7 +13496,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   z-index: 9999; }
   .sidebar-right .bg-label-pattern {
     background: transparent;
-    background-image: url("../images/pattern/pattern5.png");
+    /*background-image: url("../images/pattern/pattern5.png");*/
     background-size: 130%; }
   .sidebar-right .bootstrap-select {
     height: 3rem;
@@ -18914,8 +18914,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     width: 1rem;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background: url(../images/svg/cd-arrow.html) no-repeat 0 0; }
+    transform: translateX(-50%) translateY(-50%);}*
+    /*background: url(../images/svg/cd-arrow.html) no-repeat 0 0; }*/
   .cd-h-timeline__navigation:hover {
     border-color: #68e365; }
 
@@ -20179,7 +20179,7 @@ button {
     .bootgrid-header .actionBar {
       padding: 0; }
     .bootgrid-header .search {
-      margin: 0 0 0.625rem 0; } } */
+      margin: 0 0 0.625rem 0; } } *
 
 table#example {
   padding: 0rem 0 2rem 0; }
