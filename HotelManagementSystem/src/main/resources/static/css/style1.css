@@ -980,8 +980,8 @@ address {
   .g-xl-5,
   .gy-xl-5 {
     --bs-gutter-y: 3rem; } }
-@media (min-width: 1440) {
-  .col-xxl {
+@media (min-width: 1440;)
+{  .col-xxl {
     flex: 1 0 0%; }
 
   .row-cols-xxl-auto > * {
@@ -13459,7 +13459,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 [data-sidebar-style="overlay"][data-layout="vertical"][data-container="boxed"] .dlabnav,
 [data-header-position="fixed"][data-sidebar-position="fixed"][data-sidebar-style="overlay"][data-layout="vertical"][data-container="wide-boxed"] .dlabnav,
 [data-header-position="fixed"][data-sidebar-position="fixed"][data-sidebar-style="overlay"][data-layout="vertical"][data-container="boxed"] .dlabnav {
-  position: absolute; }*/
+  position: absolute; }
 
 .sidebar-right-trigger {
   position: absolute;
@@ -14168,7 +14168,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 [data-sibebarbg="color_2"] {
   --sidebar-bg: #6610f2;
   } 
-    color: #fff !important; 
+    color:#fff !important;
     [data-sibebarbg="color_2"][data-theme-version="dark"] .dlabnav .metismenu > li.mm-active > a i,
     [data-sibebarbg="color_2"] .dlabnav .metismenu > li.mm-active > a i {
       color: #fff !important; }
