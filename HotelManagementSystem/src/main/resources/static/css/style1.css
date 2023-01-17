@@ -129,7 +129,7 @@ address {
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px; } }
-@media (min-width: 1440) {
+@media (min-width: 1440px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
     max-width: 1320px; } }
 .row {
@@ -812,7 +812,8 @@ address {
 
   .g-lg-5,
   .gy-lg-5 {
-    --bs-gutter-y: 3rem; } }
+    --bs-gutter-y: 3rem; }
+}
 @media (min-width: 1200px) {
   .col-xl {
     flex: 1 0 0%; }
@@ -979,10 +980,12 @@ address {
 
   .g-xl-5,
   .gy-xl-5 {
-    --bs-gutter-y: 3rem; } }
-@media (min-width: 1440;)
-{  .col-xxl {
-    flex: 1 0 0%; }
+    --bs-gutter-y: 3rem; }
+}
+@media (min-width: 1440px){
+    .col-xxl {
+    flex: 1 0 0%;
+    }
 
   .row-cols-xxl-auto > * {
     flex: 0 0 auto;
@@ -1306,7 +1309,7 @@ address {
   .table-responsive-xl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; } }
-@media (max-width: 1439.98) {
+@media (max-width: 1498px) {
   .table-responsive-xxl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; } }
