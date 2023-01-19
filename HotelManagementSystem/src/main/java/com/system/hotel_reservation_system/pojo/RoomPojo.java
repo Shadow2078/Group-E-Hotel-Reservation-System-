@@ -36,7 +36,7 @@ public class RoomPojo {
     private String room_type;
 
 
-    private Integer phone_number;
+    private String phone_number;
 
 
     private Integer no_of_people;
@@ -50,6 +50,8 @@ public class RoomPojo {
     private MultipartFile image4;
 
     private MultipartFile image5;
+
+    private String beds;
 
     public RoomPojo(Room room){
         this.id = room.getId();

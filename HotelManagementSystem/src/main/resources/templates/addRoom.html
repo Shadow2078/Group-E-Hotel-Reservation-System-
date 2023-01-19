@@ -6,12 +6,7 @@
 	<!-- PAGE TITLE -->
 	<title> Hotel Admin Dashboard</title>
 	<!-- Style css -->
-<<<<<<< HEAD
-	<link th:href="@{/css/style.css}" rel="stylesheet">
-=======
-	<link th:href="@{css/style.css}" rel="stylesheet">
->>>>>>> 6bf95c966461743e9f1d3972d2f5b13ea4361e16
-	
+	<link th:href="@{/css/style1.css}" rel="stylesheet">
 </head>
 <body>
 	<div id="main-wrapper">
@@ -118,7 +113,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" method="post"
+                                    <form class="form-valide" th:method="post"
                                     th:action="@{/room/create}"
                                     th:object="${room}" enctype="multipart/form-data">
                                         <div class="row">
@@ -136,15 +131,15 @@
                                                             class="text-danger">*</span></label>
                                                     <div class="col-lg-6"><input type="text" class="form-control"
                                                             id="val-email" name="val-email"
-                                                            placeholder="Choose a city"   th:field="*{city}" th:value="${room.city}"></div>
+                                                            placeholder="Choose a city"   th:field="*{city}" ></div>
                                                 </div>
                                                 <div class="form-group mb-3 row"><label
                                                         class="col-lg-4 col-form-label"
-                                                        for="val-password">Address<span
+                                                        for="val-text">Address<span
                                                             class="text-danger">*</span></label>
-                                                    <div class="col-lg-6"><input type="password"
-                                                            class="form-control" id="val-password"
-                                                            name="val-password" placeholder="Choose an address.."   th:field="*{address}" th:value="${room.address}">
+                                                    <div class="col-lg-6"><input type="text"
+                                                            class="form-control" id="val-text"
+                                                            name="val-password" placeholder="Choose an address.."   th:field="*{address}" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row"><label
@@ -153,7 +148,7 @@
                                                         class="text-danger">*</span></label>
                                                 <div class="col-lg-6"><input type="text" class="form-control"
                                                         id="val-currency" name="val-currency"
-                                                        placeholder="RS2160"  th:field="*{price}" th:value="${room.price}"></div>
+                                                        placeholder="RS2160"  th:field="*{price}" ></div>
                                             </div>
                                                 <div class="form-group mb-3 row"><label
                                                         class="col-lg-4 col-form-label"
@@ -161,7 +156,7 @@
                                                             class="text-danger">*</span></label>
                                                     <div class="col-lg-6"><textarea class="form-control"
                                                             id="val-suggestions" name="val-suggestions" rows="5"
-                                                            placeholder="What would you like to say about rooms?"   th:field="*{room_description}" th:value="${room.room_description}"></textarea>
+                                                            placeholder="What would you like to say about rooms?"   th:field="*{room_description}" ></textarea>
                                                     </div>
                                                 </div>
 
@@ -171,7 +166,7 @@
                                                         class="text-danger">*</span></label>
                                                 <div class="col-lg-6"><textarea class="form-control"
                                                         id="val-suggestions" name="val-suggestions" rows="5"
-                                                        placeholder="What would you like to say about rooms?"   th:field="*{room_type}" th:value="${room.room_type}"></textarea>
+                                                        placeholder="What would you like to say about rooms?"   th:field="*{room_type}" ></textarea>
                                                 </div>
                                             </div>
 
@@ -247,8 +242,6 @@
                                                     <div class="col-lg-7 ms-auto"><button type="submit"
                                                             class="btn btn-primary">Submit</button></div>
                                                 </div>
-                                            </div>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -259,14 +252,14 @@
         </div>
     </div>
 </div>
-<script src="vendor/global/global.min.js"></script>
+<script th:src="@{vendor/global/global.min.js}"></script>
 
-<script src="vendor/apexchart/apexchart.js"></script>
+<script th:src="@{vendor/apexchart/apexchart.js}"></script>
 <!-- Dashboard 1 -->
 <script src="js/dashboard/dashboard-1.js"></script>
 
-<script src="vendor/owl-carousel/owl.carousel.js"></script>
-<script src="js/custom.min.js"></script>
-<script src="js/dlabnav-init.js"></script>
+<script th:src="@{vendor/owl-carousel/owl.carousel.js}"></script>
+<script th:src="@{js/custom.min.js}"></script>
+<script th:src="@{js/dlabnav-init.js}"></script>
 </body>
 </html>

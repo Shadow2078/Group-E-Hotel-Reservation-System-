@@ -7,11 +7,11 @@
       <meta http-equiv=X-UA-Compatible content="ie=edge">
       <title>Rooms | MojGara</title>
       <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script><script src=https://www.youtube.com/player_api></script>
-      <link rel="stylesheet preload" as=style th:href="@{css/preload.min.css}">
-      <link rel="stylesheet preload" as=style th:href="@{css/icomoon.css}">
-      <link rel="stylesheet preload" as=style th:href="@{css/libs.min.css}">
-      <link rel=stylesheet th:href="@{css/rooms.min.css}">
-      <link rel=stylesheet th:href="@{css/floatbutton.min.cs}">
+      <link rel="stylesheet preload" as=style th:href="@{/css/preload.min.css}">
+      <link rel="stylesheet preload" as=style th:href="@{/css/icomoon.css}">
+      <link rel="stylesheet preload" as=style th:href="@{/css/libs.min.css}">
+      <link rel=stylesheet th:href="@{/css/rooms.min.css}">
+      <link rel=stylesheet th:href="@{/css/floatbutton.min.css}">
    </head>
    <body>
       <header class="header d-flex align-items-center" data-page=rooms>
@@ -44,7 +44,7 @@
 
                      <li class=header_nav-list_item><a class=nav-item href=news.html data-page=about>News</a></li>
                      <li class=header_nav-list_item><a class=nav-item href=gallery.html data-page=about>Gallery</a></li>
-                     <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</li>
+                     <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</a></li>
                   </ul>
                </nav>
                <ul class="socials d-flex align-items-center">
@@ -69,132 +69,134 @@
       <main class="rooms section">
          <div class=container>
             <ul class=rooms_list>
-               <li class=rooms_list-item data-order=1 data-aos=fade-up>
+               <li class=rooms_list-item data-order=1 data-aos=fade-up th:each="room:${rooms}">
                   <div class="item-wrapper d-md-flex">
                      <div class=media>
                         <picture>
                            
-                           <img class=lazy  th:src="@{img/room/penth1.jpg}" alt=media>
+                           <img class=lazy  th:src="@{/img/room/penth1.jpg}" alt=media>
                         </picture>
                      </div>
                      <div class="main d-md-flex justify-content-between">
                         <div class="main_info d-md-flex flex-column justify-content-between">
-                           <a class="main_title h4">The Penthouse</a>
-                           <p class=main_description>Unit in the highest floor of the hotels.utfit them to include ultra-luxury fixtures, finishes, and designs which are different from all other residential floors of the building.Consists of  air conditioning,wooden flooring and two baths.</p>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 6 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 king Beds</span></div>
+                           <a class="main_title h4" th:text="${room.room_type}"></a>
+                           <p class=main_description th:text="${room.room_description}">
+<!--                              Unit in the highest floor of the hotels.utfit them to include ultra-luxury fixtures, finishes, and designs which are different from all other residential floors of the building.Consists of  air conditioning,wooden flooring and two baths.-->
+                           </p>
+                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center" th:text="${room.no_of_people}+ 'Guests'" ><i class="icon-user icon"></i>  </span><span class="main_amenities-item d-inline-flex align-items-center" th:text="${room.beds}+ ' Beds'"><i class="icon-twin_bed icon"></i> </span></div>
                         </div>
                         <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
-                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>Rs 3000</span> / 1 night </span><span class=main_pricing-item><span class=h4>Rs 19000</span> / 7 nights</span></div>
+                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2 th:text="${room.price}"></span> / 1 night </span><span class=main_pricing-item><span class=h4 th:text="${room.price}*7"></span> / 7 nights</span></div>
                            <a class="theme-element theme-element--accent btn" href=Penthouse.html>Book now</a>
                         </div>
                      </div>
                   </div>
                </li>
-               <li class=rooms_list-item data-order=2 data-aos=fade-up>
-                  <div class="item-wrapper d-md-flex">
-                     <div class=media>
-                        <picture>
-                           
-                           <img class=lazy  th:src="@{img/room/stdel1.jpg}" alt=media>
-                        </picture>
-                     </div>
-                     <div class="main d-md-flex justify-content-between">
-                        <div class="main_info d-md-flex flex-column justify-content-between">
-                           <a class="main_title h4">Standard Deluxe Room</a>
-                           <p class=main_description>Room for two people consisting 2 beds , air conditioning and a shared bathroom.Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 3 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 Single Beds</span></div>
-                        </div>
-                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
-                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$19</span> / 1 night </span><span class=main_pricing-item><span class=h4>$80</span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" href=standarddeluxe.html>Book now</a>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class=rooms_list-item data-order=3 data-aos=fade-up>
-                  <div class="item-wrapper d-md-flex">
-                     <div class=media>
-                        <picture>
-                           
-                           <img class=lazy  th:src="@{img/room/gs2.jpg}" alt=media>
-                        </picture>
-                     </div>
-                     <div class="main d-md-flex justify-content-between">
-                        <div class="main_info d-md-flex flex-column justify-content-between">
-                           <a class="main_title h4" >The Grand Suite</a>
-                           <p class=main_description>Best for when you are travelling with a group of friends,room which consists of 6 beds ,air conditioning and one bath.Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 4 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 1 King Bed </span></div>
-                        </div>
-                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
-                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$99</span> / 1 night </span><span class=main_pricing-item><span class=h4>$220</span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" href=grandsuiteroom.html>Book now</a>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class=rooms_list-item data-order=4 data-aos=fade-up>
-                  <div class="item-wrapper d-md-flex">
-                     <div class=media>
-                        <picture>
-                           
-                           <img class=lazy  th:src="@{img/room/js4.jpg}" alt=media>
-                        </picture>
-                     </div>
-                     <div class="main d-md-flex justify-content-between">
-                        <div class="main_info d-md-flex flex-column justify-content-between">
-                           <a class="main_title h4" >The Junior Suite</a>
-                           <p class=main_description> spacious accommodation with comfortable living area alongside the bedroom.Available Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 twin beds</span></div>
-                        </div>
-                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
-                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$29</span> / 1 night </span><span class=main_pricing-item><span class=h4>$115</span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" href=juniorsuite.html>Book now</a>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class=rooms_list-item data-order=5 data-aos=fade-up>
-                  <div class="item-wrapper d-md-flex">
-                     <div class=media>
-                        <picture>
-                        
-                           <img class=lazy  th:src="@{img/room/lux1.jpg}" alt=media>
-                        </picture>
-                     </div>
-                     <div class="main d-md-flex justify-content-between">
-                        <div class="main_info d-md-flex flex-column justify-content-between">
-                           <a class="main_title h4">Luxury Suite</a>
-                           <p class=main_description>Room for three people which consist of three beds, air conditioning,sofa and one bath.Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 1 full bed </span></div>
-                        </div>
-                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
-                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$59</span> / 1 night </span><span class=main_pricing-item><span class=h4>$210</span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" href=room.html>Book now</a>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class=rooms_list-item data-order=6 data-aos=fade-up>
-                  <div class="item-wrapper d-md-flex">
-                     <div class=media>
-                        <picture>
-                        
-                           <img class=lazy  th:src="@{img/room/pr3.jpg}" alt=media>
-                        </picture>
-                     </div>
-                     <div class="main d-md-flex justify-content-between">
-                        <div class="main_info d-md-flex flex-column justify-content-between">
-                           <a class="main_title h4"> Standard Double Bed Private Shared Bathroom</a>
-                           <p class=main_description>Room for two people which consist of double beds, air conditioning and a sofa and one bath. Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>
-                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 4 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 Single Beds </span></div>
-                        </div>
-                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
-                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$59</span> / 1 night </span><span class=main_pricing-item><span class=h4>$210</span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" href=premium.html>Book now</a>
-                        </div>
-                     </div>
-                  </div>
-               </li>
+<!--               <li class=rooms_list-item data-order=2 data-aos=fade-up>-->
+<!--                  <div class="item-wrapper d-md-flex">-->
+<!--                     <div class=media>-->
+<!--                        <picture>-->
+<!--                           -->
+<!--                           <img class=lazy  th:src="@{img/room/stdel1.jpg}" alt=media>-->
+<!--                        </picture>-->
+<!--                     </div>-->
+<!--                     <div class="main d-md-flex justify-content-between">-->
+<!--                        <div class="main_info d-md-flex flex-column justify-content-between">-->
+<!--                           <a class="main_title h4">Standard Deluxe Room</a>-->
+<!--                           <p class=main_description>Room for two people consisting 2 beds , air conditioning and a shared bathroom.Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>-->
+<!--                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 3 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 Single Beds</span></div>-->
+<!--                        </div>-->
+<!--                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">-->
+<!--                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$19</span> / 1 night </span><span class=main_pricing-item><span class=h4>$80</span> / 7 nights</span></div>-->
+<!--                           <a class="theme-element theme-element&#45;&#45;accent btn" href=standarddeluxe.html>Book now</a>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </li>-->
+<!--               <li class=rooms_list-item data-order=3 data-aos=fade-up>-->
+<!--                  <div class="item-wrapper d-md-flex">-->
+<!--                     <div class=media>-->
+<!--                        <picture>-->
+<!--                           -->
+<!--                           <img class=lazy  th:src="@{img/room/gs2.jpg}" alt=media>-->
+<!--                        </picture>-->
+<!--                     </div>-->
+<!--                     <div class="main d-md-flex justify-content-between">-->
+<!--                        <div class="main_info d-md-flex flex-column justify-content-between">-->
+<!--                           <a class="main_title h4" >The Grand Suite</a>-->
+<!--                           <p class=main_description>Best for when you are travelling with a group of friends,room which consists of 6 beds ,air conditioning and one bath.Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>-->
+<!--                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 4 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 1 King Bed </span></div>-->
+<!--                        </div>-->
+<!--                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">-->
+<!--                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$99</span> / 1 night </span><span class=main_pricing-item><span class=h4>$220</span> / 7 nights</span></div>-->
+<!--                           <a class="theme-element theme-element&#45;&#45;accent btn" href=grandsuiteroom.html>Book now</a>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </li>-->
+<!--               <li class=rooms_list-item data-order=4 data-aos=fade-up>-->
+<!--                  <div class="item-wrapper d-md-flex">-->
+<!--                     <div class=media>-->
+<!--                        <picture>-->
+<!--                           -->
+<!--                           <img class=lazy  th:src="@{img/room/js4.jpg}" alt=media>-->
+<!--                        </picture>-->
+<!--                     </div>-->
+<!--                     <div class="main d-md-flex justify-content-between">-->
+<!--                        <div class="main_info d-md-flex flex-column justify-content-between">-->
+<!--                           <a class="main_title h4" >The Junior Suite</a>-->
+<!--                           <p class=main_description> spacious accommodation with comfortable living area alongside the bedroom.Available Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>-->
+<!--                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 twin beds</span></div>-->
+<!--                        </div>-->
+<!--                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">-->
+<!--                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$29</span> / 1 night </span><span class=main_pricing-item><span class=h4>$115</span> / 7 nights</span></div>-->
+<!--                           <a class="theme-element theme-element&#45;&#45;accent btn" href=juniorsuite.html>Book now</a>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </li>-->
+<!--               <li class=rooms_list-item data-order=5 data-aos=fade-up>-->
+<!--                  <div class="item-wrapper d-md-flex">-->
+<!--                     <div class=media>-->
+<!--                        <picture>-->
+<!--                        -->
+<!--                           <img class=lazy  th:src="@{img/room/lux1.jpg}" alt=media>-->
+<!--                        </picture>-->
+<!--                     </div>-->
+<!--                     <div class="main d-md-flex justify-content-between">-->
+<!--                        <div class="main_info d-md-flex flex-column justify-content-between">-->
+<!--                           <a class="main_title h4">Luxury Suite</a>-->
+<!--                           <p class=main_description>Room for three people which consist of three beds, air conditioning,sofa and one bath.Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>-->
+<!--                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 2 Sleeps </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 1 full bed </span></div>-->
+<!--                        </div>-->
+<!--                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">-->
+<!--                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$59</span> / 1 night </span><span class=main_pricing-item><span class=h4>$210</span> / 7 nights</span></div>-->
+<!--                           <a class="theme-element theme-element&#45;&#45;accent btn" href=room.html>Book now</a>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </li>-->
+<!--               <li class=rooms_list-item data-order=6 data-aos=fade-up>-->
+<!--                  <div class="item-wrapper d-md-flex">-->
+<!--                     <div class=media>-->
+<!--                        <picture>-->
+<!--                        -->
+<!--                           <img class=lazy  th:src="@{img/room/pr3.jpg}" alt=media>-->
+<!--                        </picture>-->
+<!--                     </div>-->
+<!--                     <div class="main d-md-flex justify-content-between">-->
+<!--                        <div class="main_info d-md-flex flex-column justify-content-between">-->
+<!--                           <a class="main_title h4"> Standard Double Bed Private Shared Bathroom</a>-->
+<!--                           <p class=main_description>Room for two people which consist of double beds, air conditioning and a sofa and one bath. Avaiable Hotel :Hotel Yak and Yeti , Aarnapurna,Soltee</p>-->
+<!--                           <div class=main_amenities><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-user icon"></i> 4 Guests </span><span class="main_amenities-item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 Single Beds </span></div>-->
+<!--                        </div>-->
+<!--                        <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">-->
+<!--                           <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2>$59</span> / 1 night </span><span class=main_pricing-item><span class=h4>$210</span> / 7 nights</span></div>-->
+<!--                           <a class="theme-element theme-element&#45;&#45;accent btn" href=premium.html>Book now</a>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </li>-->
             </ul>
          
          </div>
@@ -246,7 +248,7 @@
             </div>
          </div>
       </footer>
-      <script src=js/common.min.js></script><script src=js/demo.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+      <script th:src="@{/js/common.min.js}"></script><script th:src="@{/js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          gtag('config', 'G-FC3KYV46D4');

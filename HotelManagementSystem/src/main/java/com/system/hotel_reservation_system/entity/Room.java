@@ -42,11 +42,13 @@ public class Room{
     private String room_type;
 
     @Column(nullable = false)
-    private Integer phone_number;
+    private String phone_number;
 
     @Column(nullable = false)
     private Integer no_of_people;
 
+    @Column(nullable = false)
+    private String beds;
     
 
 

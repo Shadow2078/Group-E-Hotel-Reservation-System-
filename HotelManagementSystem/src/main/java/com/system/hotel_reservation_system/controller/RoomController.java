@@ -1,5 +1,6 @@
 package com.system.hotel_reservation_system.controller;
 
+import com.system.hotel_reservation_system.entity.Room;
 import com.system.hotel_reservation_system.pojo.RoomPojo;
 import com.system.hotel_reservation_system.services.RoomService;
 import jakarta.validation.Valid;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 import java.util.Map;
 import java.io.IOException;
 import java.util.HashMap;
@@ -24,6 +27,13 @@ public class RoomController {
 
     private final RoomService roomService;
 
+    @GetMapping("/rooms")
+    public String GetRooms(Model model){
+        List<Room> rooms = roomService.fetchAll();
+        model.addAttribute("rooms", rooms);
+        return  "/rooms";
+    }
+
     @GetMapping("/add")
     public String getRegister(Model model) {
         model.addAttribute("room", new RoomPojo());
@@ -31,20 +41,21 @@ public class RoomController {
     }
 
     @PostMapping("/create")
-    public String createUser(@Valid RoomPojo roomPojo,
+    public String createRoom(@Valid RoomPojo roomPojo,
                              BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException {
 
         Map<String, String> requestError = validateRequest(bindingResult);
         if (requestError != null) {
+            System.out.println(requestError);
             redirectAttributes.addFlashAttribute("requestError", requestError);
-            return "redirect:/register";
+            return "redirect:/add";
         }
 
         roomService.saveRoom(roomPojo);
         redirectAttributes.addFlashAttribute("successMsg", "Room saved successfully");
 
 
-        return "redirect:/register";
+        return "redirect:/add";
     }
 
      public Map<String, String> validateRequest(BindingResult bindingResult) {
