@@ -19,4 +19,9 @@ public class NavigationController {
         return "/gallery";
     }
 
+    @GetMapping("/news")
+    public String GetNews(){
+        return "/news";
+    }
+
 }
