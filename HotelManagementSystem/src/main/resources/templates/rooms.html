@@ -74,7 +74,7 @@
                      <div class=media>
                         <picture>
                            
-                           <img class=lazy  th:src="@{/img/room/penth1.jpg}" alt=media>
+                           <img class=lazy  th:src="'data:image/png;base64,'+${room.image1Base64}" alt=media>
                         </picture>
                      </div>
                      <div class="main d-md-flex justify-content-between">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
                            <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2 th:text="${room.price}"></span> / 1 night </span><span class=main_pricing-item><span class=h4 th:text="${room.price}*7"></span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" href=Penthouse.html>Book now</a>
+                           <a class="theme-element theme-element--accent btn" th:href="@{~/room/roomind}+${room.id}">Book now</a>
                         </div>
                      </div>
                   </div>

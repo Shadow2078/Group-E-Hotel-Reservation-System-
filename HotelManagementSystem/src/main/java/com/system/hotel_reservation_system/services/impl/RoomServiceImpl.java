@@ -7,17 +7,21 @@ import com.system.hotel_reservation_system.services.RoomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
 public class RoomServiceImpl implements RoomService {
     private final RoomRepo RoomRepo;
-    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/hotel_mgmt";
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/hotel_mgmt/";
 
 
     @Override
@@ -31,8 +35,9 @@ public class RoomServiceImpl implements RoomService {
         room.setRoom_type(RoomPojo.getRoom_type());
         room.setPhone_number(RoomPojo.getPhone_number());
         room.setNo_of_people(RoomPojo.getNo_of_people());
+        room.setBeds(RoomPojo.getBeds());
 
-        if(RoomPojo.getImage1()!=null){
+        if(!Objects.equals(RoomPojo.getImage1().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage1().getOriginalFilename());
@@ -42,7 +47,7 @@ public class RoomServiceImpl implements RoomService {
             room.setImage1(RoomPojo.getImage1().getOriginalFilename());
         }
 
-         if(RoomPojo.getImage2()!=null){
+        if(!Objects.equals(RoomPojo.getImage2().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage2().getOriginalFilename());
@@ -52,7 +57,7 @@ public class RoomServiceImpl implements RoomService {
             room.setImage2(RoomPojo.getImage2().getOriginalFilename());
         }
 
-         if(RoomPojo.getImage3()!=null){
+        if(!Objects.equals(RoomPojo.getImage3().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage3().getOriginalFilename());
@@ -62,7 +67,7 @@ public class RoomServiceImpl implements RoomService {
             room.setImage3(RoomPojo.getImage3().getOriginalFilename());
         }
 
-         if(RoomPojo.getImage4()!=null){
+        if(!Objects.equals(RoomPojo.getImage4().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage4().getOriginalFilename());
@@ -72,7 +77,7 @@ public class RoomServiceImpl implements RoomService {
             room.setImage4(RoomPojo.getImage4().getOriginalFilename());
         }
 
-         if(RoomPojo.getImage5()!=null){
+        if(!Objects.equals(RoomPojo.getImage5().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage5().getOriginalFilename());
@@ -87,8 +92,73 @@ public class RoomServiceImpl implements RoomService {
 
     }
 
+    public String getImageBase64(String fileName) {
+        if (fileName!=null) {
+            String filePath = System.getProperty("user.dir")+"\\hotel_mgmt\\";
+            File file = new File(filePath + fileName);
+            byte[] bytes;
+            try {
+                bytes = Files.readAllBytes(file.toPath());
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+            return Base64.getEncoder().encodeToString(bytes);
+        }
+        return null;
+    }
+
+    public List<Room> listMapping(List<Room> list){
+        Stream<Room> allRoomsWithImage=list.stream().map(room ->
+                Room.builder()
+                        .id(room.getId())
+                        .hotelname(room.getHotelname())
+                        .address(room.getAddress())
+                        .price(room.getPrice())
+                        .beds(room.getBeds())
+                        .image1Base64(getImageBase64(room.getImage1()))
+                        .image2Base64(getImageBase64(room.getImage2()))
+                        .image3Base64(getImageBase64(room.getImage3()))
+                        .image4Base64(getImageBase64(room.getImage4()))
+                        .image5Base64(getImageBase64(room.getImage5()))
+                        .city(room.getCity())
+                        .room_description(room.getRoom_description())
+                        .room_type(room.getRoom_type())
+                        .no_of_people(room.getNo_of_people())
+                        .phone_number(room.getPhone_number())
+                        .build()
+        );
+
+        list = allRoomsWithImage.toList();
+        return list;
+    }
+
+
     @Override
     public List<Room> fetchAll() {
-        return RoomRepo.findAll();
+        return listMapping(RoomRepo.findAll());
+    }
+
+    @Override
+    public Room fetchById(Integer id) {
+        Room room =RoomRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+        room=Room.builder()
+                .id(room.getId())
+                .hotelname(room.getHotelname())
+                .address(room.getAddress())
+                .price(room.getPrice())
+                .beds(room.getBeds())
+                .image1Base64(getImageBase64(room.getImage1()))
+                .image2Base64(getImageBase64(room.getImage2()))
+                .image3Base64(getImageBase64(room.getImage3()))
+                .image4Base64(getImageBase64(room.getImage4()))
+                .image5Base64(getImageBase64(room.getImage5()))
+                .city(room.getCity())
+                .room_description(room.getRoom_description())
+                .room_type(room.getRoom_type())
+                .no_of_people(room.getNo_of_people())
+                .phone_number(room.getPhone_number())
+                .build();
+        return room;
     }
 }

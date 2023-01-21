@@ -1,16 +1,13 @@
 package com.system.hotel_reservation_system.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor
@@ -51,14 +48,26 @@ public class Room{
     private String beds;
     
 
-
+    @Column
     private String image1;
 
+    @Transient
+    private String image1Base64;
+
+    @Column
     private String image2;
-
+    @Transient
+    private String image2Base64;
+    @Column
     private String image3;
-
+    @Transient
+    private String image3Base64;
+    @Column
     private String image4;
-
+    @Transient
+    private String image4Base64;
+    @Column
     private String image5;
+    @Transient
+    private String image5Base64;
 }

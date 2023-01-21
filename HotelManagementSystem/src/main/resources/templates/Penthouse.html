@@ -7,11 +7,11 @@
       <meta http-equiv=X-UA-Compatible content="ie=edge">
       <title>The PentHouse | MojGara</title>
       <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script><script src=https://www.youtube.com/player_api></script>
-      <link rel="stylesheet preload" as=style th:href="@{css/preload.min.css}">
-      <link rel="stylesheet preload" as=style th:href="@{css/icomoon.css}">
-      <link rel="stylesheet preload" as=style th:href="@{css/libs.min.css}">
-      <link rel=stylesheet th:href="@{css/room.min.css}">
-      <link rel=stylesheet th:href="@{css/floatbutton.min.css}">
+      <link rel="stylesheet preload" as=style th:href="@{~/css/preload.min.css}">
+      <link rel="stylesheet preload" as=style th:href="@{~/css/icomoon.css}">
+      <link rel="stylesheet preload" as=style th:href="@{~/css/libs.min.css}">
+      <link rel=stylesheet th:href="@{~/css/room.min.css}">
+      <link rel=stylesheet th:href="@{~/css/floatbutton.min.css}">
    </head>
    <body>
       <header class="header d-flex align-items-center" data-page=stdr>
@@ -44,7 +44,7 @@
 
                    <li class=header_nav-list_item><a class=nav-item href=post.html data-page=about>News</a></li>
                    <li class=header_nav-list_item><a class=nav-item href=news.html data-page=about>Gallery</a></li>
-                   <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</li>
+                   <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</a></li>
                 </ul>
              </nav>
                <ul class="socials d-flex align-items-center">
@@ -76,20 +76,22 @@
                         <div class=swiper-wrapper>
                            <div class=swiper-slide>
                               <picture>
-                                 
-                                 <img class=lazy  th:src="@{img/room/penth1.jpg}" alt=media>
+<!--                                 <img class=lazy th:src="@{~/img/room/penth1.jpg}" alt=media>-->
+
+                              <img class=lazy  th:src="'data:image/png;base64,'+${roomss.image1Base64}" alt=media>
+                              </picture>
+                           </div>
+                           <div class=swiper-slide>
+                              <picture>
+                                 <img class=lazy  th:src="'data:image/png;base64,'+${roomss.image4Base64}" alt=media>
+
+                                 <!--                                 <img class=lazy th:src="@{~/img/room/02.jpg}" alt=media>-->
                               </picture>
                            </div>
                            <div class=swiper-slide>
                               <picture>
                                  
-                                 <img class=lazy th:src="@{img/room/penth2.jpg}" alt=media>
-                              </picture>
-                           </div>
-                           <div class=swiper-slide>
-                              <picture>
-                                 
-                                 <img class=lazy  th:src="@{img/room/penth3.jpg}" alt=media>
+                                 <img class=lazy  th:src="'data:image/png;base64,'+${roomss.image1Base64}" alt=media>
                               </picture>
                            </div>
                         </div>
@@ -100,19 +102,19 @@
                            <div class=swiper-slide>
                               <picture>
                                  
-                                 <img class=lazy  th:src="@{img/room/pent4.jpeg}" alt=media>
+                                 <img class=lazy  th:src="'data:image/png;base64,'+${roomss.image4Base64}" alt=media>
                               </picture>
                            </div>
                            <div class=swiper-slide>
-                              <picture>
-                              
-                                 <img class=lazy  th:src="@{img/room/pent5.jpeg}" alt=media>
-                              </picture>
-                           </div>
+                           <picture>
+
+                              <img class=lazy  th:src="'data:image/png;base64,'+${roomss.image4Base64}" alt=media>
+                           </picture>
+                        </div>
                            <div class=swiper-slide>
                               <picture>
                                  
-                                 <img class=lazy  th:src="@{img/room/pent6.jpg}" alt=media>
+                                 <img class=lazy  th:src="'data:image/png;base64,'+${roomss.image1Base64}" alt=media>
                               </picture>
                            </div>
                         </div>
@@ -540,11 +542,12 @@
             </div>
          </div>
       </footer>
-      <script src=js/common.min.js></script><script src=js/room.min.js></script><script src=js/demo.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+      <script th:src="@{~js/common.min.js}"></script><script th:src="@{~js/room.min.js}"></script><script th:src="@{~js/room.min.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          gtag('config', 'G-FC3KYV46D4');
       </script>
+      </main>
    </body>
    
 </html>

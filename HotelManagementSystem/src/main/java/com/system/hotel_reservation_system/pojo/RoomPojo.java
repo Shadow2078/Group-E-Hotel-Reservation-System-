@@ -63,8 +63,7 @@ public class RoomPojo {
         this.room_type = room.getRoom_type();
         this.phone_number = room.getPhone_number();
         this.no_of_people = room.getNo_of_people();
-
-
+        this.beds=room.getBeds();
 
 
     }

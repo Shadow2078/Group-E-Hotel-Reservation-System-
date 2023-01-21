@@ -203,6 +203,13 @@
                                                             id="val-number" name="val-number" placeholder="xx"  th:field="*{no_of_people}" th:value="${room.no_of_people}">
                                                     </div>
                                                 </div>
+                                                <div class="form-group mb-3 row"><label
+                                                        class="col-lg-4 col-form-label" for="val-number">Beds
+                                                    <span class="text-danger">*</span></label>
+                                                    <div class="col-lg-6"><input type="text" class="form-control"
+                                                                                 id="val-number" name="val-number" placeholder="xx"  th:field="*{beds}" >
+                                                    </div>
+                                                </div>
                                                         <div class="form-group mb-3 row">
                                                             <label for="image-upload" class="col-lg-4 col-form-label">Select images:</label>
                                                             <div class="col-lg-6">
@@ -256,7 +263,7 @@
 
 <script th:src="@{vendor/apexchart/apexchart.js}"></script>
 <!-- Dashboard 1 -->
-<script src="js/dashboard/dashboard-1.js"></script>
+<script th:src="@{js/dashboard/dashboard-1.js}"></script>
 
 <script th:src="@{vendor/owl-carousel/owl.carousel.js}"></script>
 <script th:src="@{js/custom.min.js}"></script>

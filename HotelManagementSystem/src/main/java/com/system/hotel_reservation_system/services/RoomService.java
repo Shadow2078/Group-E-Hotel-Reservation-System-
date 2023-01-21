@@ -11,4 +11,6 @@ public interface RoomService {
     String saveRoom(RoomPojo roomPojo) throws IOException;
 
     List<Room> fetchAll();
+
+    Room fetchById(Integer id);
 }
