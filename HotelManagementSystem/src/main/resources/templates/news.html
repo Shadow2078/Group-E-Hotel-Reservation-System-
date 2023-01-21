@@ -6,11 +6,11 @@
     <meta http-equiv=X-UA-Compatible content="ie=edge">
     <title>How to Travel the World & Make a Difference | MojGara</title>
     <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script><script src=https://www.youtube.com/player_api></script>
-    <link rel="stylesheet preload" as=style th:href="@{css/preload.min.css}">
-    <link rel="stylesheet preload" as=style th:href="@{css/icomoon.css}">
-    <link rel="stylesheet preload" as=style th:href="@{css/libs.min.css}">
-    <link rel=stylesheet th:href="@{css/post.min.css}">
-    <link rel=stylesheet th:href="@{css/floatbutton.min.css}">
+    <link rel="stylesheet preload" as=style th:href="@{~/css/preload.min.css}">
+    <link rel="stylesheet preload" as=style th:href="@{~/css/icomoon.css}">
+    <link rel="stylesheet preload" as=style th:href="@{~/css/libs.min.css}">
+    <link rel=stylesheet th:href="@{~/css/post.min.css}">
+    <link rel=stylesheet th:href="@{~/css/floatbutton.min.css}">
 </head>
 <body>
 <header class="header d-flex align-items-center" data-page=post>
@@ -204,7 +204,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy data-src=img/aside/post01.jpg src=img/aside/post01.jpg alt=media>
+                                    <img class=lazy  th:src="@{img/aside/post01.jpg}" alt=media>
                                 </picture>
                             </div>
                             <div class="main d-flex flex-column"><a class="main_title h5" href=#>Travel and Working Holidays</a> <span class=main_date>June 16, 2021</span></div>
@@ -331,7 +331,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/news/05.jpg}" th:src="@{img/news/05.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{img/news/05.jpg}" alt=media>
                                 </picture>
                                 <span class="media_label media_label--left">Tourist Guide</span>
                             </div>
@@ -347,7 +347,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/news/01.jpg}" th:src="@{img/news/01.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{img/news/01.jpg}" alt=media>
                                 </picture>
                                 <span class="media_label media_label--left">Communication</span>
                             </div>
@@ -411,7 +411,7 @@
     </div>
 
 </footer>
-<script src=js/common.min.js></script><script src=js/post.min.js></script><script src=js/demo.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+<script th:src="@{~js/common.min.js}"></script><script th:src="@{~js/post.min.js}"></script><script th:src="@{js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-FC3KYV46D4');

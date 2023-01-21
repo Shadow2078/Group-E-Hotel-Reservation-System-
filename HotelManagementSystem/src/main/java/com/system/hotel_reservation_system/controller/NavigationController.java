@@ -24,6 +24,10 @@ public class NavigationController {
         return "/news";
     }
 
+    @GetMapping("/contact")
+    public String GetContact(){
+        return "/contacts";
+    }
 
 
 }

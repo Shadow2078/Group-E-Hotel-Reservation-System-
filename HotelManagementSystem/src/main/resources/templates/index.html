@@ -37,13 +37,12 @@
          </div>
          <nav class=header_nav>
             <ul class=header_nav-list>
-               <li class=header_nav-list_item><a class=nav-item href=index.html data-page=home>Home</a></li>
+               <li class=header_nav-list_item><a class=nav-item th:href="@{~/index}" data-page=home>Home</a></li>
                <li class=header_nav-list_item><a class=nav-item th:href="@{~/about}" data-page=about>About</a></li>
                <li class=header_nav-list_item><a class=nav-item href=rooms.html data-page=about>Rooms</a></li>
-
                <li class=header_nav-list_item><a class=nav-item th:href="@{~/news}" data-page=about>News</a></li>
                <li class=header_nav-list_item><a class=nav-item th:href="@{~/gallery}" data-page=about>Gallery</a></li>
-               <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</a></li>
+               <li class=header_nav-list_item><a class=nav-item th:href="@{~/contact}" data-page=about>Contact</a></li>
             </ul>
          </nav>
          <ul class="socials d-flex align-items-center">
@@ -526,7 +525,7 @@
       <div class=container>
          <div class="gallery_header d-sm-flex justify-content-between align-items-center">
             <h2 class=gallery_header-title>Photos of our rooms</h2>
-            <div class=wrapper><a class="btn theme-element theme-element--light" href=gallery.html>View all photos</a></div>
+            <div class=wrapper><a class="btn theme-element theme-element--light" th:href="@{~/gallery}">View all photos</a></div>
          </div>
          <div class="gallery_grid d-grid">
             <div class="gallery_grid-item gallery_grid-item--left" data-aos=zoom-in>
@@ -608,7 +607,7 @@
       <div class=container>
          <div class="latest_header d-sm-flex justify-content-between align-items-center">
             <h2 class=latest_header-title data-aos=fade-right>MojGara news</h2>
-            <div class=wrapper data-aos=fade-left><a class="btn theme-element theme-element--light" href=news.html>View all news</a></div>
+            <div class=wrapper data-aos=fade-left><a class="btn theme-element theme-element--light" th:href="@{~/news}">View all news</a></div>
          </div>
          <ul class="latest_list d-md-flex flex-wrap">
             <li class="latest_list-item col-md-6 col-xl-4" data-order=1 data-aos=fade-up>
@@ -616,7 +615,7 @@
                   <div class=media>
                      <picture>
 
-                        <img class=lazy  th:src="@{img/ news/02.jpg}" alt=media>
+                        <img class=lazy  th:src="@{~/img/news/02.jpg}" alt=media>
                      </picture>
                      <span class="media_label media_label--left">Travel</span>
                   </div>
