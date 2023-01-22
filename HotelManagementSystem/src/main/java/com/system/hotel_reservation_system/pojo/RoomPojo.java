@@ -27,7 +27,7 @@ public class RoomPojo {
     private String address;
 
 
-    private Double price;
+    private String price;
 
 
     private String room_description;

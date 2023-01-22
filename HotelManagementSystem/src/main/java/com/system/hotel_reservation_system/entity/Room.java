@@ -30,7 +30,7 @@ public class Room{
     private String address;
 
     @Column(nullable = false)
-    private Double price;
+    private String price;
 
     @Column(nullable = false)
     private String room_description;
