@@ -16,7 +16,6 @@ public class ReviewPojo {
 
     private Integer location;
 
-
     private Integer pricing;
 
     private Integer comfort;

@@ -1,5 +1,7 @@
 package com.system.hotel_reservation_system.controller;
 
+import com.system.hotel_reservation_system.entity.Review;
+import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.UserPojo;
 import com.system.hotel_reservation_system.services.UserService;
 import jakarta.validation.Valid;
@@ -35,4 +37,13 @@ public class UserController {
     public String indexPage(){
         return "index";
     }
+
+//    @GetMapping("/review")
+//    public String getReviewPage(Model model){
+//        model.addAttribute("review", new ReviewPojo());
+//        return "Penthouse";
+//
+//    }
+
+
 }

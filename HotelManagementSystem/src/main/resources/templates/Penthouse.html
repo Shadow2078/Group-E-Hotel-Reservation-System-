@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang=en xmlns:th="http://www.thymeleaf.org">
    
    <head>
       <meta charset=UTF-8>
@@ -344,11 +344,11 @@
                </section>
                <section class="review col-lg-8">
                   <h3 class=review_header>Leave comment</h3>
-                  <form class="review_form contacts_form form d-sm-flex flex-wrap justify-content-between" action=# method=post data-type=reviewRoom>
+                  <form class="review_form contacts_form form d-sm-flex flex-wrap justify-content-between" th:action="@{/user/submit}" th:object="${review}" th:method="post" data-type=reviewRoom>
                      <div class="review_rating d-flex flex-wrap">
                         <div class="review_rating-block d-sm-flex align-items-center justify-content-between" data-order=1>
-                           <label class="label h6" for=locationStars>Location</label>
-                           <select class=star-rating id=locationStars>
+                           <label class="label h6" for=locationStars >Location</label>
+                           <select class=star-rating id=locationStars required th:field="*{location}" th:value="${review.location}">
                               <option value=5>Excellent</option>
                               <option value=4>Very Good</option>
                               <option value=3>Average</option>
@@ -357,8 +357,8 @@
                            </select>
                         </div>
                         <div class="review_rating-block d-sm-flex align-items-center justify-content-between" data-order=2>
-                           <label class="label h6" for=pricingStars>Pricing</label>
-                           <select class=star-rating id=pricingStars>
+                           <label class="label h6" for=pricingStars >Pricing</label>
+                           <select class=star-rating id=pricingStars required th:field="*{pricing}" th:value="${review.pricing}">
                               <option value=5>Excellent</option>
                               <option value=4>Very Good</option>
                               <option value=3>Average</option>
@@ -368,7 +368,7 @@
                         </div>
                         <div class="review_rating-block d-sm-flex align-items-center justify-content-between" data-order=3>
                            <label class="label h6" for=comfortStars>Comfort</label>
-                           <select class=star-rating id=comfortStars>
+                           <select class=star-rating id=comfortStars required th:field="*{comfort}" th:value="${review.comfort}">
                               <option value=5>Excellent</option>
                               <option value=4>Very Good</option>
                               <option value=3>Average</option>
@@ -378,7 +378,7 @@
                         </div>
                         <div class="review_rating-block d-sm-flex align-items-center justify-content-between" data-order=4>
                            <label class="label h6" for=serviceStars>Service</label>
-                           <select class=star-rating id=serviceStars>
+                           <select class=star-rating id=serviceStars required th:field="*{service}" th:value="${review.service}">
                               <option value=5>Excellent</option>
                               <option value=4>Very Good</option>
                               <option value=3>Average</option>
@@ -387,10 +387,10 @@
                            </select>
                         </div>
                      </div>
-                     <div class=field-wrapper><label class=label for=reviewRoomName><i class="icon-user icon"></i></label> <input class="field required" id=reviewRoomName type=text placeholder=Name></div>
-                     <div class=field-wrapper><label class=label for=reviewRoomEmail><i class="icon-email icon"></i></label> <input class="field required" id=reviewRoomEmail type=text data-type=email placeholder=Email></div>
-                     <textarea class="field textarea required" id=reviewRoomMessage placeholder=Message></textarea>
-                     <button class="btn theme-element theme-element--accent" type=submit>Submit</button>
+                     <div class=field-wrapper><label class=label for=reviewRoomName><i class="icon-user icon"></i></label> <input class="field required" id=reviewRoomName type=text placeholder=Name required th:field="*{name}" th:value="${review.name}"></div>
+                     <div class=field-wrapper><label class=label for=reviewRoomEmail><i class="icon-email icon"></i></label> <input class="field required" id=reviewRoomEmail type=text data-type=email placeholder=Email required th:field="*{email}" th:value="${review.email}"></div>
+                     <textarea class="field textarea required" id=reviewRoomMessage placeholder=Message required th:field="*{description}" th:value="${review.description}"></textarea>
+                     <button class="btn theme-element theme-element--accent" type="submit">Submit</button>
                   </form>
                </section>
             </div>

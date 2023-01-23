@@ -16,24 +16,24 @@ public class Review {
     @GeneratedValue(generator = "hrs_room_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column
     private Integer location;
 
-    @Column(nullable = false)
+    @Column
     private Integer pricing;
 
-    @Column(nullable = false)
+    @Column
     private Integer comfort;
 
-    @Column(nullable = false)
+    @Column
     private Integer service;
 
-    @Column(nullable = false)
+    @Column
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private String description;
 }

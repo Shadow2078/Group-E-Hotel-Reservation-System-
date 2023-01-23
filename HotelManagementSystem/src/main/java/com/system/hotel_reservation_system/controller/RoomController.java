@@ -1,8 +1,10 @@
 package com.system.hotel_reservation_system.controller;
 
 import com.system.hotel_reservation_system.entity.Room;
+import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.RoomPojo;
 import com.system.hotel_reservation_system.services.RoomService;
+import com.system.hotel_reservation_system.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,7 @@ import org.springframework.validation.FieldError;
 public class RoomController {
 
     private final RoomService roomService;
+    private final UserService userService;
 
     @GetMapping("/rooms")
     public String GetRooms(Model model){
@@ -76,12 +79,15 @@ public class RoomController {
 
     @GetMapping("roomind/{id}")
     public String getRoom(@PathVariable ("id") Integer id,Model model){
-     Room room= roomService.fetchById(id);
-
-
-
+        model.addAttribute("review", new ReviewPojo());
+        Room room= roomService.fetchById(id);
         model.addAttribute("roomss",room);
         return "Penthouse";
+    }
+    @PostMapping("/submit")
+    public String SubmitReview(@Valid ReviewPojo reviewPojo){
+        userService.submitReview(reviewPojo);
+        return "redirect:/room/roomind/{id}";
     }
 
 }
