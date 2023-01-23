@@ -87,7 +87,7 @@
                         </div>
                         <div class="main_pricing d-flex flex-column align-items-md-end justify-content-md-between">
                            <div class="wrapper d-flex flex-column"><span class=main_pricing-item><span class=h2 th:text="${room.price}"></span> / 1 night </span><span class=main_pricing-item><span class=h4 th:text="${room.price}*7"></span> / 7 nights</span></div>
-                           <a class="theme-element theme-element--accent btn" th:href="@{~/room/roomind}+${room.id}">Book now</a>
+                           <a class="theme-element theme-element--accent btn" th:href="@{~/room/roomind/}+${room.id}">Book now</a>
                         </div>
                      </div>
                   </div>
@@ -248,7 +248,7 @@
             </div>
          </div>
       </footer>
-      <script th:src="@{/js/common.min.js}"></script><script th:src="@{/js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+      <script th:src="@{~/js/common.min.js}"></script><script th:src="@{~/js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          gtag('config', 'G-FC3KYV46D4');
