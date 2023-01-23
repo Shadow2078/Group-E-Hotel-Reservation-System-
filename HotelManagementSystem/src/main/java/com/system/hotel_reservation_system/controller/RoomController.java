@@ -57,7 +57,7 @@ public class RoomController {
         redirectAttributes.addFlashAttribute("successMsg", "Room saved successfully");
 
 
-        return "redirect:/add";
+        return "redirect:room/rooms";
     }
 
      public Map<String, String> validateRequest(BindingResult bindingResult) {

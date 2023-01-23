@@ -37,13 +37,12 @@
             </div>
             <nav class=header_nav>
                 <ul class=header_nav-list>
-                    <li class=header_nav-list_item><a class=nav-item href=index.html data-page=home>Home</a></li>
-                    <li class=header_nav-list_item><a class=nav-item href=about.html data-page=about>About</a></li>
+                    <li class=header_nav-list_item><a class=nav-item th:href="@{~/index}" data-page=home>Home</a></li>
+                    <li class=header_nav-list_item><a class=nav-item th:href="@{~/about}" data-page=about>About</a></li>
                     <li class=header_nav-list_item><a class=nav-item href=rooms.html data-page=about>Rooms</a></li>
-
-                    <li class=header_nav-list_item><a class=nav-item href=news.html data-page=about>News</a></li>
-                    <li class=header_nav-list_item><a class=nav-item href=gallery.html data-page=about>Gallery</a></li>
-                    <li class=header_nav-list_item><a class=nav-item href=contacts2.html data-page=about>Contact</a></li>
+                    <li class=header_nav-list_item><a class=nav-item th:href="@{~/news}" data-page=about>News</a></li>
+                    <li class=header_nav-list_item><a class=nav-item th:href="@{~/gallery}" data-page=about>Gallery</a></li>
+                    <li class=header_nav-list_item><a class=nav-item th:href="@{~/contact}" data-page=about>Contact</a></li>
                 </ul>
             </nav>
             <ul class="socials d-flex align-items-center">

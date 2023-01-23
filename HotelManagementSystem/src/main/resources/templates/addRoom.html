@@ -6,7 +6,7 @@
 	<!-- PAGE TITLE -->
 	<title> Hotel Admin Dashboard</title>
 	<!-- Style css -->
-	<link th:href="@{/css/style1.css}" rel="stylesheet">
+	<link th:href="@{~/css/style1.css}" rel="stylesheet">
 </head>
 <body>
 	<div id="main-wrapper">
@@ -231,7 +231,7 @@
                                                         <div class="form-group mb-3 row">
                                                             <label for="image-upload-4" class="col-lg-4 col-form-label">Select images:</label>
                                                             <div class="col-lg-6">
-                                                            
+
 
                                                             <input type="file" id="image-upload-1" name="image4" multiple accept="image/*">
                                                           </div>
@@ -259,14 +259,14 @@
         </div>
     </div>
 </div>
-<script th:src="@{vendor/global/global.min.js}"></script>
+<script th:src="@{~/vendor/global/global.min.js}"></script>
 
-<script th:src="@{vendor/apexchart/apexchart.js}"></script>
+<script th:src="@{~/vendor/apexchart/apexchart.js}"></script>
 <!-- Dashboard 1 -->
-<script th:src="@{js/dashboard/dashboard-1.js}"></script>
+<script th:src="@{/js/dashboard/dashboard-1.js}"></script>
 
-<script th:src="@{vendor/owl-carousel/owl.carousel.js}"></script>
-<script th:src="@{js/custom.min.js}"></script>
-<script th:src="@{js/dlabnav-init.js}"></script>
+<script th:src="@{~/vendor/owl-carousel/owl.carousel.js}"></script>
+<script th:src="@{~/js/custom.min.js}"></script>
+<script th:src="@{~/js/dlabnav-init.js}"></script>
 </body>
 </html>
