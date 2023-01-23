@@ -5,7 +5,7 @@
       <meta charset=UTF-8>
       <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
       <meta http-equiv=X-UA-Compatible content="ie=edge">
-      <title>The PentHouse | MojGara</title>
+      <title>  MojGara</title>
       <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script><script src=https://www.youtube.com/player_api></script>
       <link rel="stylesheet preload" as=style th:href="@{~/css/preload.min.css}">
       <link rel="stylesheet preload" as=style th:href="@{~/css/icomoon.css}">
@@ -62,7 +62,7 @@
             <ul class="breadcrumbs d-flex flex-wrap align-content-center">
                <li class=list-item><a class=link href=index.html>Home</a></li>
                <li class=list-item><a class=link href=rooms.html>Rooms</a></li>
-               <li class=list-item><a class=link href=#>The PentHouse</a></li>
+               <li class=list-item><a class=link href=# th:text="${roomss.room_type}"></a></li>
             </ul>
             <h1 class=page_title th:text="${roomss.room_type}"></h1>
          </div>
@@ -112,7 +112,7 @@
 
                   </div>
                   <div class="room_main-info col-lg-8">
-                     <div class="amenities d-flex flex-wrap align-items-center"><span class="amenities_item d-inline-flex align-items-center"><i class="icon-user icon"></i> 6 Guests </span><span class="amenities_item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 King Beds </span>
+                     <div class="amenities d-flex flex-wrap align-items-center"><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.no_of_people}+ 'Guests'"><i class="icon-user icon"></i>  </span><span class="amenities_item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 King Beds </span>
                         </div>
                      <div class=description>
                         <p class=description_text th:text="${roomss.room_description}"></p>
@@ -298,19 +298,10 @@
                            </div>
 
 
-                     <div class=rating>
-                        <span class=rating_summary><span class=h2>4.25</span> <sup class=h4>/5</sup></span>
-                        <div class="rating_list d-flex flex-wrap">
-                           <div class="rating_list-item d-sm-flex align-items-center justify-content-between" data-order=1><span class=label>Location</span> <span class=progressLine id=location data-value=4.7 data-fill=#0DA574></span></div>
-                           <div class="rating_list-item d-sm-flex align-items-center justify-content-between" data-order=2><span class=label>Comfort</span> <span class=progressLine id=comfort data-value=4.5 data-fill=#0DA574></span></div>
-                           <div class="rating_list-item d-sm-flex align-items-center justify-content-between" data-order=3><span class=label>Pricing</span> <span class=progressLine id=pricing data-value=4.9 data-fill=#0DA574></span></div>
-                           <div class="rating_list-item d-sm-flex align-items-center justify-content-between" data-order=4><span class=label>Service</span> <span class=progressLine id=service data-value=4.8 data-fill=#0DA574></span></div>
-                        </div>
-                     </div>
                   </div>
                   <div class="room_main-cards col-lg-4">
                      <div class=room_main-cards_card>
-                        <span class=pricing><span class="pricing_price h2">Rs 2500</span> / 1 night</span>
+                        <span class=pricing><span class="pricing_price h2" th:text="${roomss.price}"></span> / 1 night</span>
                         <form class=booking action=# method=post autocomplete=off data-type=booking>
                            <div class="booking_group d-flex flex-column">
                               <label class="booking_group-label h5" for=checkIn>Check-in</label>
