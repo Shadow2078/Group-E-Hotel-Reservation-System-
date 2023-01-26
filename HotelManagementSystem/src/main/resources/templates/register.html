@@ -25,7 +25,7 @@
                     <div class="form-items">
                         <h3>Register new account</h3>
                         <p>Access to the most powerfull tool in the entire design and web industry.</p>
-                        <form th:method="post" th:action="@{/save}" th:object="${user}">
+                        <form th:method="post" th:action="@{/user/save}" th:object="${user}">
                             <input class="form-control" type="text" name="name" placeholder="Full Name" required th:field="*{fullname}" th:value="${user.fullname}">
                             <input class="form-control" type="email" name="email" placeholder="E-mail Address" required th:field="*{email}" th:value="${user.email}">
                             <input class="form-control" type="password" name="password" placeholder="Password" required th:field="*{password}" th:value="${user.password}">
