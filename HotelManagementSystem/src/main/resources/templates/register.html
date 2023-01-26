@@ -24,7 +24,7 @@
                 <div class="form-content">
                     <div class="form-items">
                         <h3>Register new account</h3>
-                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                            <p>Join US</p>
                         <form th:method="post" th:action="@{/user/save}" th:object="${user}">
                             <input class="form-control" type="text" name="name" placeholder="Full Name" required th:field="*{fullname}" th:value="${user.fullname}">
                             <input class="form-control" type="email" name="email" placeholder="E-mail Address" required th:field="*{email}" th:value="${user.email}">
@@ -33,12 +33,12 @@
                                 <button id="submit" type="submit" class="ibtn">Register</button>
                             </div>
                         </form>
-                        <div class="other-links">
-                            <div class="text">Or register with</div>
-                            <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a><a href="#"><i class="fab fa-google"></i>Google</a><a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a>
-                        </div>
+<!--                        <div class="other-links">-->
+<!--                            <div class="text">Or register with</div>-->
+<!--                            <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a><a href="#"><i class="fab fa-google"></i>Google</a><a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a>-->
+<!--                        </div>-->
                         <div class="page-links">
-                            <!-- <a href="login25.html">Login to account</a> -->
+                             <a th:href="@{~/login}">Already Got an Acc?</a>
                         </div>
                     </div>
                 </div>
