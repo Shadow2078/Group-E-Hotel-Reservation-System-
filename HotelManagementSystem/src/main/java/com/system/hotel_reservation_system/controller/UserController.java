@@ -38,12 +38,6 @@ public class UserController {
         return "index";
     }
 
-//    @GetMapping("/review")
-//    public String getReviewPage(Model model){
-//        model.addAttribute("review", new ReviewPojo());
-//        return "Penthouse";
-//
-//    }
 
 
 }

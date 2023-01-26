@@ -7,11 +7,11 @@
       <meta http-equiv=X-UA-Compatible content="ie=edge">
       <title>About | MojGara</title>
       <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script><script src=https://www.youtube.com/player_api></script>
-      <link rel="stylesheet preload" as=style th:href="@{css/preload.min.css}">
-      <link rel="stylesheet preload" as=style th:href="@{css/icomoon.css}">
-      <link rel="stylesheet preload" as=style th:href="@{css/libs.min.css}">
-      <link rel=stylesheet th:href="@{css/about.min.css}">
-      <link rel=stylesheet th:href="@{css/floatbutton.min.css}">
+      <link rel="stylesheet preload" as=style th:href="@{~/css/preload.min.css}">
+      <link rel="stylesheet preload" as=style th:href="@{~/css/icomoon.css}">
+      <link rel="stylesheet preload" as=style th:href="@{~/css/libs.min.css}">
+      <link rel=stylesheet th:href="@{~/css/about.min.css}">
+      <link rel=stylesheet th:href="@{~/css/floatbutton.min.css}">
    </head>
    <body>
       <header class="header d-flex align-items-center" data-page=about>
@@ -88,7 +88,7 @@
                </ul>
                <div class=about_benefits-video data-aos=fade-in>
                   <picture>
-                     <img class=lazy th:src="@{img/about/video.jpg}" alt=media>
+                     <img class=lazy th:src="@{~/img/about/video.jpg}" alt=media>
                   </picture>
                   <a class="video-play d-inline-flex align-items-center justify-content-center" href=#><i class="icon-play icon"></i></a>
                </div>
@@ -106,7 +106,7 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              <img class=lazy  th:src="@{img/about/01.jpg}" alt=media>
+                              <img class=lazy  th:src="@{~/img/about/01.jpg}" alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">Rs1800</span> / 1 night</span>
                         </div>
@@ -121,7 +121,7 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              <img class=lazy th:src="@{img/about/02.jpg}" alt=media>
+                              <img class=lazy th:src="@{~/img/about/02.jpg}" alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">RS.3500</span> / 1 night</span>
                         </div>
@@ -137,7 +137,7 @@
                      <div class="item-wrapper d-md-flex flex-column">
                         <div class=media>
                            <picture>
-                              <img class=lazy th:src="@{img/about/03.jpg}" alt=media>
+                              <img class=lazy th:src="@{~/img/about/03.jpg}" alt=media>
                            </picture>
                            <span class="media_label media_label--pricing"><span class="price h4">Rs.999</span> / 1 night</span>
                         </div>
@@ -218,7 +218,7 @@
                <div class="about_stages-media col-xl-6" data-aos=fade-in>
                   <picture>
                      <source data-srcset=img/about/stages.webp srcset=img/about/stages.webp>
-                     <img class=lazy th:src="@{img/about/stages.jpg}" alt=media>
+                     <img class=lazy th:src="@{~/img/about/stages.jpg}" alt=media>
                   </picture>
                </div>
             </div>
@@ -308,7 +308,7 @@
                   <div class=media data-aos=fade-right>
                      <picture>
 
-                        <img class=lazy th:src="@{img/aside/02.jpg}" alt=media>
+                        <img class=lazy th:src="@{~/img/aside/02.jpg}" alt=media>
                      </picture>
                   </div>
                   <div class=main>
@@ -348,7 +348,7 @@
                   <div class=media data-aos=fade-right>
                      <picture>
                         <source data-srcset=img/aside/02.webp srcset=img/aside/02.webp>
-                        <img class=lazy th:src="@{img/aside/02.jpg}" alt=media>
+                        <img class=lazy th:src="@{~/img/aside/02.jpg}" alt=media>
                      </picture>
                   </div>
 
@@ -366,15 +366,15 @@
                   </a>
                   <p class=footer_main-block_text>Providing for you safety and home like environment.</p>
                </div>
-               <div class="footer_main-block footer_main-block--nav col-sm-6 col-lg-auto">
-                  <h4 class=footer_main-block_header>Quick links</h4>
-                  <ul class="footer_main-block_nav d-flex flex-lg-column">
-                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=home href=index.html>Home</a></li>
-                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=about href=about.html>About</a></li>
-                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=rooms href=rooms.html>Rooms</a></li>
-                     <li class=list-item><a class="link underlined underlined--white nav-item" data-page=news href=news.html>News</a></li>
-                  </ul>
-               </div>
+<!--               <div class="footer_main-block footer_main-block&#45;&#45;nav col-sm-6 col-lg-auto">-->
+<!--                  <h4 class=footer_main-block_header>Quick links</h4>-->
+<!--                  <ul class="footer_main-block_nav d-flex flex-lg-column">-->
+<!--                     <li class=list-item><a class="link underlined underlined&#45;&#45;white nav-item" data-page=home href=index.html>Home</a></li>-->
+<!--                     <li class=list-item><a class="link underlined underlined&#45;&#45;white nav-item" data-page=about href=about.html>About</a></li>-->
+<!--                     <li class=list-item><a class="link underlined underlined&#45;&#45;white nav-item" data-page=rooms href=rooms.html>Rooms</a></li>-->
+<!--                     <li class=list-item><a class="link underlined underlined&#45;&#45;white nav-item" data-page=news href=news.html>News</a></li>-->
+<!--                  </ul>-->
+<!--               </div>-->
                <div class="footer_main-block footer_main-block--contacts col-sm-5 col-lg-auto">
                   <h4 class=footer_main-block_header>Contact Us</h4>
                   <ul class=footer_main-block_contacts>
@@ -406,7 +406,7 @@
          </div>
 
       </footer>
-      <script th:src="@{js/common.min.js}"></script><script th:src="@{js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+      <script th:src="@{~/js/common.min.js}"></script><script th:src="@{~/js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          gtag('config', 'G-FC3KYV46D4');
