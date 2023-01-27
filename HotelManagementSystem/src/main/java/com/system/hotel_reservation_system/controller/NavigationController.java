@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping
+@RequestMapping("/dashboard")
 public class NavigationController {
     @GetMapping("/about")
     public String GetAbout(){
@@ -28,6 +28,12 @@ public class NavigationController {
     public String GetContact(){
         return "/contacts";
     }
+
+    @GetMapping("/payment")
+    public String GetPayment(){
+        return "/payment";
+    }
+
 
 
 }

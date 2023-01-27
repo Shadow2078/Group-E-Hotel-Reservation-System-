@@ -38,12 +38,12 @@
                </div>
                <nav class=header_nav>
                   <ul class=header_nav-list>
-                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/index}" data-page=home>Home</a></li>
-                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/about}" data-page=about>About</a></li>
+                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/user/index}" data-page=home>Home</a></li>
+                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/about}" data-page=about>About</a></li>
                      <li class=header_nav-list_item><a class=nav-item th:href="@{~/room/rooms}" data-page=about>Rooms</a></li>
-                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/news}" data-page=about>News</a></li>
-                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/gallery}" data-page=about>Gallery</a></li>
-                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/contact}" data-page=about>Contact</a></li>
+                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/news}" data-page=about>News</a></li>
+                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/gallery}" data-page=about>Gallery</a></li>
+                     <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/contact}" data-page=about>Contact</a></li>
                   </ul>
                </nav>
                <ul class="socials d-flex align-items-center">
@@ -111,7 +111,7 @@
 
                   </div>
                   <div class="room_main-info col-lg-8">
-                     <div class="amenities d-flex flex-wrap align-items-center"><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.no_of_people}+ 'Guests'"><i class="icon-user icon"></i>  </span><span class="amenities_item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 King Beds </span>
+                     <div class="amenities d-flex flex-wrap align-items-center"><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.no_of_people}+ ' Guests'"><i class="icon-user icon"></i>  </span><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.beds} + ' Beds'"><i class="icon-twin_bed icon " ></i>  </span>
                         </div>
                      <div class=description>
                         <p class=description_text th:text="${roomss.room_description}"></p>
@@ -310,7 +310,11 @@
                               <label class="booking_group-label h5" for=checkOut>Check-out</label>
                               <div class=booking_group-wrapper><i class="icon-calendar icon"></i> <input class="booking_group-field field required" data-type=date data-end=true type=text id=checkOut name=contactsDate placeholder="Add departure date" readonly=readonly> <i class="icon-chevron_down icon"></i></div>
                            </div>
-
+                           <div class="booking_group d-flex flex-column">
+                              <label class="booking_group-label h5" for=checkOut>Number of people </label>
+                              <div class=booking_group-wrapper><i class="icon-user icon"></i> <input class="booking_group-field field required" data-type=integer data-end=true type=text id=peOple  placeholder="Number of People"> </div>
+                           </div>
+                              <input hidden type="text" id="room_id" name="roomID" th:value="${roomss.id}">
                            <button class="booking_btn btn theme-element theme-element--accent" type=submit>Book now</button>
                         </form>
                      </div>
