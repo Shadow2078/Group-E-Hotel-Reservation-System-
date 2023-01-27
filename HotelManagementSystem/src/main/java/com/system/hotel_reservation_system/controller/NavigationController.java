@@ -29,5 +29,11 @@ public class NavigationController {
         return "/contacts";
     }
 
+    @GetMapping("/payment")
+    public String GetPayment(){
+        return "/payment";
+    }
+
+
 
 }
