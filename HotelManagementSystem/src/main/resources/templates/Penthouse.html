@@ -111,7 +111,7 @@
 
                   </div>
                   <div class="room_main-info col-lg-8">
-                     <div class="amenities d-flex flex-wrap align-items-center"><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.no_of_people}+ 'Guests'"><i class="icon-user icon"></i>  </span><span class="amenities_item d-inline-flex align-items-center"><i class="icon-twin_bed icon"></i> 2 King Beds </span>
+                     <div class="amenities d-flex flex-wrap align-items-center"><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.no_of_people}+ ' Guests'"><i class="icon-user icon"></i>  </span><span class="amenities_item d-inline-flex align-items-center" th:text="${roomss.beds} + ' Beds'"><i class="icon-twin_bed icon " ></i>  </span>
                         </div>
                      <div class=description>
                         <p class=description_text th:text="${roomss.room_description}"></p>
