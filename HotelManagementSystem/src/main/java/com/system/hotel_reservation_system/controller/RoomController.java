@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -32,11 +33,12 @@ public class RoomController {
     private final RoomService roomService;
     private final UserService userService;
 
+
     @GetMapping("/rooms")
     public String GetRooms(Model model){
         List<Room> rooms = roomService.fetchAll();
         model.addAttribute("rooms", rooms);
-        return  "/rooms";
+        return  "room-list";
     }
 
     @GetMapping("/add")
@@ -78,7 +80,7 @@ public class RoomController {
     }
 
     @GetMapping("roomind/{id}")
-    public String getRoom(@PathVariable ("id") Integer id,Model model){
+    public String getRoom(@PathVariable ("id") Integer id, Model model, Principal principal){
         model.addAttribute("review", new ReviewPojo());
         Room room= roomService.fetchById(id);
         model.addAttribute("roomss",room);

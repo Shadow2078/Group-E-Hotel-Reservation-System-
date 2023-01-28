@@ -9,7 +9,6 @@ public interface UserService {
 
     UserPojo findByEmail(String email);
 
-    UserPojo findByPassword(String password);
 
     String submitReview(ReviewPojo reviewPojo);
 

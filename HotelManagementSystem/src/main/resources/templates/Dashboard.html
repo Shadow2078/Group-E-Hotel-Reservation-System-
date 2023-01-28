@@ -5,12 +5,12 @@
 <head>
 	<!-- PAGE TITLE HERE -->
 	<title> Hotel Admin Dashboard</title>
-	<link th:href="@{vendor/jquery-nice-select/css/nice-select.css}" rel="stylesheet">
-	<link th:href="@{vendor/owl-carousel/owl.carousel.css}" rel="stylesheet">
+	<link th:href="@{~/vendor/jquery-nice-select/css/nice-select.css}" rel="stylesheet">
+	<link th:href="@{~/vendor/owl-carousel/owl.carousel.css}" rel="stylesheet">
 	<!-- <link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"> -->
 
 	<!-- Style css -->
-	<link th:href="@{css/style1.css}" rel="stylesheet">
+	<link th:href="@{~/css/style1.css}" rel="stylesheet">
 
 </head>
 <body>
@@ -422,21 +422,21 @@
 </div>
 <!--Main wrapper end-->
 <!-- Required vendors -->
-<script src="vendor/global/global.min.js"></script>
+<script th:src="@{~/vendor/global/global.min.js}"></script>
 
 <!-- <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script> -->
 
 <!-- Apex Chart -->
 
-<script src="vendor/apexchart/apexchart.js"></script>
+<script th:src="@{~/vendor/apexchart/apexchart.js}"></script>
 <!-- Dashboard 1 -->
-<script src="js/dashboard/dashboard-1.js"></script>
+<script th:src="@{~/js/dashboard/dashboard-1.js}"></script>
 
-<script src="vendor/owl-carousel/owl.carousel.js"></script>
+<script th:src="@{~/vendor/owl-carousel/owl.carousel.js}"></script>
 <!-- <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script> -->
 
-<script src="js/custom.min.js"></script>
-<script src="js/dlabnav-init.js"></script>
+<script th:src="@{~/js/custom.min.js}"></script>
+<script th:src="@{~/js/dlabnav-init.js}"></script>
 <!-- <script src="js/demo.js"></script> -->
 
 </body>

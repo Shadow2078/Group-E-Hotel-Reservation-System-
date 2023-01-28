@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-//@RequestMapping("/user")
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -24,7 +24,7 @@ public class UserController {
     @GetMapping("/register")
     public String register(Model model){
         model.addAttribute("user",new UserPojo());
-        return "/register";
+        return "register";
     }
 
     @PostMapping("/save")
@@ -39,6 +39,7 @@ public class UserController {
         return "index";
     }
 
+<<<<<<< HEAD
 //    @GetMapping("/review")
 //    public String getReviewPage(Model model){
 //        model.addAttribute("review", new ReviewPojo());
@@ -50,6 +51,8 @@ public String forgotpassword(Model model){
     model.addAttribute("users",new UserPojo());
     return ("forget");
 }
+=======
+>>>>>>> 17123dc8ac4276e53f0c0efd260a6fe44cc48168
 
     @PostMapping("/changepassword")
     public String changepassword(@Valid User userPojo){
