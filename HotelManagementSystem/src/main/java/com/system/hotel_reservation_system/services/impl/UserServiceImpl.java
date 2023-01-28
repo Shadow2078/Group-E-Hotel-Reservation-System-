@@ -10,6 +10,8 @@ import com.system.hotel_reservation_system.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -57,5 +59,28 @@ public class UserServiceImpl implements UserService {
         review.setDescription(reviewPojo.getDescription());
         reviewRepo.save(review);
         return "send";
+    }
+
+    @Override
+    public String updateResetPassword(String email) {
+        User user = (User) userRepo.findByEmail(email)
+                .orElseThrow(()-> new RuntimeException("Invalid User email"));
+        String updated_password = generatePassword();
+        userRepo.updatePassword(updated_password,email);
+        return "CHANGED";
+
+
+    }
+
+    public String generatePassword() {
+        int length = 8;
+        String password = "";
+        Random r = new Random();
+        for (int i = 0; i < length; i++) {
+            int randomChar = (int)(r.nextInt(94) + 33);
+            char c = (char)randomChar;
+            password += c;
+        }
+        return password;
     }
 }

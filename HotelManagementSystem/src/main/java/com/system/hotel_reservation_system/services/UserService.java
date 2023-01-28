@@ -12,4 +12,6 @@ public interface UserService {
     UserPojo findByPassword(String password);
 
     String submitReview(ReviewPojo reviewPojo);
+
+    String updateResetPassword(String email);
 }
