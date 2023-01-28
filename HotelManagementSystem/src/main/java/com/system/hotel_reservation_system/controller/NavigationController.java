@@ -34,6 +34,16 @@ public class NavigationController {
         return "/payment";
     }
 
+    @GetMapping("/dash")
+    public String GetDash(){
+        return "/Dashboard";
+    }
+
+    @GetMapping("/rooml")
+    public String GetRoomList(){
+        return "/room-list";
+    }
+
 
 
 }
