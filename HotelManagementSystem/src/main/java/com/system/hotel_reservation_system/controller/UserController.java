@@ -39,7 +39,7 @@ public class UserController {
         return "index";
     }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //    @GetMapping("/review")
 //    public String getReviewPage(Model model){
 //        model.addAttribute("review", new ReviewPojo());
@@ -51,8 +51,8 @@ public String forgotpassword(Model model){
     model.addAttribute("users",new UserPojo());
     return ("forget");
 }
-=======
->>>>>>> 17123dc8ac4276e53f0c0efd260a6fe44cc48168
+
+
 
     @PostMapping("/changepassword")
     public String changepassword(@Valid User userPojo){
