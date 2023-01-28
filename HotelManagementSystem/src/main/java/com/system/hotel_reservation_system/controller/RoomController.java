@@ -33,11 +33,12 @@ public class RoomController {
     private final RoomService roomService;
     private final UserService userService;
 
+
     @GetMapping("/rooms")
     public String GetRooms(Model model){
         List<Room> rooms = roomService.fetchAll();
         model.addAttribute("rooms", rooms);
-        return  "/rooms";
+        return  "room-list";
     }
 
     @GetMapping("/add")
