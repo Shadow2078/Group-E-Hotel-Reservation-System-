@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang=en>
+<!--<html lang=en xmlns:th="http://www.thymeleaf.org">-->
 <head>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
@@ -60,9 +61,9 @@
         <ul class="breadcrumbs d-flex flex-wrap align-content-center">
             <li class=list-item><a class=link href=index.html>Home</a></li>
             <li class=list-item><a class=link href=news.html>News</a></li>
-            <li class=list-item><a class=link href=#>How to Travel the World & Make a Difference</a></li>
+
         </ul>
-        <h1 class=page_title>How to Travel the World & Make a Difference</h1>
+        <h1 class=page_title>News&Blogs</h1>
     </div>
 </header>
 <main>
@@ -73,33 +74,33 @@
                     <div class="media media--main">
                         <picture>
 
-                            <img class=lazy data-src=img/news/01.jpg th:src="@{img/news/01.jpg}" alt=media>
+                            <img class=lazy data-src=img/news/01.jpg th:src="@{~/img/news/01.jpg}" alt=media>
                         </picture>
                     </div>
                     <div class=post_main-article_metadata><span class="item d-inline-flex align-items-center"><i class="icon-calendar icon"></i> June 16, 2021 </span><span class="item d-inline-flex align-items-center"><i class="icon-eye icon"></i> <span class=number>120</span> <span class=text>views</span> </span><a class="item d-inline-flex align-items-center" href=#comments><i class="icon-comment icon"></i> <span class=number>2</span> <span class=text>Comments</span></a></div>
                     <p class=post_main-article_text>This is a guest post from Harper Reid. She is a freelance writer from New Zealand who is a huge supporter of sustainable living and travel. She believes that everybody can do something to save the environment, one simple step at a time. Visit Harper’s Tumblr page to see more of her published work.</p>
                     <div class=post_main-article_gallery>
                         <div class="gallery-item gallery-item--main media">
-                            <a class=link th:href="@{img/post/full01.jpg}" data-role=gallery-link>
+                            <a class=link th:href="@{~/img/post/full01.jpg}" data-role=gallery-link>
                                 <picture>
 
-                                    <img class=lazy  th:src="@{img/post/01.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{~/img/post/01.jpg}" alt=media>
                                 </picture>
                             </a>
                         </div>
                         <div class="gallery-item media">
-                            <a class=link th:href="@{img/post/full02.jpg}" data-role=gallery-link>
+                            <a class=link th:href="@{~/img/post/full02.jpg}" data-role=gallery-link>
                                 <picture>
 
-                                    <img class=lazy  th:src="@{img/post/02.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{~/img/post/02.jpg}" alt=media>
                                 </picture>
                             </a>
                         </div>
                         <div class="gallery-item media">
-                            <a class=link th:href="@{img/post/full03.jpg}" data-role=gallery-link>
+                            <a class=link th:href="@{~/img/post/full03.jpg}" data-role=gallery-link>
                                 <picture>
 
-                                    <img class=lazy  th:src="@{img/post/03.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{~/img/post/03.jpg}" alt=media>
                                 </picture>
                             </a>
                         </div>
@@ -127,7 +128,7 @@
                         <div class=media>
                             <picture>
 
-                                <img class=lazy  th:src="@{img/post/author.jpg}" alt=media>
+                                <img class=lazy  th:src="@{~/img/post/author.jpg}" alt=media>
                             </picture>
                         </div>
                         <div class=main>
@@ -146,12 +147,12 @@
                     <h3 class=post_main-comments_header>Post comments</h3>
                     <ul class=post_main-comments_list>
                         <li class="list-item d-flex flex-column flex-sm-row align-items-start">
-                            <div class=media>
-                                <picture>
+<!--                            <div class=media>-->
+<!--                                <picture>-->
 
-                                    <img class=lazy data-src=img/post/woman.jpg th:src="@{img/post/woman.jpg}" alt=media>
-                                </picture>
-                            </div>
+<!--                                    <img class=lazy data-src=img/post/woman.jpg th:src="@{~/img/post/woman.jpg}" alt=media>-->
+<!--                                </picture>-->
+<!--                            </div>-->
                             <div class=main>
                                 <div class="main_info d-flex flex-column"><span class="name h4">Gloria Ellis</span> <span class=date>June 16, 2021</span></div>
                                 <p class=text> Travel is the only thing you buy that makes you richer.</p>
@@ -159,12 +160,12 @@
                             <a class=replyTrigger href=#><span class=icon-reply></span></a>
                         </li>
                         <li class="list-item d-flex flex-column flex-sm-row align-items-start" data-reply=true>
-                            <div class=media>
-                                <picture>
+<!--                            <div class=media>-->
+<!--                                <picture>-->
 
-                                    <img class=lazy data-src=img/post/man.jpg th:src="@{img/post/man.jpg}" alt=media>
-                                </picture>
-                            </div>
+<!--                                    <img class=lazy data-src=img/post/man.jpg th:src="@{~/img/post/man.jpg}" alt=media>-->
+<!--                                </picture>-->
+<!--                            </div>-->
                             <div class=main>
                                 <div class="main_info d-flex flex-column"><span class="name h4">Esther Hopkins</span> <span class=date>June 16, 2021</span></div>
                                 <p class=text>Nothing makes you feel better than when you get into a hotel bed, and the sheets feel so good. Why shouldn't you wake up like that every day? Spend money on your mattress and bedding because these things make a difference on your sleep and, ultimately, your happiness.</p>
@@ -175,10 +176,10 @@
                 </section>
                 <section class=post_main-reply>
                     <h3 class=post_main-reply_header>Leave comment</h3>
-                    <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" action=# method=post data-type=comment>
-                        <div class=field-wrapper><label class=label for=commentName><i class="icon-user icon"></i></label> <input class="field required" id=commentName type=text placeholder=Name></div>
-                        <div class=field-wrapper><label class=label for=commentEmail><i class="icon-email icon"></i></label> <input class="field required" id=commentEmail type=text data-type=email placeholder=Email></div>
-                        <textarea class="field textarea required" id=commentMessage placeholder=Message></textarea>
+                    <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" th:method="post" th:action="@{user/submitnews}" th:object="${news}" >
+                        <div class=field-wrapper><label class=label for=commentName><i class="icon-user icon"></i></label> <input class="field required" id=commentName type=text placeholder=Name th:field="*{names}" > </div>
+                        <div class=field-wrapper><label class=label for=commentEmail><i class="icon-email icon"></i></label> <input class="field required" id=commentEmail type=text data-type=email placeholder=Email ></div>
+                        <textarea class="field textarea required" id=commentMessage placeholder=Message ></textarea>
                         <button class="btn theme-element theme-element--accent" type=submit>Submit</button>
                     </form>
                 </section>
@@ -203,7 +204,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy  th:src="@{img/aside/post01.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{~/img/aside/post01.jpg}" alt=media>
                                 </picture>
                             </div>
                             <div class="main d-flex flex-column"><a class="main_title h5" href=#>Travel and Working Holidays</a> <span class=main_date>June 16, 2021</span></div>
@@ -212,7 +213,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/post02.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/post02.jpg}" alt=media>
                                 </picture>
                             </div>
                             <div class="main d-flex flex-column"><a class="main_title h5" href=#>A Hotel Decided to Social Support</a> <span class=main_date>June 16, 2021</span></div>
@@ -221,7 +222,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/post03.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/post03.jpg}" alt=media>
                                 </picture>
                             </div>
                             <div class="main d-flex flex-column"><a class="main_title h5" href=#>Travel and Working Holidays</a> <span class=main_date>June 16, 2021</span></div>
@@ -251,7 +252,7 @@
                             <a href=# target=_blank rel="noopener noreferrer">
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/01.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/01.jpg}" alt=media>
                                 </picture>
                             </a>
                         </li>
@@ -259,7 +260,7 @@
                             <a href=# target=_blank rel="noopener noreferrer">
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/02.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/02.jpg}" alt=media>
                                 </picture>
                             </a>
                         </li>
@@ -267,7 +268,7 @@
                             <a href=# target=_blank rel="noopener noreferrer">
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/03.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/03.jpg}" alt=media>
                                 </picture>
                             </a>
                         </li>
@@ -275,7 +276,7 @@
                             <a href=# target=_blank rel="noopener noreferrer">
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/04.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/04.jpg}" alt=media>
                                 </picture>
                             </a>
                         </li>
@@ -283,7 +284,7 @@
                             <a href=# target=_blank rel="noopener noreferrer">
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/05.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/05.jpg}" alt=media>
                                 </picture>
                             </a>
                         </li>
@@ -291,7 +292,7 @@
                             <a href=# target=_blank rel="noopener noreferrer">
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/aside/06.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/aside/06.jpg}" alt=media>
                                 </picture>
                             </a>
                         </li>
@@ -314,7 +315,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy th:src="@{img/news/02.jpg}" alt=media>
+                                    <img class=lazy th:src="@{~/img/news/02.jpg}" alt=media>
                                 </picture>
                                 <span class="media_label media_label--left">Travel</span>
                             </div>
@@ -330,7 +331,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy  th:src="@{img/news/05.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{~/img/news/05.jpg}" alt=media>
                                 </picture>
                                 <span class="media_label media_label--left">Tourist Guide</span>
                             </div>
@@ -346,7 +347,7 @@
                             <div class=media>
                                 <picture>
 
-                                    <img class=lazy  th:src="@{img/news/01.jpg}" alt=media>
+                                    <img class=lazy  th:src="@{~/img/news/01.jpg}" alt=media>
                                 </picture>
                                 <span class="media_label media_label--left">Communication</span>
                             </div>
@@ -410,7 +411,7 @@
     </div>
 
 </footer>
-<script th:src="@{~js/common.min.js}"></script><script th:src="@{~js/post.min.js}"></script><script th:src="@{js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
+<script th:src="@{~/js/common.min.js}"></script><script th:src="@{~/js/post.min.js}"></script><script th:src="@{~/js/demo.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-FC3KYV46D4');
