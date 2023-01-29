@@ -18,9 +18,9 @@
 //public class BookingController {
 //    private final BookingService bookingService;
 //
-//    @PostMapping("/book")
-//    public String bookBike(@Valid BookPojo bookingPojo) throws ParseException {
-//        bookingService.saveBooking(bookingPojo);
-//        return "redirect:/home";
-//    }
+////    @PostMapping("/book")
+////    public String bookBike(@Valid BookPojo bookingPojo) throws ParseException {
+////        bookingService.saveBooking(bookingPojo);
+////        return "redirect:/home";
+////    }
 //}

@@ -38,7 +38,7 @@ public class RoomController {
     public String GetRooms(Model model){
         List<Room> rooms = roomService.fetchAll();
         model.addAttribute("rooms", rooms);
-        return  "room-list";
+        return  "rooms";
     }
 
     @GetMapping("/add")
