@@ -1,6 +1,6 @@
 package com.system.hotel_reservation_system.controller;
 
-import com.system.hotel_reservation_system.pojo.NewsPojo;
+//import com.system.hotel_reservation_system.pojo.NewsPojo;
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.UserPojo;
 import com.system.hotel_reservation_system.services.UserService;
@@ -30,7 +30,7 @@ public class NavigationController {
 
     @GetMapping("/news")
     public String GetNews(Model model){
-        model.addAttribute("news",new NewsPojo());
+//        model.addAttribute("news",new NewsPojo());
         return "/news";
     }
 

@@ -2,7 +2,7 @@ package com.system.hotel_reservation_system.controller;
 
 import com.system.hotel_reservation_system.entity.Review;
 import com.system.hotel_reservation_system.entity.User;
-import com.system.hotel_reservation_system.pojo.NewsPojo;
+//import com.system.hotel_reservation_system.pojo.NewsPojo;
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.UserPojo;
 import com.system.hotel_reservation_system.services.UserService;
@@ -68,10 +68,10 @@ public String forgotpassword(Model model){
 //        return "news";
 //    }
 
-    @PostMapping("/submitnews")
-    public String SubmitNews(@Valid NewsPojo newsPojo){
-        userService.submitNews(newsPojo);
-        return "redirect:/user/news";
-    }
+//    @PostMapping("/submitnews")
+//    public String SubmitNews(@Valid NewsPojo newsPojo){
+//        userService.submitNews(newsPojo);
+//        return "redirect:/user/news";
+//    }
 
 }

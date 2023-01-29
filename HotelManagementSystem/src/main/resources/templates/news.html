@@ -5,7 +5,7 @@
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv=X-UA-Compatible content="ie=edge">
-    <title>How to Travel the World & Make a Difference | MojGara</title>
+    <title>MojGara</title>
     <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async=""></script><script src=https://www.youtube.com/player_api></script>
     <link rel="stylesheet preload" as=style th:href="@{~/css/preload.min.css}">
     <link rel="stylesheet preload" as=style th:href="@{~/css/icomoon.css}">
@@ -176,8 +176,8 @@
                 </section>
                 <section class=post_main-reply>
                     <h3 class=post_main-reply_header>Leave comment</h3>
-                    <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" th:method="post" th:action="@{user/submitnews}" th:object="${news}" >
-                        <div class=field-wrapper><label class=label for=commentName><i class="icon-user icon"></i></label> <input class="field required" id=commentName type=text placeholder=Name th:field="*{names}" > </div>
+                    <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" >
+                        <div class=field-wrapper><label class=label for=commentName><i class="icon-user icon"></i></label> <input class="field required" id=commentName type=text placeholder=Name  > </div>
                         <div class=field-wrapper><label class=label for=commentEmail><i class="icon-email icon"></i></label> <input class="field required" id=commentEmail type=text data-type=email placeholder=Email ></div>
                         <textarea class="field textarea required" id=commentMessage placeholder=Message ></textarea>
                         <button class="btn theme-element theme-element--accent" type=submit>Submit</button>

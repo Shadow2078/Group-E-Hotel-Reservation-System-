@@ -3,12 +3,12 @@ package com.system.hotel_reservation_system.services.impl;
 import com.system.hotel_reservation_system.config.PasswordEncoderUtil;
 import com.system.hotel_reservation_system.entity.Review;
 import com.system.hotel_reservation_system.entity.User;
-import com.system.hotel_reservation_system.entity.News;
+//import com.system.hotel_reservation_system.entity.News;
 import com.system.hotel_reservation_system.exception.AppException;
-import com.system.hotel_reservation_system.pojo.NewsPojo;
+//import com.system.hotel_reservation_system.pojo.NewsPojo;
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.UserPojo;
-import com.system.hotel_reservation_system.repo.NewsRepo;
+//import com.system.hotel_reservation_system.repo.NewsRepo;
 import com.system.hotel_reservation_system.repo.ReviewRepo;
 import com.system.hotel_reservation_system.repo.UserRepo;
 import com.system.hotel_reservation_system.services.UserService;
@@ -22,7 +22,7 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepo userRepo;
-    private final NewsRepo newsRepo;
+//    private final NewsRepo newsRepo;
     private final ReviewRepo reviewRepo;
 
     @Override
@@ -85,16 +85,16 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Override
-    public String submitNews(NewsPojo newsPojo) {
-        News news=new News();
-        news.setId(newsPojo.getId());
-        news.setNames(newsPojo.getNames());
-        news.setEmails(newsPojo.getEmails());
-        news.setDescriptions(newsPojo.getDescriptions());
-        newsRepo.save(news);
-        return "send";
-    }
+//    @Override
+//    public String submitNews(NewsPojo newsPojo) {
+//        News news=new News();
+//        news.setId(newsPojo.getId());
+//        news.setNames(newsPojo.getNames());
+//        news.setEmails(newsPojo.getEmails());
+//        news.setDescriptions(newsPojo.getDescriptions());
+//        newsRepo.save(news);
+//        return "send";
+//    }
 
 
 
