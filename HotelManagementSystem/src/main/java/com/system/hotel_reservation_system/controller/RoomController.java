@@ -1,8 +1,10 @@
 package com.system.hotel_reservation_system.controller;
 
 import com.system.hotel_reservation_system.entity.Room;
+import com.system.hotel_reservation_system.pojo.BookPojo;
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.RoomPojo;
+import com.system.hotel_reservation_system.services.BookingService;
 import com.system.hotel_reservation_system.services.RoomService;
 import com.system.hotel_reservation_system.services.UserService;
 import jakarta.validation.Valid;
@@ -32,6 +34,8 @@ public class RoomController {
 
     private final RoomService roomService;
     private final UserService userService;
+    private final BookingService bookingService;
+
 
 
     @GetMapping("/rooms")
@@ -82,10 +86,18 @@ public class RoomController {
     @GetMapping("roomind/{id}")
     public String getRoom(@PathVariable ("id") Integer id, Model model, Principal principal){
         model.addAttribute("review", new ReviewPojo());
+        model.addAttribute("booking", new BookPojo());
+//        model.addAttribute("getuser", userService.findByEmail(principal.getName()));
         Room room= roomService.fetchById(id);
         model.addAttribute("roomss",room);
         return "Penthouse";
     }
+    @PostMapping("/savebook")
+    public String bookBike(@Valid BookPojo bookingPojo) {
+        bookingService.save(bookingPojo);
+        return "redirect:dashboard/dash";
+    }
+
     @PostMapping("/submit")
     public String SubmitReview(@Valid ReviewPojo reviewPojo){
         userService.submitReview(reviewPojo);
