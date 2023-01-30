@@ -74,7 +74,7 @@
                     <div class="media media--main">
                         <picture>
 
-                            <img class=lazy data-src=img/news/01.jpg th:src="@{~/img/news/01.jpg}" alt=media>
+                            <img class=lazy  th:src="@{~/img/news/01.jpg}" alt=media>
                         </picture>
                     </div>
                     <div class=post_main-article_metadata><span class="item d-inline-flex align-items-center"><i class="icon-calendar icon"></i> June 16, 2021 </span><span class="item d-inline-flex align-items-center"><i class="icon-eye icon"></i> <span class=number>120</span> <span class=text>views</span> </span><a class="item d-inline-flex align-items-center" href=#comments><i class="icon-comment icon"></i> <span class=number>2</span> <span class=text>Comments</span></a></div>
@@ -174,15 +174,15 @@
                         </li>
                     </ul>
                 </section>
-                <section class=post_main-reply>
-                    <h3 class=post_main-reply_header>Leave comment</h3>
-                    <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" >
-                        <div class=field-wrapper><label class=label for=commentName><i class="icon-user icon"></i></label> <input class="field required" id=commentName type=text placeholder=Name  > </div>
-                        <div class=field-wrapper><label class=label for=commentEmail><i class="icon-email icon"></i></label> <input class="field required" id=commentEmail type=text data-type=email placeholder=Email ></div>
-                        <textarea class="field textarea required" id=commentMessage placeholder=Message ></textarea>
-                        <button class="btn theme-element theme-element--accent" type=submit>Submit</button>
-                    </form>
-                </section>
+<!--                <section class=post_main-reply>-->
+<!--                    <h3 class=post_main-reply_header>Leave comment</h3>-->
+<!--                    <form class="contacts_form form d-sm-flex flex-wrap justify-content-between" th:method="post" th:action="@{/user/submitnews}" th:object="${newsAdd}" >-->
+<!--                        <div class=field-wrapper><label class=label for=commentName><i class="icon-user icon"></i></label> <input class="field required" id=commentName type=text placeholder=Name  th:field="*{na}"> </div>-->
+<!--                        <div class=field-wrapper><label class=label for=commentEmail><i class="icon-email icon"></i></label> <input class="field required" id=commentEmail type=text data-type=email placeholder=Email ></div>-->
+<!--                        <textarea class="field textarea required" id=commentMessage placeholder=Message ></textarea>-->
+<!--                        <button class="btn theme-element theme-element&#45;&#45;accent" type=submit>Submit</button>-->
+<!--                    </form>-->
+<!--                </section>-->
             </div>
             <div class=widgets data-sticky=true data-stop="">
                 <div class="widgets_item widgets_item--search">
