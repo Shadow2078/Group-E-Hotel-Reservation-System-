@@ -1,5 +1,6 @@
 package com.system.hotel_reservation_system.controller;
 
+import com.system.hotel_reservation_system.entity.Review;
 import com.system.hotel_reservation_system.entity.Room;
 import com.system.hotel_reservation_system.pojo.BookPojo;
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
@@ -89,9 +90,13 @@ public class RoomController {
         model.addAttribute("booking", new BookPojo());
 //        model.addAttribute("getuser", userService.findByEmail(principal.getName()));
         Room room= roomService.fetchById(id);
+        Review review= userService.fetchbyid(id);
         model.addAttribute("roomss",room);
+        model.addAttribute("revs",review);
         return "Penthouse";
     }
+
+
     @PostMapping("/savebook")
     public String bookBike(@Valid BookPojo bookingPojo) {
         bookingService.save(bookingPojo);
@@ -117,6 +122,13 @@ public class RoomController {
 //        ));
         model.addAttribute("roomData",rooms);
         return  "room-list";
+    }
+
+    @GetMapping("/reviews")
+    public String GetRevs(Model model) {
+        List<Review> reviews = userService.fetchAll();
+        model.addAttribute("revData", reviews);
+        return "reviews";
     }
 
 }

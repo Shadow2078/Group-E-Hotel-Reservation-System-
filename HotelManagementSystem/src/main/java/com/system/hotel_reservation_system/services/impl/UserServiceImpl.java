@@ -17,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -84,6 +85,21 @@ public class UserServiceImpl implements UserService {
         return "CHANGED";
 
 
+    }
+
+    @Override
+    public List<Review> fetchAll() {
+        return this.reviewRepo.findAll();
+    }
+
+    @Override
+    public Review fetchbyid(Integer id) {
+        Review review=reviewRepo.findById(id).orElseThrow(()->
+                new RuntimeException("notfound"));
+        review=Review.builder().name(review.getName())
+                .description(review.getDescription())
+                .build();
+        return review;
     }
 
     public String generatePassword() {

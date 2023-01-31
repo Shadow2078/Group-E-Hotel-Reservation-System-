@@ -11,7 +11,7 @@
 
 
     <!-- Style css -->
-    <link href="css/style0.css" rel="stylesheet">
+    <link th:href="@{~/css/style1.css}" rel="stylesheet">
 
 </head>
 <body>
@@ -141,13 +141,13 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
+                                                <tr th:each="rev:${revData}">
                                                     <td>
                                                         <div class="form-check style-1">
                                                             <input class="form-check-input" type="checkbox" value="">
                                                         </div>
-                                                    <td>
-                                                        <span class="text-nowrap">boka</span>
+                                                    <td th:text="${rev.name}">
+                                                        <span class="text-nowrap"></span>
                                                     </td>
                                                     <td class="job-desk1">
 																	<span>
@@ -161,7 +161,7 @@
 																	</span>
                                                         <span>
 																		<p class="fs-16">
-																			babal bhio sabai kura babal nai  bhio :)
+
 																		</p>
 																	</span>
                                                     </td>
@@ -172,32 +172,32 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check style-1">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-nowrap">palita</span>
-                                                    </td>
-                                                    <td class="job-desk1">
-																	<span>
-																		<ul class="stars">
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																		</ul>
-																	</span>
-                                                        <span>
-																		<p class="fs-16">
-																			babal bhio sabai kura babal nai  bhio :)
-																		</p>
-																	</span>
-                                                    </td>
-                                                </tr>
+<!--                                                <tr>-->
+<!--                                                    <td>-->
+<!--                                                        <div class="form-check style-1">-->
+<!--                                                            <input class="form-check-input" type="checkbox" value="">-->
+<!--                                                        </div>-->
+<!--                                                    </td>-->
+<!--                                                    <td>-->
+<!--                                                        <span class="text-nowrap">palita</span>-->
+<!--                                                    </td>-->
+<!--                                                    <td class="job-desk1">-->
+<!--																	<span>-->
+<!--																		<ul class="stars">-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																		</ul>-->
+<!--																	</span>-->
+<!--                                                        <span>-->
+<!--																		<p class="fs-16">-->
+<!--																			babal bhio sabai kura babal nai  bhio :)-->
+<!--																		</p>-->
+<!--																	</span>-->
+<!--                                                    </td>-->
+<!--                                                </tr>-->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -233,19 +233,19 @@
 
 </style>
 
-<script src="vendor/global/global.min.js"></script>
+<script th:src="@{~/vendor/global/global.min.js}"></script>
 
-<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script th:src="@{~/vendor/jquery-nice-select/js/jquery.nice-select.min.js}"></script>
 
 <!-- Dashboard 1 -->
-<script src="js/dashboard/dashboard-1.js"></script>
+<script th:src="@{~/js/dashboard/dashboard-1.js}"></script>
 
-<script src="vendor/owl-carousel/owl.carousel.js"></script>
+<script th:src="@{~/vendor/owl-carousel/owl.carousel.js}"></script>
 
-<script src="js/custom.min.js"></script>
-<script src="js/dlabnav-init.js"></script>
-<script src="js/demo.js"></script>
-<script src="js/styleSwitcher.js"></script>
+<script th:src="@{~/js/custom.min.js}"></script>
+<script th:src="@{~/js/dlabnav-init.js}"></script>
+<script th:src="@{~/js/demo.js}"></script>
+<script th:src="@{~/js/styleSwitcher.js}"></script>
 </body>
 
 
