@@ -104,11 +104,18 @@ public class RoomController {
         return "redirect:/room/rooms";
     }
 
-//    @GetMapping("/roomlist")
-//    public String GetRoomlist(Model model){
-//        List<Room> rooms = roomService.fetchAll();
-//        model.addAttribute("roomlist", rooms);
-//        return  "room-list";
-//    }
+    @GetMapping("/roomlist")
+    public String GetRoomlist(Model model){
+        List<Room> rooms = roomService.fetchAll();
+        model.addAttribute("roomlist", rooms.stream().map(room ->
+                Room.builder()
+                        .room_type(room.getRoom_type())
+                        .price(room.getPrice())
+                        .beds(room.getBeds())
+                        .build()
+
+        ));
+        return  "room-list";
+    }
 
 }

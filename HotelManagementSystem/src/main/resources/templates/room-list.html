@@ -142,33 +142,33 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr th:each="room:${rooms}">
-														<td>
+													<tr th:each="room:${roomlist}">
+														<td th:text="${room.room_type}">
 															<div class="room-list-bx d-flex align-items-center">
 
 																<div>
-																	<span class=" text-secondary fs-14 d-block" th:text="${room.id}"></span>
-																	<span class=" fs-16 font-w500 text-nowrap" th:text="${room.hotelname}"></span>
+																	<span class=" text-secondary fs-14 d-block" ></span>
+																	<span class=" fs-16 font-w500 text-nowrap" ></span>
 																</div>
 															</div>
 														</td>
 														<td>
-															<span class="fs-16 font-w500 text-nowrap" th:text="${room.room_type}"></span>
+															<span class="fs-16 font-w500 text-nowrap"></span>
 														</td>
 														<td>
 															<div>
 																
-																<span class="fs-16 font-w500" th:text="${room.address}"></span>
+																<span class="fs-16 font-w500" ></span>
+															</div>
+														</td>
+														<td th:text="${room.price}">
+															<div class="">
+																<span class="font-w500" ><small class="fs-14 ms-2">/day</small></span>
 															</div>
 														</td>
 														<td>
 															<div class="">
-																<span class="font-w500" th:text="${room.price}"><small class="fs-14 ms-2">/day</small></span>
-															</div>
-														</td>
-														<td>
-															<div class="">
-																<span class="font-w500" th:text="${room.beds}"></span>
+																<span class="font-w500" ></span>
 															</div>
 														</td>
 														<td>
