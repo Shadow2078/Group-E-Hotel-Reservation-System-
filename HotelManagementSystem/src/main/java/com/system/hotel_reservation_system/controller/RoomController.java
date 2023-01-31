@@ -104,4 +104,11 @@ public class RoomController {
         return "redirect:/room/rooms";
     }
 
+//    @GetMapping("/roomlist")
+//    public String GetRoomlist(Model model){
+//        List<Room> rooms = roomService.fetchAll();
+//        model.addAttribute("roomlist", rooms);
+//        return  "room-list";
+//    }
+
 }
