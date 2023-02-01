@@ -131,4 +131,11 @@ public class RoomController {
         return "reviews";
     }
 
+    @GetMapping("/delete/{id}")
+    public String DelRev(@PathVariable("id")Integer id){
+        userService.deletebyid(id);
+
+        return "redirect:/room/reviews";
+    }
+
 }

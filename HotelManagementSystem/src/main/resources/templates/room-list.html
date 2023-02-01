@@ -69,47 +69,47 @@
 		<!--Header end ti-comment-alt-->
         <!--Sidebar start-->
 		<div class="dlabnav">
-			<div class="dlabnav-scroll">
+			<div class="dlabnav-scroll active mm-active is-active" >
 				<ul class="metismenu" id="menu">
-					<li><a href="Dashboard.htmlhtml">
-							<i class="flaticon-025-dashboard"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
+					<li><a href="index-2.html">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Dashboard</span>
+					</a>
 					</li>
-					
+
 				</ul>
-				
+
 				<ul class="metismenu" id="menu">
-				<li><a href="guest-list.html">
-					<i class="flaticon-025-dashboard"></i>
-					<span class="nav-text">Guest List</span>
-				</a>
-				</li>
-				</ul>
-				<ul class="metismenu" id="menu">
-				<li><a href="addRoom.html">
-					<i class="flaticon-381-list"></i>
-					<span class="nav-text">Add Room</span>
-				</a>
-				</li>
+					<li><a href="guest-list.html">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Guest List</span>
+					</a>
+					</li>
 				</ul>
 				<ul class="metismenu" id="menu">
-				<li><a th:href="@{~/room/roomlist}">
-					<i class="flaticon-381-home"></i>
-					<span class="nav-text">Room List</span>
-				</a>
-				</li>
+					<li><a th:href="@{~/room/add}">
+						<i class="flaticon-381-list"></i>
+						<span class="nav-text">Add rooms</span>
+					</a>
+					</li>
 				</ul>
-				
 				<ul class="metismenu" id="menu">
-				<li><a href="reviews.html">
-					<i class="flaticon-025-dashboard"></i>
-					<span class="nav-text">Reviews</span>
-				</a>
-				</li>
+					<li><a th:href="@{~/room/roomlist}">
+						<i class="flaticon-381-home"></i>
+						<span class="nav-text">Room List</span>
+					</a>
+					</li>
 				</ul>
-					</div>
-				</div>
+
+				<ul class="metismenu" id="menu">
+					<li><a th:href="@{~/room/reviews}">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Reviews</span>
+					</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 			</div>
 		</div>
 		<!--Sidebar end-->

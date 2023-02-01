@@ -19,4 +19,6 @@ public interface UserService {
     List<Review> fetchAll();
 
     Review fetchbyid(Integer id);
+
+    void deletebyid(Integer id);
 }

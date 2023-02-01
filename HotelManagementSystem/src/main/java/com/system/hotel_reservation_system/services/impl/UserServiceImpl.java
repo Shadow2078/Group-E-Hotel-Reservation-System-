@@ -83,8 +83,6 @@ public class UserServiceImpl implements UserService {
         String updated_password = generatePassword();
         userRepo.updatePassword(updated_password,email);
         return "CHANGED";
-
-
     }
 
     @Override
@@ -101,6 +99,12 @@ public class UserServiceImpl implements UserService {
                 .build();
         return review;
     }
+
+    @Override
+    public void deletebyid(Integer id) {
+        reviewRepo.deleteById(id);
+    }
+
 
     public String generatePassword() {
         int length = 8;
