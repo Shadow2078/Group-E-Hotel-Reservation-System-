@@ -138,4 +138,25 @@ public class RoomController {
         return "redirect:/room/reviews";
     }
 
+    @GetMapping("/deletes/{id}")
+    public String DelRoom(@PathVariable("id")Integer id){
+        roomService.deletebyid(id);
+        return "redirect:/room/roomlist";
+    }
+
+    @GetMapping("/editroom/{id}")
+    public String EditRoom(@PathVariable Integer id,Model model){
+        Room room=roomService.fetchById(id);
+        model.addAttribute("erooms",new RoomPojo(room));
+        model.addAttribute("edrooms",room);
+        return "editroom";
+    }
+
+    @GetMapping("/editrooms/{id}")
+    public String EditRooms(@PathVariable("id") Integer id,Model model){
+        Room room=roomService.fetchById(id);
+        model.addAttribute("eroomss",new RoomPojo(room));
+        return "redirect:room/roomlist";
+    }
+
 }

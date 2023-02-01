@@ -44,16 +44,4 @@ public class NavigationController {
         return "/Dashboard";
     }
 
-
-
-//    @GetMapping("/rooml")
-//    public String GetRoomList(){
-//        return "/room-list";
-//    }
-//@GetMapping("/rev")
-//public String GetRev(){
-//    return "/reviews";
-//}
-
-
 }

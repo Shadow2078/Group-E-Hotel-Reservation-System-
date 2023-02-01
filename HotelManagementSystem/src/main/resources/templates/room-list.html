@@ -161,10 +161,10 @@
 															</div>
 														</td>
 														<td>
-															<a href="javascript:void(0);" class="btn btn-success btn-md">ACTIVE</a>
+															<a th:href="@{~/room/editroom/}+${room.id}" class="btn btn-success btn-md">Edit</a>
 														</td>
 														<td>
-															<a href="javascript:void(0);" class="btn btn-success btn-md">DELETE</a>
+															<a th:href="@{~/room/deletes/}+${room.id}" class="btn btn-success btn-md">DELETE</a>
 														</td>
 
 														

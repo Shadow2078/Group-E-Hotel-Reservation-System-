@@ -27,6 +27,7 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public String saveRoom(RoomPojo RoomPojo) throws IOException {
         Room room = new Room();
+        if (RoomPojo.getId()!= null){    room.setId(RoomPojo.getId());}
         room.setHotelname(RoomPojo.getHotelname());
         room.setCity(RoomPojo.getCity());
         room.setAddress(RoomPojo.getAddress());
@@ -160,5 +161,10 @@ public class RoomServiceImpl implements RoomService {
                 .phone_number(room.getPhone_number())
                 .build();
         return room;
+    }
+
+    @Override
+    public void deletebyid(Integer id) {
+        RoomRepo.deleteById(id);
     }
 }

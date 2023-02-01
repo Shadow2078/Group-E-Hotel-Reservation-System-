@@ -13,4 +13,6 @@ public interface RoomService {
     List<Room> fetchAll();
 
     Room fetchById(Integer id);
+
+    void deletebyid(Integer id);
 }
