@@ -24,6 +24,8 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public String save(BookPojo bookPojo) {
         Book book = new Book();
+        if (bookPojo.getId()!= null){
+            book.setId(bookPojo.getId());}
         book.setCheckin(bookPojo.getCheckin());
         book.setCheckout(bookPojo.getCheckout());
         book.setPeople(bookPojo.getPeople());
@@ -37,6 +39,29 @@ public class BookingServiceImpl implements BookingService {
     public List<Book> fetchAll() {
         return this.bookRepo.findAll();
     }
+
+    @Override
+    public Book fetchById(Integer id) {
+        Book book=bookRepo.findById(id).orElseThrow(()->
+                new RuntimeException("notfound"));
+        book=Book.builder().checkout(book.getCheckin())
+                .id(book.getId())
+                .checkin(book.getCheckin())
+                .checkout(book.getCheckout())
+                .People(book.getPeople())
+                .phone(book.getPhone())
+                .userId(book.getUserId())
+                .roomId(book.getRoomId())
+                .build();
+        return book;
+    }
+
+    @Override
+    public void deletebyid(Integer id) {
+        bookRepo.deleteById(id);
+    }
+
+
     public List<Book> findAllInList(List<Book> list) {
         Stream<Book> allBooking = list.stream().map(booking ->
                 Book.builder()
@@ -55,4 +80,6 @@ public class BookingServiceImpl implements BookingService {
     public List findBookingById(Integer id) {
         return findAllInList(bookRepo.findBookingById(id));
     }
+
+
 }

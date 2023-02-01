@@ -35,15 +35,15 @@
  main .recent-orders h2{
     margin-bottom: 0.8rem;
  }
- main .recent-orders table{
-    background: var(--color-white);
+main .recent-orders table {
+    background: white;
     width: 70%;
-    margin-left: 310px;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
     box-shadow: var(--box-shadow);
- }
+    margin-left: 20%;
+}
  main .recent-orders table:hover{
     box-shadow: none;
  }

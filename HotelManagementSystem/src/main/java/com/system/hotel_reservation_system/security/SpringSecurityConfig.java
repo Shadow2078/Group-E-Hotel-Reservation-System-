@@ -33,6 +33,8 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/room/**","/user/**","/dashboard/**" ,"/forgotpassword/**","/changepassword/**")
                 .permitAll()
+                .requestMatchers("/admin/**")
+                .hasAuthority("Admin")
                 .anyRequest()
                 .authenticated()
                 .and()

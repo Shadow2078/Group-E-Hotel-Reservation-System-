@@ -13,6 +13,8 @@
 
     <!-- Style css -->
     <link th:href="@{~/css/style1.css}" rel="stylesheet">
+    <link th:href="@{~/css/admin.css}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -36,27 +38,21 @@
                     <div class="header-left">
                         <div class="dashboard_bar">
                             Reviews
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)" class="fs-14">Customer Review</a></li>
-                            </ol>
                         </div>
-                        <li class="nav-item dropdown header-profile">
-                            <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                <img th:src="@{~/images/avatar/1.png}" width="20" alt=""/>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a href="app-profile.html" class="dropdown-item ai-icon">
-                                    <svg id="icon-user2" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <span class="ms-2">Profile </span>
-                                </a>
-                                <a href="login.html" class="dropdown-item ai-icon">
-                                    <svg  xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                                    <span class="ms-2">Logout </span>
-                                </a>
-                            </div>
-                        </li>
-                        </ul>
                     </div>
+
+                    <li class="nav-item dropdown header-profile">
+                        <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                            <img th:src="@{~/images/avatar1.png}" width="20" alt=""/>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a th:href="@{~/logout}" class="dropdown-item ai-icon">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                <span class="ms-2">Logout </span>
+                            </a>
+                        </div>
+                    </li>
+                </div>
             </nav>
         </div>
     </div>
@@ -64,7 +60,7 @@
     <div class="dlabnav">
         <div class="dlabnav-scroll active mm-active is-active" >
             <ul class="metismenu" id="menu">
-                <li><a th:href="@{~/dashboard/dash}">
+                <li><a th:href="@{~/admin/dash}">
                     <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -73,21 +69,21 @@
             </ul>
 
             <ul class="metismenu" id="menu">
-                <li><a href="guest-list.html">
+                <li><a th:href="@{~/admin/boook}">
                     <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Guest List</span>
                 </a>
                 </li>
             </ul>
             <ul class="metismenu" id="menu">
-                <li><a th:href="@{~/room/add}">
+                <li><a th:href="@{~/admin/add}">
                     <i class="flaticon-381-list"></i>
                     <span class="nav-text">Add rooms</span>
                 </a>
                 </li>
             </ul>
             <ul class="metismenu" id="menu">
-                <li><a th:href="@{~/room/roomlist}">
+                <li><a th:href="@{~/admin/roomlist}">
                     <i class="flaticon-381-home"></i>
                     <span class="nav-text">Room List</span>
                 </a>
@@ -95,7 +91,7 @@
             </ul>
 
             <ul class="metismenu" id="menu">
-                <li><a th:href="@{~/room/reviews}">
+                <li><a th:href="@{~/admin/reviews}">
                     <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Reviews</span>
                 </a>
@@ -103,111 +99,31 @@
             </ul>
         </div>
     </div>
-</div>
-</div>
-<!--Sidebar end-->
 
-<!--Content body start-->
-<div class="content-body">
-    <div class="container-fluid">
-        <div class="row mt-4">
-            <div class="col-xl-12">
-                <div class="row">
-                    <div class="my-4 d-flex justify-content-between align-items-center flex-wrap">
-                        <div class="card-action coin-tabs mb-4">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#AllCustomerReviews">All Customer Reviews</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-body p-0">
-                                <div class="tab-content">
-                                    <div class="tab-pane active show" id="AllCustomerReviews">
-                                        <div class="table-responsive">
-                                            <table class="table card-table display mb-4 shadow-hover table-responsive-lg review-tbl" id="guestTable-all">
-                                                <thead>
-                                                <tr>
-<!--                                                    <th class="bg-none">-->
-<!--                                                        <div class="form-check style-1">-->
-<!--                                                            <input class="form-check-input" type="checkbox" value="" id="checkAll">-->
-<!--                                                        </div>-->
-<!--                                                    </th>-->
-                                                    <th>Customer Name</th>
-                                                    <th class="text-center">Comment</th>
-                                                    <th class="text-center">Action</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr th:each="rev:${revData}">
-                                                    <td>
-                                                        <div class="form-check style-1">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                        </div>
-                                                    <td th:text="${rev.name}">
-                                                        <span class="text-nowrap"></span>
-                                                    </td>
-                                                    <td class="job-desk1" th:text="${rev.description}">
-<!--																	<span>-->
-<!--																		<ul class="stars">-->
-<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
-<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
-<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
-<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
-<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
-<!--																		</ul>-->
-<!--																	</span>-->
-                                                        <span>
-																		<p class="fs-16">
 
-																		</p>
-																	</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex">
-<!--                                                            <button class="first-button">Edit </button>-->
-                                                            <a th:href="@{~/room/delete/}+${rev.id}"> <button class="second-button" >Delete</button></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+<main>
+    <h1>Review</h1>
+    <div class="recent-orders">
+        <h2>Recent Reviews</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Comment</th>
 
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="rev:${revData}">
+                <td th:text="${rev.name}"></td>
+                <td th:text="${rev.description}"></td>
+
+            </tr>
+
+            </tbody>
+        </table>
     </div>
-</div>
-</div>
-<style>
-    .first-button {
-        background-color: rgb(146, 216, 106);
-        color: white;
-        padding: 10px 10px;
-        border-radius: 5px;
-        transition: transform 0.1s ease-in-out;
-        transform: scale(0.95);
-    }
-
-    .second-button {
-        background-color: rgb(168, 50, 50);
-        color: white;
-        padding: 10px 10px;
-        border-radius: 5px;
-        transition: transform 0.1s ease-in-out;
-        transform: scale(0.95);
-    }
-
-</style>
+</main>
 
 <script th:src="@{~/vendor/global/global.min.js}"></script>
 

@@ -24,29 +24,13 @@ public class LoginController {
 
     private final UserService userService;
 
-//    @GetMapping("/login")
-//    public ModelAndView login() {
-//        ModelAndView mav = new ModelAndView("login");
-//        mav.addObject("users", new User());
-//        return mav;
-//    }
-//
-//    @PostMapping("/login")
-//    public String login(@ModelAttribute("users") User user) {
-//
-//        UserPojo authUser = userService.findByEmail(user.getEmail());
-//        UserPojo authUserPassword = userService.findByPassword(user.getPassword());
-//
-//
-//        System.out.print(authUser);
-//        System.out.print(authUserPassword);
-//
-//        if (Objects.nonNull(authUser) && (Objects.nonNull(authUserPassword))) {
-//            return "redirect:/index";
-//        } else {
-//            return "redirect:/login";
-//        }
-//    }
+    @PostMapping("/logout")
+    public String logout(Authentication authentication) {
+        if (authentication.isAuthenticated()) {
+            SecurityContextHolder.clearContext();
+        }
+        return "redirect:/login";
+    }
 
     @GetMapping("/login")
     public String showLoginPage() {

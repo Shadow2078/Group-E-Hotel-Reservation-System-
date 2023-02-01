@@ -20,7 +20,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" th:action="@{~/room/create}" th:method="post" th:object="${erooms}" enctype="multipart/form-data">
+                                    <form class="form-valide" th:action="@{~/admin/create}" th:method="post" th:object="${erooms}" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-xl-6">
                                         <input  hidden type="text" th:field="*{id}" th:value="${edrooms.getId()}">
@@ -109,7 +109,7 @@
                                                 </div>
                                                 <div class="form-group mb-6 row">
                                                     <div class="col-lg-7 ms-auto">
-                                                        <a th:href="@{~/room/editrooms}+${edrooms.id}"> <button type="submit" class="btn btn-primary">Edit</button> </a>
+                                                        <a th:href="@{~/admin/editrooms}+${edrooms.id}"> <button type="submit" class="btn btn-primary">Edit</button> </a>
                                                     </div>
                                                 </div>
                                     </form>

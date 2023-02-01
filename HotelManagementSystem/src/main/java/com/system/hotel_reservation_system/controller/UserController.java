@@ -4,6 +4,8 @@ import com.system.hotel_reservation_system.pojo.UserPojo;
 import com.system.hotel_reservation_system.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
+import java.util.Collection;
 
 
 @Controller
@@ -35,18 +38,20 @@ public class UserController {
 
     //Temporary
     @GetMapping("/index")
-    public String indexPage(Model model, Principal principal){
+    public String indexPage(Model model, Principal principal, Authentication authentication){
+        if (authentication!=null){
+            Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+            for (GrantedAuthority grantedAuthority : authorities) {
+                if (grantedAuthority.getAuthority().equals("Admin")) {
+                    return "redirect:/admin/dash";
+                }
+            }
+        }
         model.addAttribute("userdata",userService.findByEmail(principal.getName()));
         return "index";
     }
 
-//<<<<<<< HEAD
-//    @GetMapping("/review")
-//    public String getReviewPage(Model model){
-//        model.addAttribute("review", new ReviewPojo());
-//        return "Penthouse";
-//
-//    }
+
 @GetMapping("/forgotpassword")
 public String forgotpassword(Model model){
     model.addAttribute("users",new UserPojo());

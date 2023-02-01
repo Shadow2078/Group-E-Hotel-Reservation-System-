@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
@@ -51,10 +52,7 @@ public class NavigationController {
         return "/payment";
     }
 
-    @GetMapping("/dash")
-    public String GetDash(){
-        return "/Dashboard";
-    }
+
 
     @GetMapping("/books/{id}")
     public String GetBook(@PathVariable Integer id, Model model, Principal principal){
@@ -65,26 +63,11 @@ public class NavigationController {
         return "/booking-form";
     }
         @PostMapping("/savebook")
-    public String bookBike(@Valid BookPojo bookingPojo) {
+    public String bookBike(@Valid BookPojo bookingPojo) throws IOException {
         bookingService.save(bookingPojo);
         return "payment";
     }
-    @GetMapping("/boook")
-    public String GetRevs(Model model) {
-        List<Book> book = bookingService.fetchAll();
-        model.addAttribute("bookinglist", book.stream().map(books->
-                Book.builder()
-                        .id(books.getId())
-                        .checkin(books.getCheckin())
-                        .checkout(books.getCheckout())
-                        .phone(books.getPhone())
-                        .People(books.getPeople())
-                        .userId(books.getUserId())
-                        .roomId(books.getRoomId())
-                        .build()
-        ));
-        return "guest-list";
-    }
+
 
     @GetMapping("/booked/{id}")
     public String fetchAllbook(@PathVariable("id") Integer id, Model model , Principal principal){
@@ -94,4 +77,24 @@ public class NavigationController {
 
         return "MyBookings";
     }
+    @GetMapping("/editbook/{id}")
+    public String editBooking(@PathVariable("id") Integer id, Model model){
+        Book book = bookingService.fetchById(id);
+        model.addAttribute("clickeddbook", new BookPojo(book));
+        return "redirect:/dest/dest";
+    }
+    @GetMapping("/products/{id}")
+    public String getmybook(@PathVariable("id") Integer id, Model model ){
+        Book book = bookingService.fetchById(id);
+        model.addAttribute("bookingss", new BookPojo(book));
+        model.addAttribute("clickedbook", book);
+        return "editbooking";
+    }
+
+    @GetMapping("/deletes/{id}")
+    public String Delbooking(@PathVariable("id")Integer id){
+       bookingService.deletebyid(id);
+        return "redirect:/user/index";
+    }
+
 }

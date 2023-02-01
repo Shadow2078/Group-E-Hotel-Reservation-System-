@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BookPojo {
-private  int id;
+private  Integer id;
 private  String checkin;
 private  String checkout;
 private  String people;

@@ -44,11 +44,15 @@
                <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/news}" data-page=about>News</a></li>
                <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/gallery}" data-page=about>Gallery</a></li>
                <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/contact}" data-page=about>Contact</a></li>
-               <li class=header_nav-list_item><a class=nav-item th:href="@{~/dashboard/booked/}+${userdata.id}"data-page=about>My Booking</a></li>
-               <li></li>
-               <li></li>
-               <li class=header_nav-list_item><i class="bi bi-person-circle"></i><a th:text="${userdata.getFullname()}"></a></li>
+               <li class=header_nav-list_item>
+                  <i class="bi bi-person-circle"></i>
+                  <a th:text="${userdata.getFullname()}"></a>
+                  <ul class="booking-dropdown">
+                     <li><a class="nav-item" th:href="@{~/dashboard/booked/}+${userdata.id}"data-page=about>My Booking</a></li>
+                     <li><a class="nav-item" data-page=about th:href="@{~/logout}">Logout</a></li>
 
+                  </ul>
+               </li>
             </ul>
          </nav>
          <ul class="socials d-flex align-items-center">
@@ -783,6 +787,35 @@
       </div>
    </div> -->
 </footer>
+<style>
+   .header_nav-list_item {
+      position: relative;
+   }
+
+   .header_nav-list_item:hover .booking-dropdown {
+      display: block;
+   }
+
+   .booking-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 200px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+   }
+
+   .booking-dropdown li {
+      display: block;
+      padding: 10px;
+   }
+
+   .booking-dropdown li:hover {
+      background-color: #f2f2f2;
+   }
+</style>
 <script th:src="@{~/js/common.min.js}"></script><script th:src="@{~/js/index.min.js}"></script><script th:src="@{~/js/gallery.min.js}"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-FC3KYV46D4"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());

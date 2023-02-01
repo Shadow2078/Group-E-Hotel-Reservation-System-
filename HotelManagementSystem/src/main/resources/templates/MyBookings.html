@@ -42,9 +42,9 @@
         <td th:text="${mybook.phone}"></td>
         <td th:text="${mybook.roomId.price}"></td>
         <td>
-          <a><button class="del-btn">Delete</button></a>
-          <a><button class="del-btn">Edit</button></a>
 
+          <a th:href="@{~/dashboard/products/}+${mybook.id}"><button class="del-btn">Edit</button></a>
+          <a th:href="@{~/dashboard/deletes/}+${mybook.id}"><button class="del-btn">Delete</button></a>
         </td>
       </tr>
 

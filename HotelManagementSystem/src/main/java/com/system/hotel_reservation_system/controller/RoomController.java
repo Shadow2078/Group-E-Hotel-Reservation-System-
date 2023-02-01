@@ -46,41 +46,7 @@ public class RoomController {
         return  "rooms";
     }
 
-    @GetMapping("/add")
-    public String getRegister(Model model) {
-        model.addAttribute("room", new RoomPojo());
-        return "addRoom";
-    }
 
-    @PostMapping("/create")
-    public String createRoom(@Valid RoomPojo roomPojo,
-                             BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException {
-
-        Map<String, String> requestError = validateRequest(bindingResult);
-        if (requestError != null) {
-            System.out.println(requestError);
-            redirectAttributes.addFlashAttribute("requestError", requestError);
-            return "redirect:/add";
-        }
-        roomService.saveRoom(roomPojo);
-        redirectAttributes.addFlashAttribute("successMsg", "Room saved successfully");
-
-        return "redirect:/add";
-    }
-
-     public Map<String, String> validateRequest(BindingResult bindingResult) {
-        if (!bindingResult.hasErrors()) {
-            return null;
-        }
-        Map<String, String> errors = new HashMap<>();
-        bindingResult.getAllErrors().forEach(error -> {
-            String fieldName = ((FieldError) error).getField();
-            String message = error.getDefaultMessage();
-            errors.put(fieldName, message);
-        });
-        return errors;
-
-    }
 
     @GetMapping("roomind/{id}")
     public String getRoom(@PathVariable ("id") Integer id, Model model, Principal principal){
@@ -107,55 +73,17 @@ public class RoomController {
         return "redirect:/rooms";
     }
 
-    @GetMapping("/roomlist")
-    public String GetRoomlist(Model model){
-        List<Room> rooms = roomService.fetchAll();
-//        model.addAttribute("roomlist", rooms.stream().map(room ->
-//                Room.builder()
-//                        .room_type(room.getRoom_type())
-//                        .price(room.getPrice())
-//                        .beds(room.getBeds())
-//                        .build()
+
+
+
+
+//    @GetMapping("/delete/{id}")
+//    public String DelRev(@PathVariable("id")Integer id){
+//        userService.deletebyid(id);
 //
-//        ));
-        model.addAttribute("roomData",rooms);
-        return  "room-list";
-    }
+//        return "redirect:/room/reviews";
+//    }
 
-    @GetMapping("/reviews")
-    public String GetRevs(Model model) {
-        List<Review> reviews = userService.fetchAll();
-        model.addAttribute("revData", reviews);
-        return "reviews";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String DelRev(@PathVariable("id")Integer id){
-        userService.deletebyid(id);
-
-        return "redirect:/room/reviews";
-    }
-
-    @GetMapping("/deletes/{id}")
-    public String DelRoom(@PathVariable("id")Integer id){
-        roomService.deletebyid(id);
-        return "redirect:/room/roomlist";
-    }
-
-    @GetMapping("/editroom/{id}")
-    public String EditRoom(@PathVariable("id") Integer id,Model model){
-        Room room=roomService.fetchById(id);
-        model.addAttribute("erooms",new RoomPojo(room));
-        model.addAttribute("edrooms",room);
-        return "editroom";
-    }
-
-    @GetMapping("/editrooms/{id}")
-    public String EditRooms(@PathVariable("id") Integer id,Model model){
-        Room room=roomService.fetchById(id);
-        model.addAttribute("edrooms",new RoomPojo(room));
-        return "redirect:room/roomlist";
-    }
 
 }
 
