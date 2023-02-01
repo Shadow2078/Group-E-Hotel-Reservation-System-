@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -68,5 +69,21 @@ public class NavigationController {
         bookingService.save(bookingPojo);
         return "payment";
     }
+    @GetMapping("/boook")
+    public String GetRevs(Model model) {
+        List<Book> book = bookingService.fetchAll();
+        model.addAttribute("bookinglist", book.stream().map(books->
+                Book.builder()
+                        .id(books.getId())
+                        .checkin(books.getCheckin())
+                        .checkout(books.getCheckout())
+                        .phone(books.getPhone())
+                        .People(books.getPeople())
+                        .userId(books.getUserId())
+                        .roomId(books.getRoomId())
+                        .build()
+        ));
+        return "guest-list";
 
+    }
 }

@@ -2,6 +2,7 @@ package com.system.hotel_reservation_system.services.impl;
 
 import com.system.hotel_reservation_system.config.PasswordEncoderUtil;
 import com.system.hotel_reservation_system.entity.Book;
+import com.system.hotel_reservation_system.entity.Room;
 import com.system.hotel_reservation_system.entity.User;
 import com.system.hotel_reservation_system.pojo.BookPojo;
 import com.system.hotel_reservation_system.repo.BookRepo;
@@ -10,6 +11,8 @@ import com.system.hotel_reservation_system.repo.UserRepo;
 import com.system.hotel_reservation_system.services.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -20,8 +23,6 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public String save(BookPojo bookPojo) {
         Book book = new Book();
-
-
         book.setCheckin(bookPojo.getCheckin());
         book.setCheckout(bookPojo.getCheckout());
         book.setPeople(bookPojo.getPeople());
@@ -30,4 +31,10 @@ public class BookingServiceImpl implements BookingService {
         book.setRoomId(roomRepo.findById(bookPojo.getRoomId()).orElseThrow());
         bookRepo.save(book);
         return "Created";    }
+
+    @Override
+    public List<Book> fetchAll() {
+
+        return this.bookRepo.findAll();
+    }
 }

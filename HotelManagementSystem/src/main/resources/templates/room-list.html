@@ -14,6 +14,8 @@
 	 -->
 	<!-- Style css -->
 	<link th:href="@{~/css/style1.css}" rel="stylesheet">
+	<link th:href="@{~/css/admin.css}" rel="stylesheet">
+
 	
 </head>
 <body>
@@ -114,74 +116,113 @@
 		</div>
 		<!--Sidebar end-->
         <!--Content body start-->
-		<div class="content-body">
-			<div class="container-fluid">
-				<div class="mt-4 d-flex justify-content-between align-items-center flex-wrap">
-					<div class="card-action coin-tabs mb-2">
-						<ul class="nav nav-tabs" role="tablist">
-							<li class="nav-item">
-								<a class="nav-link active" data-bs-toggle="tab" href="#AllRooms">All Rooms</a>
-						</ul>
-					</div>
-				</div>
-				<div class="row mt-4">
-					<div class="col-xl-12">
-						<div class="card">
-							<div class="card-body p-0">
-								<div class="tab-content">	
-									<div class="tab-pane fade active show" id="AllRooms">
-										<div class="table-responsive">
-											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all3">
-												<thead>
-													<tr>
-														<th>Room Type</th>
-														<th>price</th>
-														<th>beds</th>
-														<th>Status</th>
-														<th class="bg-none"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr th:each="room:${roomData}">
-														<td th:text="${room.room_type}">
-															<div class="room-list-bx d-flex align-items-center">
+<!--		<div class="content-body">-->
+<!--			<div class="container-fluid">-->
+<!--				<div class="mt-4 d-flex justify-content-between align-items-center flex-wrap">-->
+<!--					<div class="card-action coin-tabs mb-2">-->
+<!--						<ul class="nav nav-tabs" role="tablist">-->
+<!--							<li class="nav-item">-->
+<!--								<a class="nav-link active" data-bs-toggle="tab" href="#AllRooms">All Rooms</a>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="row mt-4">-->
+<!--					<div class="col-xl-12">-->
+<!--						<div class="card">-->
+<!--							<div class="card-body p-0">-->
+<!--								<div class="tab-content">	-->
+<!--									<div class="tab-pane fade active show" id="AllRooms">-->
+<!--										<div class="table-responsive">-->
+<!--											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all3">-->
+<!--												<thead>-->
+<!--													<tr>-->
+<!--														<th>Room Type</th>-->
+<!--														<th>price</th>-->
+<!--														<th>beds</th>-->
+<!--														<th>Status</th>-->
+<!--														<th class="bg-none"></th>-->
+<!--													</tr>-->
+<!--												</thead>-->
+<!--												<tbody>-->
+<!--													<tr th:each="room:${roomData}">-->
+<!--														<td th:text="${room.room_type}">-->
+<!--															<div class="room-list-bx d-flex align-items-center">-->
 
-																<div>
-																	<span class=" text-secondary fs-14 d-block" ></span>
-																	<span class=" fs-16 font-w500 text-nowrap" ></span>
-																</div>
-															</div>
-														</td>
-														<td th:text="${room.price}">
-															<span class="fs-16 font-w500 text-nowrap"></span>
-														</td>
-														<td th:text="${room.beds}">
-															<div>s
-																<span class="fs-12 font-w500" ></span>
-															</div>
-														</td>
-														<td>
-															<a th:href="@{~/room/editroom/}+${room.id}" class="btn btn-success btn-md">Edit</a>
-														</td>
-														<td>
-															<a th:href="@{~/room/deletes/}+${room.id}" class="btn btn-success btn-md">DELETE</a>
-														</td>
+<!--																<div>-->
+<!--																	<span class=" text-secondary fs-14 d-block" ></span>-->
+<!--																	<span class=" fs-16 font-w500 text-nowrap" ></span>-->
+<!--																</div>-->
+<!--															</div>-->
+<!--														</td>-->
+<!--														<td th:text="${room.price}">-->
+<!--															<span class="fs-16 font-w500 text-nowrap"></span>-->
+<!--														</td>-->
+<!--														<td th:text="${room.beds}">-->
+<!--															<div>s-->
+<!--																<span class="fs-12 font-w500" ></span>-->
+<!--															</div>-->
+<!--														</td>-->
+<!--														<td>-->
+<!--															<a th:href="@{~/room/editroom/}+${room.id}" class="btn btn-success btn-md">Edit</a>-->
+<!--														</td>-->
+<!--														<td>-->
+<!--															<a th:href="@{~/room/deletes/}+${room.id}" class="btn btn-success btn-md">DELETE</a>-->
+<!--														</td>-->
 
-														
-													</tr>
-												</tbody>
+<!--														-->
+<!--													</tr>-->
+<!--												</tbody>-->
 
-											</table>
-										</div>	
-									</div>	
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<!--											</table>-->
+<!--										</div>	-->
+<!--									</div>	-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+
+
+	<main>
+		<h1>User List</h1>
+		<div class="recent-orders">
+			<h2>Recent Booking</h2>
+			<table>
+				<thead>
+				<tr>
+					<th>Room Name</th>
+					<th>Price</th>
+					<th>Beds</th>
+					<th>People</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="room:${roomData}">
+					<td th:text="${room.room_type}"></td>
+					<td th:text="${room.price}"></td>
+					<td th:text="${room.beds}"></td>
+					<td th:text="${room.no_of_people}"></td>
+					<td>
+						<a th:href="@{~/room/editroom/}+${room.id}"><button class="del-btn">Edit</button></a>
+
+					</td>
+					<td>
+						<a th:href="@{~/room/deletes/}+${room.id}"><button class="del-btn">Delete</button></a>
+
+					</td>
+				</tr>
+
+				</tbody>
+			</table>
 		</div>
-	</div>
+	</main>
+
+
+
+
+
     <script th:src="@{~/vendor/global/global.min.js}"></script>
 
 	<script th:src="@{~/vendor/jquery-nice-select/js/jquery.nice-select.min.js}"></script>

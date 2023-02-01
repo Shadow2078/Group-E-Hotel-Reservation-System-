@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- PAGE TITLE HERE -->
 	<title>Hotel Admin Dashboard</title>
 	
 	<!-- FAVICONS ICON -->
@@ -17,14 +11,14 @@
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 	
 	<!-- Style css -->
-	<link href="css/style1.css" rel="stylesheet">
+	<link th:href="@{~/css/style1.css}" rel="stylesheet">
+	<link th:href="@{~/css/admin.css}" rel="stylesheet">
+
 	
 </head>
 <body>
 	
-		<!--**********************************
-			Nav header start
-		***********************************-->
+		<!--Nav header start-->
 		<div id="main-wrapper">
 		<div class="nav-header">
 			<a href="index.html" class="brand-logo">
@@ -35,13 +29,9 @@
 				</div>
 			</div>
 		</div>
-		<!--**********************************
-			Nav header end
-		***********************************-->
+		<!--Nav header end-->
 	
-		<!--**********************************
-			Header start
-		***********************************-->
+		<!--Header start-->
 		<div class="header">
 			<div class="header-content">
 				<nav class="navbar navbar-expand">
@@ -51,27 +41,23 @@
 								Guest List
 							</div>
 						</div>
-						<div class="nav-item d-flex align-items-center">
+						<!-- <div class="nav-item d-flex align-items-center">
 							<div class="input-group search-area">
 								<input type="text" class="form-control" placeholder="">
 								<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
 							</div>
-						</div>
+						</div> -->
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-									<img th:src="@{images/profile/pic1.jpg}" width="20" alt=""/>
+									<img src="images/avatar/1.png" width="20" alt=""/>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="app-profile.html" class="dropdown-item ai-icon">
-										<svg id="icon-user2" th:xmlns="@{http://www.w3.org/2000/svg}" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+										<svg id="icon-user2" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
 										<span class="ms-2">Profile </span>
 									</a>
-									<a href="email-inbox.html" class="dropdown-item ai-icon">
-										<svg id="icon-inbox1" th:xmlns="@{http://www.w3.org/2000/svg}" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-										<span class="ms-2">Inbox </span>
-									</a>
 									<a href="login.html" class="dropdown-item ai-icon">
-										<svg  th:xmlns="@{http://www.w3.org/2000/svg}" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+										<svg  xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
 										<span class="ms-2">Logout </span>
 									</a>
 								</div>
@@ -80,13 +66,8 @@
 				</nav>
 			</div>
 		</div>
-		<!--**********************************
-			Header end ti-comment-alt
-		***********************************-->
 
-		<!--**********************************
-			Sidebar start
-		***********************************-->
+		<!--Sidebar start-->
 		<div class="dlabnav">
 			<div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
@@ -106,9 +87,9 @@
 				</li>
 				</ul>
 				<ul class="metismenu" id="menu">
-				<li><a href="guest-details.html">
+				<li><a href="addRoom.html">
 					<i class="flaticon-381-list"></i>
-					<span class="nav-text">Guest Details</span>
+					<span class="nav-text">Add room</span>
 				</a>
 				</li>
 				</ul>
@@ -131,891 +112,56 @@
 				</div>
 			</div>
 		</div>
-		<!--**********************************
-			Sidebar end
-		***********************************-->
+
+		<!--Sidebar end-->
 		
-		<!--**********************************
-			Content body start
-		***********************************-->
-		<div class="content-body">
-			<!-- row -->
-			<div class="container-fluid">
-				<div class="d-flex justify-content-between align-items-center flex-wrap">
-					<div class="card-action coin-tabs mb-2">
-						<ul class="nav nav-tabs" role="tablist">
-							<li class="nav-item">
-								<a class="nav-link active" data-bs-toggle="tab" href="#AllGuest">All Guest</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#Pending">Pending</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#Booked">Booked</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#Canceled">Canceled</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#Refund">Refund</a>
-							</li>
-						</ul>
-					</div>
-					<div class="d-flex align-items-center mb-2 flex-wrap"> 
-						<div class="guest-calendar">
-							<div id="reportrange" class="pull-right reportrange" style="width: 100%">
-								<span></span><b class="caret"></b>
-								<i class="fas fa-chevron-down ms-3"></i>
-							</div>
-						</div>
-						<div class="newest ms-3">
-							<select class="default-select">
-								<option>Newest</option>
-								<option>Oldest</option>
-							</select>
-						</div>	
-					</div>
-				</div>
-				<div class="row mt-4">
-					<div class="col-xl-12">
-						<div class="card">
-							<div class="card-body p-0">
-								<div class="tab-content">	
-									<div class="tab-pane active show" id="AllGuest">
-										<div class="table-responsive">
-											<table class="table card-table display mb-4 shadow-hover default-table table-responsive-lg" id="guestTable-all">
-												<thead>
-													<tr>
-														<th class="bg-none">
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="" id="checkAll">
-															</div>
-														</th>
-														<th>Guest</th>
-														<th>Order Date</th>
-														<th>Check In</th>
-														<th>Check Out</th>
-														<th>Special Request</th>
-														<th>Room Type</th>
-														<th class="text-center">Status</th>
-														<th class="bg-none"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<!-- <img class="me-3 rounded" src="images/avatar/1.jpg" alt=""> -->
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Cahyadi Purnomo</a></h5>
-																	<!-- <span class="text-primary fs-14">#EMP-00025</span> -->
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" th:xmlns="@{http://www.w3.org/2000/svg}">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>	
-													<tr>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/6.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Steven</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/7.jpg}" alt="">
-																<img class="me-3 rounded" th:src="@{images/avatar/7.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Samantha</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>	
-									</div>	
-									<div class="tab-pane" id="Pending">
-										<div class="table-responsive">
-											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all1">
-												<thead>
-													<tr>
-														<th class="bg-none">
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="" id="checkAll1">
-															</div>
-														</th>
-														<th>Guest</th>
-														<th>Order Date</th>
-														<th>Check In</th>
-														<th>Check Out</th>
-														<th>Special Request</th>
-														<th>Room Type</th>
-														<th class="text-center">Status</th>
-														<th class="bg-none"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/2.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Cahyadi Purnomo</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/3.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Hendric Suratman</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>	
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/4.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Jajang Lawrence</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-													
-												</tbody>
-											</table>
-										</div>	
-									</div>
-									<div class="tab-pane" id="Booked">
-										<div class="table-responsive">
-											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all2">
-												<thead>
-													<tr>
-														<th class="bg-none">
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="" id="checkAll3">
-															</div>
-														</th>
-														<th>Guest</th>
-														<th>Order Date</th>
-														<th>Check In</th>
-														<th>Check Out</th>
-														<th>Special Request</th>
-														<th>Room Type</th>
-														<th class="text-center">Status</th>
-														<th class="bg-none"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/1.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Cahyadi Purnomo</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>	
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/1.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Cahyadi Purnomo</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>	
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/2.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Angela Smith</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="tab-pane" id="Canceled">
-										<div class="table-responsive">
-											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all3">
-												<thead>
-													<tr>
-														<th class="bg-none">
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="" id="checkAll4">
-															</div>
-														</th>
-														<th>Guest</th>
-														<th>Order Date</th>
-														<th>Check In</th>
-														<th>Check Out</th>
-														<th>Special Request</th>
-														<th>Room Type</th>
-														<th class="text-center">Status</th>
-														<th class="bg-none"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/2.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Angela Smith</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="tab-pane" id="Refund">
-										<div class="table-responsive">
-											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all4">
-												<thead>
-													<tr>
-														<th class="bg-none">
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="" id="checkAll5">
-															</div>
-														</th>
-														<th>Guest</th>
-														<th>Order Date</th>
-														<th>Check In</th>
-														<th>Check Out</th>
-														<th>Special Request</th>
-														<th>Room Type</th>
-														<th class="text-center">Status</th>
-														<th class="bg-none"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/2.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Angela Smith</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="form-check style-1">
-															  <input class="form-check-input" type="checkbox" value="">
-															</div>
-														</td>
-														<td>
-															<div class="concierge-bx d-flex align-items-center">
-																<img class="me-3 rounded" th:src="@{images/avatar/2.jpg}" alt="">
-																<div>
-																	<h5 class="fs-16 mb-0 text-nowrap"><a class="text-black" href="javascript:void(0);">Angela Smith</a></h5>
-																	<span class="text-primary fs-14">#EMP-00025</span>
-																</div>
-															</div>
-														</td>
-														<td class="text-nowrap">
-															<span>Oct 30th 2020 09:21 AM</span>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 2th, 2020</h5>
-																<span>9.46 PM</span>
-															</div>
-														</td>
-														<td>
-															<div>
-																<h5 class="text-nowrap">Nov 4th, 2020</h5>
-																<span>6.12 PM</span>
-															</div>
-														</td>
-														<td class="request">
-															<a href="javascript:void(0);" class="btn  btn-sm">View Notes</a>
-														</td>
-														<td>
-															<span class="font-w500">Deluxe A - 02</span>
-														</td>
-														<td>
-															<div class="request">
-																<a href="javascript:void(0);" class="btn btn-md text-primary">Refund</a>
-															</div>
-														</td>
-														<td>
-															<div class="dropdown dropend">
-																<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" th:xmlns="http://www.w3.org/2000/svg">
-																		<path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																		<path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-																	</svg>
-																</a>
-																<div class="dropdown-menu">
-																	<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-																	<a class="dropdown-item" href="javascript:void(0);">Delete</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+		<main>
+                <h1>User List</h1>
+                <div class="recent-orders">
+                    <h2>Recent Booking</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <<th>Booking Id</th>
+							<th>User Name</th>
+							<th>Room Name</th>
+							<th>Departure</th>
+							<th>Arrival</th>
+							<th>Contact</th>
+							<th>People</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="book:${bookinglist}">
+							<td th:text="${book.id}"></td>
+							<td th:text="${book.userId.fullname}"></td>
+							<td th:text="${book.roomId.room_type}"></td>
+							<td th:text="${book.checkin}"></td>
+							<td th:text="${book.checkout}"></td>
+							<td th:text="${book.phone}"></td>
+							<td th:text="${book.people}"></td>
 
+                        </tr>
+
+                    </tbody>
+                    </table>
+                </div>
+            </main>
+		
+	<!--Main wrapper end-->
 	<!-- Required vendors -->
-	<script src="vendor/global/global.min.js"></script>
+	<script th:src="@{~/vendor/global/global.min.js}"></script>
 
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<script th:src="@{~/vendor/jquery-nice-select/js/jquery.nice-select.min.js}"></script>
+	<!-- Dashboard 1 -->
 	<!-- momment js is must -->
-    <script src="vendor/moment/moment.min.js"></script>
+    <script th:src="@{~/vendor/moment/moment.min.js}"></script>
     <!-- <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script> -->
 	
 
 	
-	<script src="js/custom.min.js"></script>
-	<script src="js/dlabnav-init.js"></script>
-	<script src="js/demo.js"></script>
-	
+	<script th:src="@{~/js/custom.min.js}"></script>
+	<script th:src="@{~/js/dlabnav-init.js}"></script>
+
 </body>
 </html>

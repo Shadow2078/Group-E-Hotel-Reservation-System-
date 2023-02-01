@@ -62,12 +62,10 @@ public class RoomController {
             redirectAttributes.addFlashAttribute("requestError", requestError);
             return "redirect:/add";
         }
-
         roomService.saveRoom(roomPojo);
         redirectAttributes.addFlashAttribute("successMsg", "Room saved successfully");
 
-
-        return "redirect:room/rooms";
+        return "redirect:/add";
     }
 
      public Map<String, String> validateRequest(BindingResult bindingResult) {
@@ -155,7 +153,7 @@ public class RoomController {
     @GetMapping("/editrooms/{id}")
     public String EditRooms(@PathVariable("id") Integer id,Model model){
         Room room=roomService.fetchById(id);
-        model.addAttribute("eroomss",new RoomPojo(room));
+        model.addAttribute("edrooms",new RoomPojo(room));
         return "redirect:room/roomlist";
     }
 

@@ -29,12 +29,9 @@ public class RoomServiceImpl implements RoomService {
         Room room = new Room();
         if (RoomPojo.getId()!= null){    room.setId(RoomPojo.getId());}
 
-
-
         room.setPrice(RoomPojo.getPrice());
         room.setRoom_description(RoomPojo.getRoom_description());
         room.setRoom_type(RoomPojo.getRoom_type());
-
         room.setNo_of_people(RoomPojo.getNo_of_people());
         room.setBeds(RoomPojo.getBeds());
 
@@ -44,7 +41,6 @@ public class RoomServiceImpl implements RoomService {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage1().getOriginalFilename());
             fileNames.append(RoomPojo.getImage1().getOriginalFilename());
             Files.write(fileNameAndPath, RoomPojo.getImage1().getBytes());
-
             room.setImage1(RoomPojo.getImage1().getOriginalFilename());
         }
 
@@ -54,7 +50,6 @@ public class RoomServiceImpl implements RoomService {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage2().getOriginalFilename());
             fileNames.append(RoomPojo.getImage2().getOriginalFilename());
             Files.write(fileNameAndPath, RoomPojo.getImage2().getBytes());
-
             room.setImage2(RoomPojo.getImage2().getOriginalFilename());
         }
 
@@ -64,7 +59,6 @@ public class RoomServiceImpl implements RoomService {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage3().getOriginalFilename());
             fileNames.append(RoomPojo.getImage3().getOriginalFilename());
             Files.write(fileNameAndPath, RoomPojo.getImage3().getBytes());
-
             room.setImage3(RoomPojo.getImage3().getOriginalFilename());
         }
 
@@ -74,7 +68,6 @@ public class RoomServiceImpl implements RoomService {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage4().getOriginalFilename());
             fileNames.append(RoomPojo.getImage4().getOriginalFilename());
             Files.write(fileNameAndPath, RoomPojo.getImage4().getBytes());
-
             room.setImage4(RoomPojo.getImage4().getOriginalFilename());
         }
 
@@ -84,7 +77,6 @@ public class RoomServiceImpl implements RoomService {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, RoomPojo.getImage5().getOriginalFilename());
             fileNames.append(RoomPojo.getImage5().getOriginalFilename());
             Files.write(fileNameAndPath, RoomPojo.getImage5().getBytes());
-
             room.setImage5(RoomPojo.getImage5().getOriginalFilename());
         }
 
@@ -142,8 +134,6 @@ public class RoomServiceImpl implements RoomService {
         Room room =RoomRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
         room=Room.builder()
                 .id(room.getId())
-
-
                 .price(room.getPrice())
                 .beds(room.getBeds())
                 .image1Base64(getImageBase64(room.getImage1()))
@@ -151,7 +141,6 @@ public class RoomServiceImpl implements RoomService {
                 .image3Base64(getImageBase64(room.getImage3()))
                 .image4Base64(getImageBase64(room.getImage4()))
                 .image5Base64(getImageBase64(room.getImage5()))
-
                 .room_description(room.getRoom_description())
                 .room_type(room.getRoom_type())
                 .no_of_people(room.getNo_of_people())
