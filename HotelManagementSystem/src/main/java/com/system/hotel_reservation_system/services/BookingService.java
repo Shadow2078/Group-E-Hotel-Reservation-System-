@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface BookingService {
     String save (BookPojo bookPojo);
-
+    List findBookingById(Integer id);
     List<Book> fetchAll();
 }

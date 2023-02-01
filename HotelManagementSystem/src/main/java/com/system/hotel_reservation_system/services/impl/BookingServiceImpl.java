@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -34,7 +35,24 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public List<Book> fetchAll() {
-
         return this.bookRepo.findAll();
+    }
+    public List<Book> findAllInList(List<Book> list) {
+        Stream<Book> allBooking = list.stream().map(booking ->
+                Book.builder()
+                        .id(booking.getId())
+                        .checkin(booking.getCheckin())
+                        .checkout(booking.getCheckout())
+                        .People(booking.getPeople())
+                        .phone(booking.getPhone())
+                        .userId(booking.getUserId())
+                        .roomId(booking.getRoomId())
+                        .build());
+        list = allBooking.toList();
+        return list;
+    }
+    @Override
+    public List findBookingById(Integer id) {
+        return findAllInList(bookRepo.findBookingById(id));
     }
 }

@@ -48,24 +48,8 @@
 								</div>
 							</div>
 							<div class="row">
-<!--								-->
-<!--								<div class="col-md-6">-->
-<!--									<div class="form-group">-->
-<!--										<input class="form-control" type="email" placeholder="Enter your Email" th:field="*{checkin}">-->
-<!--										<span class="form-label">Email</span>-->
-<!--									</div>-->
-<!--								</div>-->
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" type="tel" placeholder="Enter you Phone" th:field="*{phone}">
-										<span class="form-label">Phone</span>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								
 
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
 										<select class="form-control" required th:field="*{People}">
 											<option value="NOT" selected hidden>no of people</option>
@@ -80,9 +64,14 @@
 										<span class="form-label">Guests</span>
 									</div>
 								</div>
-								<div class="col-md-4"></div>
-						
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="tel" placeholder="Enter you Phone" required th:field="*{phone}">
+										<span class="form-label">Phone</span>
+									</div>
+								</div>
 							</div>
+
 							<div class="form-btn">
 								<button class="submit-btn" type="submit">Book Now</button>
 							</div>
@@ -112,6 +101,7 @@
 			}
 		}
 	</script>
+
 </body>
 
 </html>

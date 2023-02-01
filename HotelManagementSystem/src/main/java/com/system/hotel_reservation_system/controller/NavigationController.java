@@ -84,6 +84,14 @@ public class NavigationController {
                         .build()
         ));
         return "guest-list";
+    }
 
+    @GetMapping("/booked/{id}")
+    public String fetchAllbook(@PathVariable("id") Integer id, Model model , Principal principal){
+        List<Book> booking= bookingService.findBookingById(id);
+        model.addAttribute("books",booking);
+        model.addAttribute("userdata",userService.findByEmail(principal.getName()));
+
+        return "MyBookings";
     }
 }

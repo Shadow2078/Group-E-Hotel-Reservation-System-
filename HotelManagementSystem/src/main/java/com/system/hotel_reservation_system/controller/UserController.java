@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -33,7 +35,8 @@ public class UserController {
 
     //Temporary
     @GetMapping("/index")
-    public String indexPage(){
+    public String indexPage(Model model, Principal principal){
+        model.addAttribute("userdata",userService.findByEmail(principal.getName()));
         return "index";
     }
 
