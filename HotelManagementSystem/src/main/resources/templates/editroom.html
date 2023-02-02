@@ -19,7 +19,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" th:action="@{~/room/create}" th:method="post" th:object="${erooms}" >
+                                    <form class="form-valide" th:action="@{~/room/create}" th:method="post" th:object="${erooms}" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-xl-6">
                                         
@@ -29,7 +29,7 @@
                                                         class="text-danger">*</span></label>
                                                 <div class="col-lg-6"><input type="text" class="form-control"
                                                         id="val-currency" name="val-currency"
-                                                        placeholder="RS2160"  th:field="*{price}" th:value="${edrooms.getPrice()}"></div>
+                                                        placeholder="RS2160"  th:field="*{price}" th:value="${erooms.getPrice()}"></div>
                                             </div>
                                                 <div class="form-group mb-3 row"><label
                                                         class="col-lg-4 col-form-label"
@@ -37,7 +37,7 @@
                                                             class="text-danger">*</span></label>
                                                     <div class="col-lg-6"><textarea class="form-control"
                                                             id="val-suggestions" name="val-suggestions" rows="5"
-                                                            placeholder="What would you like to say about rooms?" th:field="*{room_description}" th:value="${edrooms.getRoom_description()}"  ></textarea>
+                                                            placeholder="What would you like to say about rooms?" th:field="*{room_description}" th:value="${erooms.getRoom_description()}"  ></textarea>
                                                     </div>
                                                 </div>
 
@@ -47,7 +47,7 @@
                                                         class="text-danger">*</span></label>
                                                 <div class="col-lg-6"><textarea class="form-control"
                                                         id="val-suggestions" name="val-suggestions" rows="5"
-                                                        placeholder="What would you like to say about rooms?"  th:field="*{room_type}" th:value="${edrooms.getRoom_type()}"  ></textarea>
+                                                        placeholder="What would you like to say about rooms?"  th:field="*{room_type}" th:value="${erooms.getRoom_type()}"  ></textarea>
                                                 </div>
                                             </div>
 
@@ -62,32 +62,32 @@
                                                         class="col-lg-4 col-form-label" for="val-number">No of people
                                                         <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6"><input type="text" class="form-control"
-                                                            id="val-number" name="val-number" placeholder="xx" th:field="*{no_of_people}" th:value="${edrooms.getNo_of_people()}">
+                                                            id="val-number" name="val-number" placeholder="xx" th:field="*{no_of_people}" th:value="${erooms.getNo_of_people()}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row"><label
                                                         class="col-lg-4 col-form-label" for="val-number">Beds
                                                     <span class="text-danger">*</span></label>
                                                     <div class="col-lg-6"><input type="text" class="form-control"
-                                                                                 id="val-number" name="val-number" placeholder="xx"  th:field="*{beds}" th:value="${edrooms.getBeds()}"  >
+                                                                                 id="val-number" name="val-number" placeholder="xx"  th:field="*{beds}" th:value="${erooms.getBeds()}"  >
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="image-upload" class="col-lg-4 col-form-label">Select images:</label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" id="image-upload-1" th:field="*{image1}"  multiple accept="image/*"  th:src="'data:image/png;base64,'+${edrooms.image1Base64}" alt=media>
+                                                        <input type="file" id="image-upload-1" th:field="*{image1}"  multiple accept="image/*" alt=media>
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="image-upload-2" class="col-lg-4 col-form-label">Select images:</label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" id="image-upload-1" th:field="*{image2}" multiple accept="image/*" th:src="'data:image/png;base64,'+${edrooms.image2Base64}" >
+                                                        <input type="file" id="image-upload-1" th:field="*{image2}" multiple accept="image/*" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="image-upload-3" class="col-lg-4 col-form-label">Select images:</label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" id="image-upload-1" th:field="*{image3}" multiple accept="image/*" th:src="'data:image/png;base64,'+${edrooms.image3Base64}" >
+                                                        <input type="file" id="image-upload-1" th:field="*{image3}" multiple accept="image/*"  >
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
@@ -95,35 +95,29 @@
                                                     <div class="col-lg-6">
 
 
-                                                        <input type="file" id="image-upload-1" th:field="*{image4}" multiple accept="image/*" th:src="'data:image/png;base64,'+${edrooms.image4Base64}" >
+                                                        <input type="file" id="image-upload-1" th:field="*{image4}" multiple accept="image/*"  >
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="image-upload-5" class="col-lg-4 col-form-label">Select images:</label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" id="image-upload-1" th:field="*{image5}" multiple accept="image/*" th:src="'data:image/png;base64,'+${edrooms.image5Base64}" >
+                                                        <input type="file" id="image-upload-1" th:field="*{image5}" multiple accept="image/*"  >
                                                     </div>
                                                 </div>
                                                      </div>
                                                 </div>
                                                 <div class="form-group mb-6 row">
-                                                    <div class="col-lg-7 ms-auto"><button type="submit"
-                                                            class="btn btn-primary">Edit</button></div>
+                                                    <div class="col-lg-7 ms-auto">
+                                                         <button type="submit" class="btn btn-primary">Edit</button>
+                                                    </div>
                                                 </div>
                                     </form>
                                 </div>
                             </div>
                                         </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
