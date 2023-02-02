@@ -116,6 +116,7 @@
                                     <form class="form-valide" th:method="post"
                                     th:action="@{/room/create}"
                                     th:object="${room}" enctype="multipart/form-data">
+                                        <input type="text" th:value="${room.id}" th:text="*{id}">
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group mb-3 row"><label

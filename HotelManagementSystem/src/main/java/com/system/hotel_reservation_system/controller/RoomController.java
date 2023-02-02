@@ -145,7 +145,7 @@ public class RoomController {
     }
 
     @GetMapping("/editroom/{id}")
-    public String EditRoom(@PathVariable Integer id,Model model){
+    public String EditRoom(@PathVariable("id") Integer id,Model model){
         Room room=roomService.fetchById(id);
         model.addAttribute("erooms",new RoomPojo(room));
         model.addAttribute("edrooms",room);
