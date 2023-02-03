@@ -300,24 +300,24 @@
                   </div>
                   <div class="room_main-cards col-lg-4">
                      <div class=room_main-cards_card>
-                        <span class=pricing><span class="pricing_price h2" th:text="${roomss.price}"></span> / 1 night</span>
-                        <form class=booking autocomplete=off data-type=booking th:method="post" th:action="@{/room/savebook}" th:object="${booking}">
-<!--                           <input class="booking_group-field field required" name="userId" th:value="${getuser.getId()}" data-type=date data-start=true type=text hidden="hidden" placeholder="Add arrival date" readonly=readonly> -->
-                           <div class="booking_group d-flex flex-column">
-                              <label class="booking_group-label h5" for=checkIn>Check-in</label>
-                              <div class=booking_group-wrapper><i class="icon-calendar icon"></i> <input class="booking_group-field field required" th:field="*{checkin}" data-type=date data-start=true type=text id=checkIn  placeholder="Add arrival date" readonly=readonly> <i class="icon-chevron_down icon"></i></div>
-                           </div>
-                           <div class="booking_group d-flex flex-column">
-                              <label class="booking_group-label h5" for=checkOut>Check-out</label>
-                              <div class=booking_group-wrapper><i class="icon-calendar icon"></i> <input class="booking_group-field field required" th:field="*{checkout}"  data-type=date data-end=true type=text id=checkOut  placeholder="Add departure date" readonly=readonly> <i class="icon-chevron_down icon"></i></div>
-                           </div>
-                           <div class="booking_group d-flex flex-column">
-                              <label class="booking_group-label h5" for=checkOut>Number of people </label>
-                              <div class=booking_group-wrapper><i class="icon-user icon"></i> <input class="booking_group-field field required" th:field="*{people}"  data-type=integer data-end=true type=text id=peOple  placeholder="Number of People"> </div>
-                           </div>
-                              <input hidden type="text" id="room_id" name="roomId" th:value="${roomss.id}">
-<!--                           <button type="submit"> Save</button>-->
-                           <button class="booking_btn btn theme-element theme-element--accent" type="submit">Book now</button>
+<!--                        <span class=pricing><span class="pricing_price h2" th:text="${roomss.price}"></span> / 1 night</span>-->
+<!--                        <form class=booking autocomplete=off data-type=booking th:method="post" th:action="@{/room/savebook}" th:object="${booking}">-->
+<!--&lt;!&ndash;                           <input class="booking_group-field field required" name="userId" th:value="${getuser.getId()}" data-type=date data-start=true type=text hidden="hidden" placeholder="Add arrival date" readonly=readonly> &ndash;&gt;-->
+<!--                           <div class="booking_group d-flex flex-column">-->
+<!--                              <label class="booking_group-label h5" for=checkIn>Check-in</label>-->
+<!--                              <div class=booking_group-wrapper><i class="icon-calendar icon"></i> <input class="booking_group-field field required" th:field="*{checkin}" data-type=date data-start=true type=text id=checkIn  placeholder="Add arrival date" readonly=readonly> <i class="icon-chevron_down icon"></i></div>-->
+<!--                           </div>-->
+<!--                           <div class="booking_group d-flex flex-column">-->
+<!--                              <label class="booking_group-label h5" for=checkOut>Check-out</label>-->
+<!--                              <div class=booking_group-wrapper><i class="icon-calendar icon"></i> <input class="booking_group-field field required" th:field="*{checkout}"  data-type=date data-end=true type=text id=checkOut  placeholder="Add departure date" readonly=readonly> <i class="icon-chevron_down icon"></i></div>-->
+<!--                           </div>-->
+<!--                           <div class="booking_group d-flex flex-column">-->
+<!--                              <label class="booking_group-label h5" for=checkOut>Number of people </label>-->
+<!--                              <div class=booking_group-wrapper><i class="icon-user icon"></i> <input class="booking_group-field field required" th:field="*{people}"  data-type=integer data-end=true type=text id=peOple  placeholder="Number of People"> </div>-->
+<!--                           </div>-->
+<!--                              <input hidden type="text" id="room_id" name="roomId" th:value="${roomss.id}">-->
+<!--                                 <button type="submit" th:href="@{~/dashboard/news}"> Save</button>-->
+                           <button class="booking_btn btn theme-element theme-element--accent" type="submit" >Book now</button>
                         </form>
                      </div>
                      <div class="room_main-cards_card accent">

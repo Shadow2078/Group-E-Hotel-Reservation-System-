@@ -106,7 +106,7 @@ public class RoomController {
     @PostMapping("/submit")
     public String SubmitReview(@Valid ReviewPojo reviewPojo){
         userService.submitReview(reviewPojo);
-        return "redirect:/room/rooms";
+        return "redirect:/rooms";
     }
 
     @GetMapping("/roomlist")

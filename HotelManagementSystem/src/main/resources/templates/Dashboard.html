@@ -68,9 +68,9 @@
 	</div>
 	<!--Sidebar start-->
 	<div class="dlabnav">
-		<div class="dlabnav-scroll">
+		<div class="dlabnav-scroll active mm-active is-active" >
 			<ul class="metismenu" id="menu">
-				<li><a href="index-2.html">
+				<li><a th:href="@{~/dashboard/dash}">
 					<i class="flaticon-025-dashboard"></i>
 					<span class="nav-text">Dashboard</span>
 				</a>
@@ -86,14 +86,14 @@
 				</li>
 			</ul>
 			<ul class="metismenu" id="menu">
-				<li><a href="addRoom.html">
+				<li><a th:href="@{~/room/add}">
 					<i class="flaticon-381-list"></i>
-					<span class="nav-text">Add Rooom</span>
+					<span class="nav-text">Add rooms</span>
 				</a>
 				</li>
 			</ul>
 			<ul class="metismenu" id="menu">
-				<li><a href="room-list.html">
+				<li><a th:href="@{~/room/roomlist}">
 					<i class="flaticon-381-home"></i>
 					<span class="nav-text">Room List</span>
 				</a>
@@ -101,7 +101,7 @@
 			</ul>
 
 			<ul class="metismenu" id="menu">
-				<li><a href="reviews.html">
+				<li><a th:href="@{~/room/reviews}">
 					<i class="flaticon-025-dashboard"></i>
 					<span class="nav-text">Reviews</span>
 				</a>
