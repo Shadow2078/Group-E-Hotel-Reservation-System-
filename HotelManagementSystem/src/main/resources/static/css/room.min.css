@@ -1135,6 +1135,17 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     font-size:16px;
     line-height:1.4
 }
+.room_main-cards_card button{
+    background: #235784;
+    color: white;
+    font-size: inherit;
+    font-weight: inherit;
+    margin-top: 20px;
+    margin-left: 80px;
+    border-radius: 5px;
+    padding: 10px 10px;
+
+}
 .room_main-cards_card:not(.accent){
     background:#fff;
     -webkit-box-shadow:0 2px 30px rgba(44,60,74,.08);
