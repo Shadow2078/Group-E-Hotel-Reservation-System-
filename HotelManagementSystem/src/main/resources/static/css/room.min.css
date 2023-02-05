@@ -1126,7 +1126,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     text-align:right;
     color:#040b11!important
 }
-/* .room_main-cards{
+ .room_main-cards{
     margin-bottom:60px
 }
   
@@ -1135,10 +1135,8 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     border-radius:8px;
     font-size:16px;
     line-height:1.4
-<<<<<<< HEAD
-} */
-=======
-}
+
+} 
 .room_main-cards_card button{
     background: #235784;
     color: white;
@@ -1150,7 +1148,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     padding: 10px 10px;
 
 }
->>>>>>> 3dd9b55ca31dffc3e5d798b2cef6aee87629348e
+
 .room_main-cards_card:not(.accent){
     background:#fff;
     -webkit-box-shadow:0 2px 30px rgba(44,60,74,.08);
@@ -1205,7 +1203,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     -ms-flex-align:center;
     align-items:center
 }
-/* .room_main-cards_card .booking_group-field{
+ .room_main-cards_card .booking_group-field{
     padding-left:30px;
     height:30px;
     width:100%
@@ -1213,7 +1211,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
 .room_main-cards_card .booking_btn{
     margin-top:30px;
     width:100%
-} */
+} 
 @media screen and (min-width:575.98px){
     .room_main-info .facilities_list-block{
         width:50%
