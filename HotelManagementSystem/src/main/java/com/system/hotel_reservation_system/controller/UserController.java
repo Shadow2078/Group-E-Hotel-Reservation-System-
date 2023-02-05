@@ -1,8 +1,5 @@
 package com.system.hotel_reservation_system.controller;
-
-import com.system.hotel_reservation_system.entity.Review;
 import com.system.hotel_reservation_system.entity.User;
-import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.UserPojo;
 import com.system.hotel_reservation_system.services.UserService;
 import jakarta.validation.Valid;
@@ -60,5 +57,7 @@ public String forgotpassword(Model model){
         userService.updateResetPassword(userPojo.getEmail());
         return "redirect:/index";
     }
+
+
 
 }

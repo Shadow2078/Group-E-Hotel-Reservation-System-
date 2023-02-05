@@ -28,7 +28,7 @@
 					<div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
 							<div class="dashboard_bar">
-								Dashboard
+								Add Room
 							</div>
 						</div>
 						<div class="nav-item d-flex align-items-center">
@@ -58,48 +58,48 @@
 			</div>
 		</div>
 		<!--Sidebar start-->
-		<div class="dlabnav">
-			<div class="dlabnav-scroll">
-				<ul class="metismenu" id="menu">
-					<li><a href="index-2.html">
-							<i class="flaticon-025-dashboard"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-					</li>
-					
-				</ul>
-				
-				<ul class="metismenu" id="menu">
-				<li><a href="guest-list.html">
-					<i class="flaticon-025-dashboard"></i>
-					<span class="nav-text">Guest List</span>
-				</a>
-				</li>
-				</ul>
-				<ul class="metismenu" id="menu">
-				<li><a href="guest-details.html">
-					<i class="flaticon-381-list"></i>
-					<span class="nav-text">Add Rooms</span>
-				</a>
-				</li>
-				</ul>
-				<ul class="metismenu" id="menu">
-				<li><a href="room-list.html">
-					<i class="flaticon-381-home"></i>
-					<span class="nav-text">Room List</span>
-				</a>
-				</li>
-				</ul>
-				
-				<ul class="metismenu" id="menu">
-				<li><a href="reviews.html">
-					<i class="flaticon-025-dashboard"></i>
-					<span class="nav-text">Reviews</span>
-				</a>
-				</li>
-				</ul>
-					</div>
-				</div>
+        <div class="dlabnav">
+            <div class="dlabnav-scroll active mm-active is-active" >
+                <ul class="metismenu" id="menu">
+                    <li><a th:href="@{~/dashboard/dash}">
+                        <i class="flaticon-025-dashboard"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    </li>
+
+                </ul>
+
+                <ul class="metismenu" id="menu">
+                    <li><a href="guest-list.html">
+                        <i class="flaticon-025-dashboard"></i>
+                        <span class="nav-text">Guest List</span>
+                    </a>
+                    </li>
+                </ul>
+                <ul class="metismenu" id="menu">
+                    <li><a th:href="@{~/room/add}">
+                        <i class="flaticon-381-list"></i>
+                        <span class="nav-text">Add rooms</span>
+                    </a>
+                    </li>
+                </ul>
+                <ul class="metismenu" id="menu">
+                    <li><a th:href="@{~/room/roomlist}">
+                        <i class="flaticon-381-home"></i>
+                        <span class="nav-text">Room List</span>
+                    </a>
+                    </li>
+                </ul>
+
+                <ul class="metismenu" id="menu">
+                    <li><a th:href="@{~/room/reviews}">
+                        <i class="flaticon-025-dashboard"></i>
+                        <span class="nav-text">Reviews</span>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 			</div>
 		</div>
 		<!--Sidebar end-->
@@ -116,6 +116,7 @@
                                     <form class="form-valide" th:method="post"
                                     th:action="@{/room/create}"
                                     th:object="${room}" enctype="multipart/form-data">
+<!--                                        <input type="text" th:value="${room.id}" th:text="*{id}">-->
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group mb-3 row"><label

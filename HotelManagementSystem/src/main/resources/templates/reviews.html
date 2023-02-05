@@ -6,12 +6,12 @@
     <title>Hotel Admin Dashboard</title>
 
     <!-- FAVICONS ICON -->
-    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link th:href="@{~/vendor/jquery-nice-select/css/nice-select.css}" rel="stylesheet">
+    <link th:href="@{~/vendor/owl-carousel/owl.carousel.css}" rel="stylesheet">
 
 
     <!-- Style css -->
-    <link href="css/style0.css" rel="stylesheet">
+    <link th:href="@{~/css/style1.css}" rel="stylesheet">
 
 </head>
 <body>
@@ -41,7 +41,7 @@
                         </div>
                         <li class="nav-item dropdown header-profile">
                             <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                <img src="images/avatar/1.png" width="20" alt=""/>
+                                <img th:src="@{~/images/avatar/1.png}" width="20" alt=""/>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="app-profile.html" class="dropdown-item ai-icon">
@@ -63,7 +63,7 @@
     <div class="dlabnav">
         <div class="dlabnav-scroll active mm-active is-active" >
             <ul class="metismenu" id="menu">
-                <li><a href="index-2.html">
+                <li><a th:href="@{~/dashboard/dash}">
                     <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -79,14 +79,14 @@
                 </li>
             </ul>
             <ul class="metismenu" id="menu">
-                <li><a href="addRoom.html">
+                <li><a th:href="@{~/room/add}">
                     <i class="flaticon-381-list"></i>
                     <span class="nav-text">Add rooms</span>
                 </a>
                 </li>
             </ul>
             <ul class="metismenu" id="menu">
-                <li><a href="room-list.html">
+                <li><a th:href="@{~/room/roomlist}">
                     <i class="flaticon-381-home"></i>
                     <span class="nav-text">Room List</span>
                 </a>
@@ -94,7 +94,7 @@
             </ul>
 
             <ul class="metismenu" id="menu">
-                <li><a href="reviews.html">
+                <li><a th:href="@{~/room/reviews}">
                     <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Reviews</span>
                 </a>
@@ -130,74 +130,49 @@
                                             <table class="table card-table display mb-4 shadow-hover table-responsive-lg review-tbl" id="guestTable-all">
                                                 <thead>
                                                 <tr>
-                                                    <th class="bg-none">
-                                                        <div class="form-check style-1">
-                                                            <input class="form-check-input" type="checkbox" value="" id="checkAll">
-                                                        </div>
-                                                    </th>
+<!--                                                    <th class="bg-none">-->
+<!--                                                        <div class="form-check style-1">-->
+<!--                                                            <input class="form-check-input" type="checkbox" value="" id="checkAll">-->
+<!--                                                        </div>-->
+<!--                                                    </th>-->
                                                     <th>Customer Name</th>
                                                     <th class="text-center">Comment</th>
                                                     <th class="text-center">Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
+                                                <tr th:each="rev:${revData}">
                                                     <td>
                                                         <div class="form-check style-1">
                                                             <input class="form-check-input" type="checkbox" value="">
                                                         </div>
-                                                    <td>
-                                                        <span class="text-nowrap">boka</span>
+                                                    <td th:text="${rev.name}">
+                                                        <span class="text-nowrap"></span>
                                                     </td>
-                                                    <td class="job-desk1">
-																	<span>
-																		<ul class="stars">
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																		</ul>
-																	</span>
+                                                    <td class="job-desk1" th:text="${rev.description}">
+<!--																	<span>-->
+<!--																		<ul class="stars">-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>-->
+<!--																		</ul>-->
+<!--																	</span>-->
                                                         <span>
 																		<p class="fs-16">
-																			babal bhio sabai kura babal nai  bhio :)
+
 																		</p>
 																	</span>
                                                     </td>
                                                     <td>
                                                         <div class="d-flex">
-                                                            <button class="first-button">Publish </button>
-                                                            <button class="second-button">Delete</button>
+<!--                                                            <button class="first-button">Edit </button>-->
+                                                            <a th:href="@{~/room/delete/}+${rev.id}"> <button class="second-button" >Delete</button></a>
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check style-1">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-nowrap">palita</span>
-                                                    </td>
-                                                    <td class="job-desk1">
-																	<span>
-																		<ul class="stars">
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																			<li><a href="javascript:void(0);"><i class="fas fa-star text-secondary"></i></a></li>
-																		</ul>
-																	</span>
-                                                        <span>
-																		<p class="fs-16">
-																			babal bhio sabai kura babal nai  bhio :)
-																		</p>
-																	</span>
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -233,19 +208,19 @@
 
 </style>
 
-<script src="vendor/global/global.min.js"></script>
+<script th:src="@{~/vendor/global/global.min.js}"></script>
 
-<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script th:src="@{~/vendor/jquery-nice-select/js/jquery.nice-select.min.js}"></script>
 
 <!-- Dashboard 1 -->
-<script src="js/dashboard/dashboard-1.js"></script>
+<script th:src="@{~/js/dashboard/dashboard-1.js}"></script>
 
-<script src="vendor/owl-carousel/owl.carousel.js"></script>
+<script th:src="@{~/vendor/owl-carousel/owl.carousel.js}"></script>
 
-<script src="js/custom.min.js"></script>
-<script src="js/dlabnav-init.js"></script>
-<script src="js/demo.js"></script>
-<script src="js/styleSwitcher.js"></script>
+<script th:src="@{~/js/custom.min.js}"></script>
+<script th:src="@{~/js/dlabnav-init.js}"></script>
+<script th:src="@{~/js/demo.js}"></script>
+<script th:src="@{~/js/styleSwitcher.js}"></script>
 </body>
 
 

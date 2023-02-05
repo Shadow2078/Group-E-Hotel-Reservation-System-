@@ -1,11 +1,15 @@
 package com.system.hotel_reservation_system.services.impl;
 
 import com.system.hotel_reservation_system.config.PasswordEncoderUtil;
+
 import com.system.hotel_reservation_system.entity.Review;
 import com.system.hotel_reservation_system.entity.User;
+
 import com.system.hotel_reservation_system.exception.AppException;
+
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.UserPojo;
+
 import com.system.hotel_reservation_system.repo.ReviewRepo;
 import com.system.hotel_reservation_system.repo.UserRepo;
 import com.system.hotel_reservation_system.services.UserService;
@@ -13,12 +17,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepo userRepo;
+//    private final NewsRepo newsRepo;
     private final ReviewRepo reviewRepo;
 
     @Override
@@ -77,9 +83,28 @@ public class UserServiceImpl implements UserService {
         String updated_password = generatePassword();
         userRepo.updatePassword(updated_password,email);
         return "CHANGED";
-
-
     }
+
+    @Override
+    public List<Review> fetchAll() {
+        return this.reviewRepo.findAll();
+    }
+
+    @Override
+    public Review fetchbyid(Integer id) {
+        Review review=reviewRepo.findById(id).orElseThrow(()->
+                new RuntimeException("notfound"));
+        review=Review.builder().name(review.getName())
+                .description(review.getDescription())
+                .build();
+        return review;
+    }
+
+    @Override
+    public void deletebyid(Integer id) {
+        reviewRepo.deleteById(id);
+    }
+
 
     public String generatePassword() {
         int length = 8;

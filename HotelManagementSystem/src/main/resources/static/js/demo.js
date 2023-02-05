@@ -42,33 +42,33 @@ var themeOptionArr = {
 		containerLayout: "full",
 	};
 	
-	var dlabThemeSet1 = {
-		typography: "poppins",
-		version: "light",
-		layout: "vertical",
-		primary: "color_3",
-		headerBg: "color_1",
-		navheaderBg: "color_3",
-		sidebarBg: "color_3",
-		sidebarStyle: "full",
-		sidebarPosition: "fixed",
-		headerPosition: "fixed",
-		containerLayout: "full",
-	};
+	// var dlabThemeSet1 = {
+	// 	typography: "poppins",
+	// 	version: "light",
+	// 	layout: "vertical",
+	// 	primary: "color_3",
+	// 	headerBg: "color_1",
+	// 	navheaderBg: "color_3",
+	// 	sidebarBg: "color_3",
+	// 	sidebarStyle: "full",
+	// 	sidebarPosition: "fixed",
+	// 	headerPosition: "fixed",
+	// 	containerLayout: "full",
+	// };
 	
-	var dlabThemeSet2 = {
-		typography: "poppins",
-		version: "light",
-		layout: "vertical",
-		primary: "color_2",
-		headerBg: "color_1",
-		navheaderBg: "color_2",
-		sidebarBg: "color_2",
-		sidebarStyle: "mini",
-		sidebarPosition: "fixed",
-		headerPosition: "fixed",
-		containerLayout: "full",
-	};
+	// var dlabThemeSet2 = {
+	// 	typography: "poppins",
+	// 	version: "light",
+	// 	layout: "vertical",
+	// 	primary: "color_2",
+	// 	headerBg: "color_1",
+	// 	navheaderBg: "color_2",
+	// 	sidebarBg: "color_2",
+	// 	sidebarStyle: "mini",
+	// 	sidebarPosition: "fixed",
+	// 	headerPosition: "fixed",
+	// 	containerLayout: "full",
+	// };
 	
 	
 	var dlabThemeSet3 = {
@@ -200,4 +200,5 @@ var themeOptionArr = {
 	});
 	
 
-})(jQuery);
+})
+(jQuery);

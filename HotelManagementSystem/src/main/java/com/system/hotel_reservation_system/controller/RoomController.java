@@ -1,8 +1,11 @@
 package com.system.hotel_reservation_system.controller;
 
+import com.system.hotel_reservation_system.entity.Review;
 import com.system.hotel_reservation_system.entity.Room;
+import com.system.hotel_reservation_system.pojo.BookPojo;
 import com.system.hotel_reservation_system.pojo.ReviewPojo;
 import com.system.hotel_reservation_system.pojo.RoomPojo;
+import com.system.hotel_reservation_system.services.BookingService;
 import com.system.hotel_reservation_system.services.RoomService;
 import com.system.hotel_reservation_system.services.UserService;
 import jakarta.validation.Valid;
@@ -32,13 +35,15 @@ public class RoomController {
 
     private final RoomService roomService;
     private final UserService userService;
+    private final BookingService bookingService;
+
 
 
     @GetMapping("/rooms")
     public String GetRooms(Model model){
         List<Room> rooms = roomService.fetchAll();
         model.addAttribute("rooms", rooms);
-        return  "room-list";
+        return  "rooms";
     }
 
     @GetMapping("/add")
@@ -82,14 +87,77 @@ public class RoomController {
     @GetMapping("roomind/{id}")
     public String getRoom(@PathVariable ("id") Integer id, Model model, Principal principal){
         model.addAttribute("review", new ReviewPojo());
+        model.addAttribute("booking", new BookPojo());
+//        model.addAttribute("getuser", userService.findByEmail(principal.getName()));
         Room room= roomService.fetchById(id);
+        Review review= userService.fetchbyid(id);
         model.addAttribute("roomss",room);
+        model.addAttribute("revs",review);
         return "Penthouse";
     }
+
+
+    @PostMapping("/savebook")
+    public String bookBike(@Valid BookPojo bookingPojo) {
+        bookingService.save(bookingPojo);
+        return "redirect:dashboard/dash";
+    }
+
     @PostMapping("/submit")
     public String SubmitReview(@Valid ReviewPojo reviewPojo){
         userService.submitReview(reviewPojo);
-        return "redirect:/room/rooms";
+        return "redirect:/rooms";
+    }
+
+    @GetMapping("/roomlist")
+    public String GetRoomlist(Model model){
+        List<Room> rooms = roomService.fetchAll();
+//        model.addAttribute("roomlist", rooms.stream().map(room ->
+//                Room.builder()
+//                        .room_type(room.getRoom_type())
+//                        .price(room.getPrice())
+//                        .beds(room.getBeds())
+//                        .build()
+//
+//        ));
+        model.addAttribute("roomData",rooms);
+        return  "room-list";
+    }
+
+    @GetMapping("/reviews")
+    public String GetRevs(Model model) {
+        List<Review> reviews = userService.fetchAll();
+        model.addAttribute("revData", reviews);
+        return "reviews";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String DelRev(@PathVariable("id")Integer id){
+        userService.deletebyid(id);
+
+        return "redirect:/room/reviews";
+    }
+
+    @GetMapping("/deletes/{id}")
+    public String DelRoom(@PathVariable("id")Integer id){
+        roomService.deletebyid(id);
+        return "redirect:/room/roomlist";
+    }
+
+    @GetMapping("/editroom/{id}")
+    public String EditRoom(@PathVariable("id") Integer id,Model model){
+        Room room=roomService.fetchById(id);
+        model.addAttribute("erooms",new RoomPojo(room));
+        model.addAttribute("edrooms",room);
+        return "editroom";
+    }
+
+    @GetMapping("/editrooms/{id}")
+    public String EditRooms(@PathVariable("id") Integer id,Model model){
+        Room room=roomService.fetchById(id);
+        model.addAttribute("eroomss",new RoomPojo(room));
+        return "redirect:room/roomlist";
     }
 
 }
+

@@ -7,9 +7,9 @@
 	<title> Hotel Admin Dashboard</title>
 	
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" th:href="@{images/favicon.png}" />
-	<link th:href="@{vendor/jquery-nice-select/css/nice-select.css}" rel="stylesheet">
-	<link th:href="@{vendor/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" th:href="@{~/images/favicon.png}" />
+	<link th:href="@{~/vendor/jquery-nice-select/css/nice-select.css}" rel="stylesheet">
+	<link th:href="@{~/vendor/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
 	<!-- <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	 -->
 	<!-- Style css -->
@@ -69,47 +69,47 @@
 		<!--Header end ti-comment-alt-->
         <!--Sidebar start-->
 		<div class="dlabnav">
-			<div class="dlabnav-scroll">
+			<div class="dlabnav-scroll active mm-active is-active" >
 				<ul class="metismenu" id="menu">
-					<li><a href="Dashboard.htmlhtml">
-							<i class="flaticon-025-dashboard"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
+					<li><a th:href="@{~/dashboard/dash}">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Dashboard</span>
+					</a>
 					</li>
-					
+
 				</ul>
-				
+
 				<ul class="metismenu" id="menu">
-				<li><a href="guest-list.html">
-					<i class="flaticon-025-dashboard"></i>
-					<span class="nav-text">Guest List</span>
-				</a>
-				</li>
-				</ul>
-				<ul class="metismenu" id="menu">
-				<li><a href="addRoom.html">
-					<i class="flaticon-381-list"></i>
-					<span class="nav-text">Add Room</span>
-				</a>
-				</li>
+					<li><a href="guest-list.html">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Guest List</span>
+					</a>
+					</li>
 				</ul>
 				<ul class="metismenu" id="menu">
-				<li><a href="room-list.html">
-					<i class="flaticon-381-home"></i>
-					<span class="nav-text">Room List</span>
-				</a>
-				</li>
+					<li><a th:href="@{~/room/add}">
+						<i class="flaticon-381-list"></i>
+						<span class="nav-text">Add rooms</span>
+					</a>
+					</li>
 				</ul>
-				
 				<ul class="metismenu" id="menu">
-				<li><a href="reviews.html">
-					<i class="flaticon-025-dashboard"></i>
-					<span class="nav-text">Reviews</span>
-				</a>
-				</li>
+					<li><a th:href="@{~/room/roomlist}">
+						<i class="flaticon-381-home"></i>
+						<span class="nav-text">Room List</span>
+					</a>
+					</li>
 				</ul>
-					</div>
-				</div>
+
+				<ul class="metismenu" id="menu">
+					<li><a th:href="@{~/room/reviews}">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Reviews</span>
+					</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 			</div>
 		</div>
 		<!--Sidebar end-->
@@ -134,9 +134,7 @@
 											<table class="table card-table display mb-4 shadow-hover table-responsive-lg" id="guestTable-all3">
 												<thead>
 													<tr>
-														<th>Hotel Name</th>
 														<th>Room Type</th>
-														<th>Address</th>
 														<th>price</th>
 														<th>beds</th>
 														<th>Status</th>
@@ -144,40 +142,29 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr th:each="room:${rooms}">
-														<td>
+													<tr th:each="room:${roomData}">
+														<td th:text="${room.room_type}">
 															<div class="room-list-bx d-flex align-items-center">
 
 																<div>
-																	<span class=" text-secondary fs-14 d-block" th:text="${room.id}"></span>
-																	<span class=" fs-16 font-w500 text-nowrap" th:text="${room.hotelname}"></span>
+																	<span class=" text-secondary fs-14 d-block" ></span>
+																	<span class=" fs-16 font-w500 text-nowrap" ></span>
 																</div>
 															</div>
 														</td>
-														<td>
-															<span class="fs-16 font-w500 text-nowrap" th:text="${room.room_type}"></span>
+														<td th:text="${room.price}">
+															<span class="fs-16 font-w500 text-nowrap"></span>
 														</td>
-														<td>
-															<div>
-																
-																<span class="fs-16 font-w500" th:text="${room.address}"></span>
+														<td th:text="${room.beds}">
+															<div>s
+																<span class="fs-12 font-w500" ></span>
 															</div>
 														</td>
 														<td>
-															<div class="">
-																<span class="font-w500" th:text="${room.price}"><small class="fs-14 ms-2">/day</small></span>
-															</div>
+															<a th:href="@{~/room/editroom/}+${room.id}" class="btn btn-success btn-md">Edit</a>
 														</td>
 														<td>
-															<div class="">
-																<span class="font-w500" th:text="${room.beds}"></span>
-															</div>
-														</td>
-														<td>
-															<a href="javascript:void(0);" class="btn btn-success btn-md">ACTIVE</a>
-														</td>
-														<td>
-															<a href="javascript:void(0);" class="btn btn-success btn-md">DELETE</a>
+															<a th:href="@{~/room/deletes/}+${room.id}" class="btn btn-success btn-md">DELETE</a>
 														</td>
 
 														
