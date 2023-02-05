@@ -1138,17 +1138,17 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     line-height:1.4
 
 } 
-.room_main-cards_card button{
-    background: #235784;
-    color: white;
-    font-size: inherit;
-    font-weight: inherit;
-    margin-top: 20px;
-    margin-left: 80px;
-    border-radius: 5px;
-    padding: 10px 10px;
+/*.room_main-cards_card accent button{*/
+/*    background: #235784;*/
+/*    color: white;*/
+/*    font-size: inherit;*/
+/*    font-weight: inherit;*/
+/*    margin-top: 20px;*/
+/*    margin-left: 80px;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px 10px;*/
 
-}
+/*}*/
 
 .room_main-cards_card:not(.accent){
     background:#fff;
@@ -1168,6 +1168,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]{
     margin-top:20px;
     padding-left:13px
 }
+
 .room_main-cards_card.accent .content .text{
     margin-bottom:20px
 }

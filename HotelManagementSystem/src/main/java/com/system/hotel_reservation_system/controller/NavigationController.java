@@ -44,4 +44,9 @@ public class NavigationController {
         return "/Dashboard";
     }
 
+    @GetMapping("/books")
+    public String GetBook(){
+        return "/booking-form";
+    }
+
 }
