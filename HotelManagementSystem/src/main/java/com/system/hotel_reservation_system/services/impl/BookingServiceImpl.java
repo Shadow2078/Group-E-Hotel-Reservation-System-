@@ -25,6 +25,7 @@ public class BookingServiceImpl implements BookingService {
         book.setCheckin(bookPojo.getCheckin());
         book.setCheckout(bookPojo.getCheckout());
         book.setPeople(bookPojo.getPeople());
+        book.setPhone(bookPojo.getPhone());
         book.setUserId(userRepo.findById(bookPojo.getUserId()).orElseThrow());
         book.setRoomId(roomRepo.findById(bookPojo.getRoomId()).orElseThrow());
         bookRepo.save(book);

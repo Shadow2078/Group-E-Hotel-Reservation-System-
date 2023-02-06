@@ -25,36 +25,39 @@
 						<div class="form-header">
 							<h1>Make your reservation</h1>
 						</div>
-						<form>
-							<div class="form-group">
-								<input class="form-control" type="text" placeholder="FullName">
-								<span class="form-label">Name</span>
-							</div>
+						<form th:method="post" th:action="@{/dashboard/savebook}" th:object="${booking}">
+						<input  type="text" hidden="hidden" name="userId" th:value="${userlog.id}">
+						<input  type="text" hidden="hidden" name="roomId" th:value="${rooms.id}">
+
+							<!--							<div class="form-group">-->
+<!--								<input class="form-control" type="text" placeholder="FullName" th:field="*{}">-->
+<!--								<span class="form-label">Name</span>-->
+<!--							</div>-->
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" required th:field="*{checkin}">
 										<span class="form-label">Check In</span>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" required th:field="*{checkout}">
 										<span class="form-label">Check out</span>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								
+<!--								-->
+<!--								<div class="col-md-6">-->
+<!--									<div class="form-group">-->
+<!--										<input class="form-control" type="email" placeholder="Enter your Email" th:field="*{checkin}">-->
+<!--										<span class="form-label">Email</span>-->
+<!--									</div>-->
+<!--								</div>-->
 								<div class="col-md-6">
 									<div class="form-group">
-										<input class="form-control" type="email" placeholder="Enter your Email">
-										<span class="form-label">Email</span>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" type="tel" placeholder="Enter you Phone">
+										<input class="form-control" type="tel" placeholder="Enter you Phone" th:field="*{phone}">
 										<span class="form-label">Phone</span>
 									</div>
 								</div>
@@ -64,14 +67,14 @@
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<select class="form-control" required>
-											<option value="" selected hidden>no of people</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
+										<select class="form-control" required th:field="*{People}">
+											<option value="NOT" selected hidden>no of people</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
 										</select>
 										<span class="select-arrow"></span>
 										<span class="form-label">Guests</span>
@@ -81,7 +84,7 @@
 						
 							</div>
 							<div class="form-btn">
-								<button class="submit-btn">Book Now</button>
+								<button class="submit-btn" type="submit">Book Now</button>
 							</div>
 						</form>
 					</div>
@@ -109,7 +112,6 @@
 			}
 		}
 	</script>
-
 </body>
 
 </html>

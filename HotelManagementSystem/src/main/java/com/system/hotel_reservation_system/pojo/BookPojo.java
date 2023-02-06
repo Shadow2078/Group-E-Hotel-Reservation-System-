@@ -15,7 +15,8 @@ public class BookPojo {
 private  int id;
 private  String checkin;
 private  String checkout;
-private  int people;
+private  String people;
+private  String phone;
 private  int roomId;
 private  int userId;
 
@@ -26,6 +27,7 @@ private  int userId;
         this.people= book.getPeople();
         this.roomId= book.getRoomId().getId();
         this.userId= book.getUserId().getId();
+        this.phone= book.getPhone();
     }
 
 }

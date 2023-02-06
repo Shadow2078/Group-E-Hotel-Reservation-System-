@@ -26,7 +26,9 @@ public class Book {
     private String checkout;
 
     @Column
-    private Integer People;
+    private String People;
+    @Column
+    private String phone;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id",

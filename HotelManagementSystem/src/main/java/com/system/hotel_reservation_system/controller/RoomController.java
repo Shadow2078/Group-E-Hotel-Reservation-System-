@@ -97,11 +97,11 @@ public class RoomController {
     }
 
 
-    @PostMapping("/savebook")
-    public String bookBike(@Valid BookPojo bookingPojo) {
-        bookingService.save(bookingPojo);
-        return "redirect:dashboard/dash";
-    }
+//    @PostMapping("/savebook")
+//    public String bookBike(@Valid BookPojo bookingPojo) {
+//        bookingService.save(bookingPojo);
+//        return "redirect:dashboard/dash";
+//    }
 
     @PostMapping("/submit")
     public String SubmitReview(@Valid ReviewPojo reviewPojo){
