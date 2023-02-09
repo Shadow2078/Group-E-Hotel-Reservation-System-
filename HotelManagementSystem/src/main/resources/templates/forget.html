@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org/" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,9 +39,9 @@
                         <div class="form-content">
                             <div class="form-items">
                                 <h3>Password Reset</h3>
-                                <p>To reset your password, enter the email address you use to sign in to iofrm</p>
-                                <form>
-                                    <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
+                                <p>To reset your password, enter the email address you use to sign in</p>
+                                <form th:method="post" th:action="@{~/user/changepassword}" th:object="${users}">
+                                    <input class="form-control" type="text" name="email" placeholder="E-mail Address" required th:field="*{email}">
                                     <div class="form-button full-width">
                                         <button id="submit" type="submit" class="ibtn btn-forget">Send Reset Link</button>
                                     </div>

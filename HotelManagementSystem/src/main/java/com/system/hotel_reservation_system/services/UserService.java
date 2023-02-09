@@ -21,4 +21,8 @@ public interface UserService {
     Review fetchbyid(Integer id);
 
     void deletebyid(Integer id);
+
+    void processPasswordResetRequest(String email);
+
+    void sendEmail();
 }

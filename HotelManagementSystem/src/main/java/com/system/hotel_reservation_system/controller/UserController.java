@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -52,10 +53,11 @@ public String forgotpassword(Model model){
 
 
     @PostMapping("/changepassword")
-    public String changepassword(@Valid User userPojo){
-        System.out.println("ENTERED");
-        userService.updateResetPassword(userPojo.getEmail());
-        return "redirect:/index";
+    public String changepassword(@RequestParam("email") String email, Model model, @Valid UserPojo userPojo){
+        userService.processPasswordResetRequest(userPojo.getEmail());
+        model.addAttribute("message","Your new password has been sent to your email Please " +
+                "check your inbox");
+        return "redirect:/home";
     }
 
 
