@@ -56,10 +56,7 @@ public String forgotpassword(Model model){
     public String changepassword(@RequestParam("email") String email, Model model, @Valid UserPojo userPojo){
         userService.processPasswordResetRequest(userPojo.getEmail());
         model.addAttribute("message","Your new password has been sent to your email Please " +
-                "check your inbox");
+                "check your inbox" );
         return "redirect:/home";
     }
-
-
-
 }

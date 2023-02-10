@@ -96,8 +96,13 @@ public class UserServiceImpl implements UserService {
         User user = (User) userRepo.findByEmail(email)
                 .orElseThrow(()-> new RuntimeException("Invalid User email"));
         String updated_password = generatePassword();
-        userRepo.updatePassword(updated_password,email);
-        return "CHANGED";
+        try {
+            userRepo.updatePassword(updated_password,email);
+            return "CHANGED";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "ds";
     }
 
     @Override
@@ -136,7 +141,7 @@ public class UserServiceImpl implements UserService {
     private void sendPassword(String email, String password ){
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
-        message.setSubject("Your new password is:");
+        message.setSubject("Your new password is: "+ password);
         message.setText(password);
         mailSender.send(message);
     }

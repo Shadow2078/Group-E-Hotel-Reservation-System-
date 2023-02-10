@@ -1,16 +1,13 @@
 package com.system.hotel_reservation_system.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,13 +24,13 @@ public class User implements UserDetails {
     @GeneratedValue(generator = "hrs_user_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(nullable = false,unique = true)
+    @Column(name = "email", nullable = false,unique = true)
     private String email;
 
-    @Column()
+    @Column(name = "fullname")
     private String fullname;
 
-    @Column()
+    @Column(name = "password")
     private String password;
 
 
