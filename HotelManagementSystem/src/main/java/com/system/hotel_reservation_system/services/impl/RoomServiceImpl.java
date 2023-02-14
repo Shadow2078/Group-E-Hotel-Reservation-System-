@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 @Service
 @RequiredArgsConstructor
 public class RoomServiceImpl implements RoomService {
-    private final RoomRepo RoomRepo;
+    private final RoomRepo  RoomRepo;
     public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/hotel_mgmt/";
 
 
@@ -28,13 +28,13 @@ public class RoomServiceImpl implements RoomService {
     public String saveRoom(RoomPojo RoomPojo) throws IOException {
         Room room = new Room();
         if (RoomPojo.getId()!= null){    room.setId(RoomPojo.getId());}
-        room.setHotelname(RoomPojo.getHotelname());
-        room.setCity(RoomPojo.getCity());
-        room.setAddress(RoomPojo.getAddress());
+
+
+
         room.setPrice(RoomPojo.getPrice());
         room.setRoom_description(RoomPojo.getRoom_description());
         room.setRoom_type(RoomPojo.getRoom_type());
-        room.setPhone_number(RoomPojo.getPhone_number());
+
         room.setNo_of_people(RoomPojo.getNo_of_people());
         room.setBeds(RoomPojo.getBeds());
 
@@ -113,8 +113,7 @@ public class RoomServiceImpl implements RoomService {
         Stream<Room> allRoomsWithImage=list.stream().map(room ->
                 Room.builder()
                         .id(room.getId())
-                        .hotelname(room.getHotelname())
-                        .address(room.getAddress())
+
                         .price(room.getPrice())
                         .beds(room.getBeds())
                         .image1Base64(getImageBase64(room.getImage1()))
@@ -122,11 +121,9 @@ public class RoomServiceImpl implements RoomService {
                         .image3Base64(getImageBase64(room.getImage3()))
                         .image4Base64(getImageBase64(room.getImage4()))
                         .image5Base64(getImageBase64(room.getImage5()))
-                        .city(room.getCity())
                         .room_description(room.getRoom_description())
                         .room_type(room.getRoom_type())
                         .no_of_people(room.getNo_of_people())
-                        .phone_number(room.getPhone_number())
                         .build()
         );
 
@@ -145,8 +142,8 @@ public class RoomServiceImpl implements RoomService {
         Room room =RoomRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
         room=Room.builder()
                 .id(room.getId())
-                .hotelname(room.getHotelname())
-                .address(room.getAddress())
+
+
                 .price(room.getPrice())
                 .beds(room.getBeds())
                 .image1Base64(getImageBase64(room.getImage1()))
@@ -154,11 +151,11 @@ public class RoomServiceImpl implements RoomService {
                 .image3Base64(getImageBase64(room.getImage3()))
                 .image4Base64(getImageBase64(room.getImage4()))
                 .image5Base64(getImageBase64(room.getImage5()))
-                .city(room.getCity())
+
                 .room_description(room.getRoom_description())
                 .room_type(room.getRoom_type())
                 .no_of_people(room.getNo_of_people())
-                .phone_number(room.getPhone_number())
+
                 .build();
         return room;
     }

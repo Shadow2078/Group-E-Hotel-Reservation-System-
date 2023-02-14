@@ -20,14 +20,7 @@ public class Room{
     @GeneratedValue(generator = "hrs_room_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(nullable = false)
-    private String hotelname;
 
-    @Column(nullable = false)
-    private String city;
-
-    @Column(nullable = false)
-    private String address;
 
     @Column(nullable = false)
     private Double price;
@@ -38,8 +31,7 @@ public class Room{
     @Column(nullable = false)
     private String room_type;
 
-    @Column(nullable = false)
-    private String phone_number;
+
 
     @Column(nullable = false)
     private Integer no_of_people;

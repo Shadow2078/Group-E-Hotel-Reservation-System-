@@ -18,13 +18,11 @@ public class RoomPojo {
     private Integer id;
 
 
-    private String hotelname;
 
 
-    private String city;
 
 
-    private String address;
+
 
 
     private Double price;
@@ -36,7 +34,7 @@ public class RoomPojo {
     private String room_type;
 
 
-    private String phone_number;
+
 
 
     private Integer no_of_people;
@@ -55,13 +53,13 @@ public class RoomPojo {
 
     public RoomPojo(Room room){
         this.id = room.getId();
-        this.hotelname = room.getHotelname();
-        this.city = room.getCity();
-        this.address = room.getAddress();
+
+
+
         this.price = room.getPrice();
         this.room_description = room.getRoom_description();
         this.room_type = room.getRoom_type();
-        this.phone_number = room.getPhone_number();
+
         this.no_of_people = room.getNo_of_people();
         this.beds=room.getBeds();
 
